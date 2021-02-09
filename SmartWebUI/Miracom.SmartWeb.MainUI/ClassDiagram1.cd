@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="굴림" Size="9" />
+  <Class Name="Miracom.SmartWeb.UI.CASCheck" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Main\CASCheck.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAEACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miracom.SmartWeb.UI.frmOption" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Main\frmOption.cs</FileName>
+      <HashCode>AAAEAAAQECAgABEAAACAAQACAAAAIBABAIAABAIAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miracom.SmartWeb.UI.frmPassword" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Main\frmPassword.cs</FileName>
+      <HashCode>IIQEAAEAkCAgABEAgACgAQACAAAAIBAAAIAABAIAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miracom.SmartWeb.UI.MainForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Main\MainForm.cs</FileName>
+      <HashCode>UwlYFYQSQiJzsdsoHWGOeLCaaYjtARABRA4zCCcJcow=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Miracom.SmartWeb.UI.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAEABAAAICAAgAAAABEgUAAQEAAAIAAAwAAQABAJQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miracom.SmartWeb.UI.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Miracom.SmartWeb.UI.ILogOutEvent" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Main\MainEvent.cs</FileName>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Miracom.SmartWeb.UI.IControlCOMIncoming" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Main\MainEvent.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+</ClassDiagram>

@@ -1,0 +1,6 @@
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.CusDB\obj\Debug\Miracom.SmartWeb.CusDB.csprojResolveAssemblyReference.cache
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.CusDB\bin\Debug\Miracom.SmartWeb.CusDB.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.CusDB\bin\Debug\Miracom.SmartWeb.CusDB.pdb
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.CusDB\bin\Debug\Miracom.SmartWeb.FWX.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.CusDB\obj\Debug\Miracom.SmartWeb.CusDB.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.CusDB\obj\Debug\Miracom.SmartWeb.CusDB.pdb

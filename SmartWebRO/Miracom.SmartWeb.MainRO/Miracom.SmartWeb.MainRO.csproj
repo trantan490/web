@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E350577E-6BC6-40BC-8D8E-51B9A8EE7B64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Miracom.SmartWeb.RO</RootNamespace>
+    <AssemblyName>Miracom.SmartWeb.MainRO</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Miracom.SmartWeb.pfx</AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Miracom.SmartWeb.CusDB, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.CusDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.CusRO, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.CusRO.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.FmbDB, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.FmbDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.FmbRO, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.FmbRO.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.FWX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SmartWeb\bin\Miracom.SmartWeb.FWX.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.H101INF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.H101INF.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.Query, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.StdDB, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.StdDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.StdRO, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.StdRO.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="transceiverxnet, Version=3.2.70.0, Culture=neutral, PublicKeyToken=ebf86c237689feec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\transceiverxnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainRO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SvrGlobalConstant.cs" />
+    <Compile Include="SvrGlobalVariable.cs" />
+    <Compile Include="CmnFunction.cs" />
+    <Compile Include="ListFunction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Miracom.SmartWeb.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Component
+copy $(TargetPath) $(SolutionDir)..\SmartWeb\SmartWebService\bin</PostBuildEvent>
+  </PropertyGroup>
+</Project>

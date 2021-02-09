@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="DB_MWIPLOTSTS" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_MFO_LOTSTS" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT  * FROM MWIPLOTSTS
+??]]></commandtext>
+    </query>
+</queryxml>

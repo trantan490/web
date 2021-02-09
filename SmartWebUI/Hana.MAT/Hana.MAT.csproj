@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E698DEAA-1DF9-4914-B143-11DBD5D1D76C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hana.MAT</RootNamespace>
+    <AssemblyName>Hana.MAT</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <DelaySign>false</DelaySign>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChartFX, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Base, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Borders, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.Borders.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinChart.v8.1, Version=8.1.20081.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Infragistics2.Win.UltraWinChart.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel, Version=1.4.0.0, Culture=neutral, PublicKeyToken=2a924091066e3ab0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.FWX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.FWX.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.H101INF, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.H101INF.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.StdUI, Version=4.2.1.7, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.StdUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.UI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Office.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MAT070101_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070101_P1.Designer.cs">
+      <DependentUpon>MAT070101_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070202.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070202.Designer.cs">
+      <DependentUpon>MAT070202.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070204.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070204.designer.cs">
+      <DependentUpon>MAT070204.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070301.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070301.designer.cs">
+      <DependentUpon>MAT070301.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070501_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070501_P1.Designer.cs">
+      <DependentUpon>MAT070501_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070503.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070503.Designer.cs">
+      <DependentUpon>MAT070503.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070503_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070503_P1.Designer.cs">
+      <DependentUpon>MAT070503_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070503_P2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070503_P2.Designer.cs">
+      <DependentUpon>MAT070503_P2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070503_P3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070503_P3.Designer.cs">
+      <DependentUpon>MAT070503_P3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070503_P4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070503_P4.Designer.cs">
+      <DependentUpon>MAT070503_P4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070504.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070504.Designer.cs">
+      <DependentUpon>MAT070504.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070504_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070504_P1.Designer.cs">
+      <DependentUpon>MAT070504_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070504_P2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070504_P2.Designer.cs">
+      <DependentUpon>MAT070504_P2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070504_P3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070504_P3.Designer.cs">
+      <DependentUpon>MAT070504_P3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070601.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070601.Designer.cs">
+      <DependentUpon>MAT070601.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070602.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070602.designer.cs">
+      <DependentUpon>MAT070602.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070207_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070207_P1.Designer.cs">
+      <DependentUpon>MAT070207_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070505_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070505_P1.Designer.cs">
+      <DependentUpon>MAT070505_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MAT070402.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070402.Designer.cs">
+      <DependentUpon>MAT070402.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070402_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAT070402_P1.Designer.cs">
+      <DependentUpon>MAT070402_P1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MAT070101_P1.resx">
+      <DependentUpon>MAT070101_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070202.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MAT070202.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070204.resx">
+      <DependentUpon>MAT070204.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070301.resx">
+      <DependentUpon>MAT070301.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070402_P1.resx">
+      <DependentUpon>MAT070402_P1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070501_P1.resx">
+      <DependentUpon>MAT070501_P1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070503.resx">
+      <DependentUpon>MAT070503.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070503_P1.resx">
+      <DependentUpon>MAT070503_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070503_P2.resx">
+      <DependentUpon>MAT070503_P2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070503_P3.resx">
+      <DependentUpon>MAT070503_P3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070503_P4.resx">
+      <DependentUpon>MAT070503_P4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070504.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MAT070504.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070504_P1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MAT070504_P1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070504_P2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MAT070504_P2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070504_P3.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MAT070504_P3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070601.resx">
+      <DependentUpon>MAT070601.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070602.resx">
+      <DependentUpon>MAT070602.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070207_P1.resx">
+      <DependentUpon>MAT070207_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070505_P1.resx">
+      <DependentUpon>MAT070505_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070201.resx">
+      <DependentUpon>MAT070201.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070101.resx">
+      <DependentUpon>MAT070101.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070401.resx">
+      <DependentUpon>MAT070401.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070501.resx">
+      <DependentUpon>MAT070501.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070205.resx">
+      <DependentUpon>MAT070205.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070206.resx">
+      <DependentUpon>MAT070206.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070502.resx">
+      <DependentUpon>MAT070502.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070207.resx">
+      <DependentUpon>MAT070207.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070505.resx">
+      <DependentUpon>MAT070505.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070701.resx">
+      <DependentUpon>MAT070701.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070603.resx">
+      <DependentUpon>MAT070603.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAT070506.resx">
+      <DependentUpon>MAT070506.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="MAT070402.resx">
+      <DependentUpon>MAT070402.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MAT070201.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070201.designer.cs">
+      <DependentUpon>MAT070201.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070101.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070101.designer.cs">
+      <DependentUpon>MAT070101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070401.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070401.designer.cs">
+      <DependentUpon>MAT070401.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070501.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070501.designer.cs">
+      <DependentUpon>MAT070501.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070205.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070205.designer.cs">
+      <DependentUpon>MAT070205.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070206.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070206.Designer.cs">
+      <DependentUpon>MAT070206.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070502.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070502.designer.cs">
+      <DependentUpon>MAT070502.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070207.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070207.Designer.cs">
+      <DependentUpon>MAT070207.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070505.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070505.Designer.cs">
+      <DependentUpon>MAT070505.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070701.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070701.Designer.cs">
+      <DependentUpon>MAT070701.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070603.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070603.Designer.cs">
+      <DependentUpon>MAT070603.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAT070506.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MAT070506.Designer.cs">
+      <DependentUpon>MAT070506.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Component</PostBuildEvent>
+  </PropertyGroup>
+</Project>

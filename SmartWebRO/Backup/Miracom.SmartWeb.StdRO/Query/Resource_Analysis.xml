@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="STD1501" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT RM.RES_ID, RD.RES_DESC, RM.OPER, 
+ SUM(RM.END_LOT) AS END_LOT, SUM(RM.END_QTY_1) AS END_QTY_1, SUM(RM.END_QTY_2)  AS END_QTY_2
+ FROM RSUMRESMOV RM, MRASRESDEF RD
+ WHERE RM.FACTORY = RD.FACTORY
+ AND RM.RES_ID=RD.RES_ID
+??]]></commandtext>
+    </query>
+</queryxml>

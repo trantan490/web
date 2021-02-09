@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="INS_RWEBFLXCOL" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[INSERT INTO RWEBFLXCOL
+   (FACTORY, INQUIRY_NAME, COLUMN_SEQ, COLUMN_NAME, COLUMN_PERIOD, COLUMN_ALIAS_1, COLUMN_ALIAS_2, RESV_FIELD_1, RESV_FIELD_2, RESV_FIELD_3, RESV_FIELD_4, RESV_FIELD_5, RESV_FLAG_1, RESV_FLAG_2, RESV_FLAG_3, RESV_FLAG_4, RESV_FLAG_5)
+ VALUES
+   (:FACTORY, :INQUIRY_NAME, :COLUMN_SEQ, :COLUMN_NAME, :COLUMN_PERIOD, :COLUMN_ALIAS_1, :COLUMN_ALIAS_2, :RESV_FIELD_1, :RESV_FIELD_2, :RESV_FIELD_3, :RESV_FIELD_4, :RESV_FIELD_5, :RESV_FLAG_1, :RESV_FLAG_2, :RESV_FLAG_3, :RESV_FLAG_4, :RESV_FLAG_5)
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:INQUIRY_NAME</param>
+            <param direction="Input" dbtype="Int32" size="50" value="1">:COLUMN_SEQ</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:COLUMN_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="3" value="A">:COLUMN_PERIOD</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:COLUMN_ALIAS_1</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:COLUMN_ALIAS_2</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_1</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_2</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_3</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_4</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_5</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_1</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_2</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_3</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_4</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_5</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_RWEBFLXCOL" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBFLXCOL WHERE FACTORY = :FACTORY AND INQUIRY_NAME = :INQUIRY_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="FABBLW">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="TEST">:INQUIRY_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Delete" queryid="DEL_FACTORY.INQUIRY.SEQ.COLUMN" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[DELETE RWEBFLXCOL
+WHERE FACTORY = :FACTORY
+AND INQUIRY_NAME = :INQUIRY_NAME
+AND COLUMN_SEQ = :COLUMN_SEQ
+AND COLUMN_NAME = :COLUMN_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:INQUIRY_NAME</param>
+            <param direction="Input" dbtype="Int32" size="3" value="A">:COLUMN_SEQ</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:COLUMN_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Delete" queryid="DEL_FACTROY.INQUIRY" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[DELETE RWEBFLXCOL
+WHERE FACTORY = :FACTORY
+AND INQUIRY_NAME = :INQUIRY_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:INQUIRY_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_FACTORY" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBFLXCOL 
+WHERE FACTORY = :FACTORY
+AND INQUIRY_NAME = :INQUIRY_NAME
+AND COLUMN_SEQ = :COLUMN_SEQ
+AND COLUMN_NAME = :COLUMN_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:INQUIRY_NAME</param>
+            <param direction="Input" dbtype="Int32" size="50" value="1">:COLUMN_SEQ</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:COLUMN_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_FACTORY.INQ.COL" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBFLXCOL
+   SET  COLUMN_SEQ = : COLUMN_SEQ 
+WHERE FACTORY = :FACTORY AND INQUIRY_NAME = :INQUIRY_NAME AND COLUMN_NAME = :COLUMN_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:INQUIRY_NAME</param>
+            <param direction="Input" dbtype="Int32" size="3" value="1">:COLUMN_SEQ</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:COLUMN_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_FACTORY.INQ.SEQ" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBFLXCOL
+   SET  COLUMN_SEQ = COLUMN_SEQ - 1
+WHERE FACTORY = :FACTORY AND INQUIRY_NAME = :INQUIRY_NAME AND COLUMN_SEQ >= :COLUMN_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="S">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="S">:INQUIRY_NAME</param>
+            <param direction="Input" dbtype="Int32" size="3" value="S">:COLUMN_SEQ</param>
+        </parameters>
+    </query>
+</queryxml>

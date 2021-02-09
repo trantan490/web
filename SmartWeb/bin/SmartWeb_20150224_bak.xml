@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="ApplicationName" value="Smart Web" />
+    <!-- <add key="WebServiceUrl" value="http://localhost/SmartWebservice/SmartWebService.asmx" /> -->
+    <add key="WebServiceUrl" value="http://211.180.182.15/SmartWebservice/SmartWebService.asmx" />
+    <add key="ApplicationVersion" value="2012122899" />
+  </appSettings>
+  
+</configuration>

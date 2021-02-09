@@ -1,0 +1,215 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1BC92E3B-5995-43B4-8C29-9CF26E771952}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Miracom.SmartWeb.UI</RootNamespace>
+    <AssemblyName>Miracom.SmartWeb.FmbUI</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Miracom.SmartWeb.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FarPoint.Win, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL" />
+    <Reference Include="FarPoint.Win.Spread, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Shared.v8.1, Version=8.1.20081.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinDock.v8.1, Version=8.1.20081.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v8.1, Version=8.1.20081.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v8.1, Version=8.1.20081.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.v8.1, Version=8.1.20081.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Miracom.SmartWeb.FWX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.FWX.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.H101INF, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.H101INF.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.StdUI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.StdUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="transceiverxnet, Version=3.2.70.0, Culture=neutral, PublicKeyToken=ebf86c237689feec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\transceiverxnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsCommon.cs" />
+    <Compile Include="clsGlobalOptions.cs" />
+    <Compile Include="Design\frmFMBAddMultiResources.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmFMBCreateLayOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmFMBCreateResource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmFMBCreateTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmFMBCreateUDRGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <None Include="Design\frmFMBDesign.cs">
+      <SubType>Form</SubType>
+    </None>
+    <Compile Include="Design\FMBDesign.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\FMBDesign.Designer.cs">
+      <DependentUpon>FMBDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\udcFMBDesign.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMdiFormFunction.cs" />
+    <Compile Include="modCommonFunction.cs" />
+    <Compile Include="modGlobalConstant.cs" />
+    <Compile Include="modGlobalEnum.cs" />
+    <Compile Include="modGlobalVariable.cs" />
+    <Compile Include="modLanguageFunction.cs" />
+    <Compile Include="modListRoutine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Setup\frmFMBSetupGlobalOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setup\frmFMBSetupResourceImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\frmFMBAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\frmFMBArrangeLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\frmFMBSaveLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\frmFMBSetupDefaultLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Design\frmFMBAddMultiResources.resx">
+      <DependentUpon>frmFMBAddMultiResources.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmFMBCreateLayOut.resx">
+      <DependentUpon>frmFMBCreateLayOut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmFMBCreateResource.resx">
+      <DependentUpon>frmFMBCreateResource.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmFMBCreateTag.resx">
+      <DependentUpon>frmFMBCreateTag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmFMBCreateUDRGroup.resx">
+      <DependentUpon>frmFMBCreateUDRGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmFMBDesign.resx">
+      <DependentUpon>frmFMBDesign.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\FMBDesign.resx">
+      <DependentUpon>FMBDesign.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\udcFMBDesign.resx">
+      <DependentUpon>udcFMBDesign.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setup\frmFMBSetupGlobalOption.resx">
+      <DependentUpon>frmFMBSetupGlobalOption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setup\frmFMBSetupResourceImage.resx">
+      <DependentUpon>frmFMBSetupResourceImage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\frmFMBAbout.resx">
+      <DependentUpon>frmFMBAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\frmFMBArrangeLayout.resx">
+      <DependentUpon>frmFMBArrangeLayout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\frmFMBSaveLayout.resx">
+      <DependentUpon>frmFMBSaveLayout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\frmFMBSetupDefaultLayout.resx">
+      <DependentUpon>frmFMBSetupDefaultLayout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Miracom.SmartWeb.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Miracom.SmartWeb.UI\Miracom.SmartWeb.UI.csproj">
+      <Project>{E73B77FE-1A4A-435C-B299-8022E0804201}</Project>
+      <Name>Miracom.SmartWeb.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Component</PostBuildEvent>
+  </PropertyGroup>
+</Project>

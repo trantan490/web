@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_FACTORY" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MWIPFLWDEF WHERE FACTORY = :FACTORY]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="FABBLW">:FACTORY</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_FLW_MAT" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[ SELECT FLOW,
+ (SELECT FLOW_DESC FROM MWIPFLWDEF WHERE FLOW = M.FLOW) FLOW_DESC
+  FROM MWIPMATFLW M
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="SEL_FLW_SEQ" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT FLOW_SEQ_NUM FROM MWIPMATFLW 
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="SEL_FLW" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT FLOW ,FLOW_DESC FROM MWIPFLWDEF
+??]]></commandtext>
+    </query>
+</queryxml>

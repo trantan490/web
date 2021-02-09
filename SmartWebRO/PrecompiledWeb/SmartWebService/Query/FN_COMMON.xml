@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_SYSDATE" commandtype="Text" description="현재 시스템일자(yyyyMMddHHmiSS)" commandtimeout="60">
+        <commandtext><![CDATA[SELECT TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') FROM DUAL]]></commandtext>
+    </query>
+    <query statement="Select" queryid="GET_FUNCTION_LIST" commandtype="Text" description="공장의 사용자 그룹별 함수리스트" commandtimeout="60">
+        <commandtext><![CDATA[SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,A.FUNC_NAME,B.FUNC_DESC
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:p_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="USER_GROUP">:p_SEC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="VIEW_MATERIAL_LIST" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT DISTINCT MAT_ID, MAT_DESC FROM MWIPMATDEF ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="VIEW_MATERIAL_VER_LIST" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT MAT_VER FROM MWIPMATDEF ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="DYNAMIC" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="VIEW_FACTORY_LIST" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MWIPFACDEF]]></commandtext>
+    </query>
+    <query statement="Select" queryid="VIEW_GCMDATA_LIST" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MGCMTBLDAT WHERE FACTORY =:FACTORY AND TABLE_NAME=:TABLE_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SUMTEST">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="MATERIAL_GRP_1">:TABLE_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="VIEW_MATGROUP_LIST" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MWIPFACCMF WHERE FACTORY =:FACTORY AND ITEM_NAME =:ITEM_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="DEMO">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="GRP_MATERIAL">:ITEM_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="VIEW_RESOURCE_LIST" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MRASRESDEF WHERE FACTORY =:FACTORY]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="DEMO">:FACTORY</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="VIEW_MAX_MATERIAL_VER" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT MAX(MAT_VER ) AS MAX_VER
+FROM MWIPMATDEF 
+WHERE FACTORY =:FACTORY AND MAT_ID =:MAT_ID
+
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SUMTEST">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="P100">:MAT_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="VIEW_GCMGRP_LIST" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT KEY_1,DATA_1 FROM  MGCMTBLDAT
+WHERE FACTORY =:FACTORY AND TABLE_NAME=:TABLE_NAME
+
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SUMTEST">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="MATERIAL_GRP_1">:TABLE_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="VIEW_FACCMF_LIST" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MWIPFACCMF
+WHERE FACTORY =:FACTORY AND ITEM_NAME=:ITEM_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SUMTEST">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="GRP_MATERIAL">:ITEM_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="VIEW_OPER_LIST" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT OPER, OPER_DESC 
+FROM MWIPOPRDEF
+WHERE FACTORY = :FACTORY
+ORDER BY OPER]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SUMTEST">:FACTORY</param>
+        </parameters>
+    </query>
+</queryxml>

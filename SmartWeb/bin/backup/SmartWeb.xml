@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="ApplicationName" value="Smart Web" />
+    <add key="WebServiceUrl" value="http://localhost/SmartWebservice/SmartWebService.asmx" />
+  </appSettings>
+  
+</configuration>

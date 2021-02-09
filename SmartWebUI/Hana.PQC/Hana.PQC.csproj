@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24EBFE04-8CD1-4999-92EC-A18C6F1EBB15}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hana.PQC</RootNamespace>
+    <AssemblyName>Hana.PQC</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <StartupObject>
+    </StartupObject>
+    <DelaySign>false</DelaySign>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChartFX, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Base, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Borders, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.Borders.dll</HintPath>
+    </Reference>
+    <Reference Include="DACrux.SPC.Control, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\DACrux.SPC.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel, Version=1.4.0.0, Culture=neutral, PublicKeyToken=2a924091066e3ab0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.FWX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.FWX.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.StdUI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.StdUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Office.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\System.Windows.Forms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PQC030107.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030107.designer.cs">
+      <DependentUpon>PQC030107.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030109.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030109.designer.cs">
+      <DependentUpon>PQC030109.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030114.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030114.Designer.cs">
+      <DependentUpon>PQC030114.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030115.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030115.designer.cs">
+      <DependentUpon>PQC030115.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030119.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030119.designer.cs">
+      <DependentUpon>PQC030119.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030203.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030203.designer.cs">
+      <DependentUpon>PQC030203.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030701_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PQC030701_P1.Designer.cs">
+      <DependentUpon>PQC030701_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030113.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030113.Designer.cs">
+      <DependentUpon>PQC030113.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030101.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030101.Designer.cs">
+      <DependentUpon>PQC030101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030401.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030401.Designer.cs">
+      <DependentUpon>PQC030401.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030501.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030501.Designer.cs">
+      <DependentUpon>PQC030501.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030601.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030601.Designer.cs">
+      <DependentUpon>PQC030601.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030703.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030703.designer.cs">
+      <DependentUpon>PQC030703.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030901.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030901.designer.cs">
+      <DependentUpon>PQC030901.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031001_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PQC031001_P1.Designer.cs">
+      <DependentUpon>PQC031001_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031201.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031201.Designer.cs">
+      <DependentUpon>PQC031201.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031202.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031202.Designer.cs">
+      <DependentUpon>PQC031202.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031203.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031203.Designer.cs">
+      <DependentUpon>PQC031203.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031204.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031204.Designer.cs">
+      <DependentUpon>PQC031204.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031205.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031205.Designer.cs">
+      <DependentUpon>PQC031205.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031206.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031206.Designer.cs">
+      <DependentUpon>PQC031206.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030302.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030302.Designer.cs">
+      <DependentUpon>PQC030302.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031207.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031207.designer.cs">
+      <DependentUpon>PQC031207.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PQC030108.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030108.Designer.cs">
+      <DependentUpon>PQC030108.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030105.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030105.designer.cs">
+      <DependentUpon>PQC030105.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031001.Designer.cs">
+      <DependentUpon>PQC031001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030103.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030103.Designer.cs">
+      <DependentUpon>PQC030103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030110.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030110.Designer.cs">
+      <DependentUpon>PQC030110.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030111.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030111.Designer.cs">
+      <DependentUpon>PQC030111.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031002.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031002.Designer.cs">
+      <DependentUpon>PQC031002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030102.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030102.Designer.cs">
+      <DependentUpon>PQC030102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031002_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PQC031002_P1.Designer.cs">
+      <DependentUpon>PQC031002_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031003.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031003.Designer.cs">
+      <DependentUpon>PQC031003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030104.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030104.Designer.cs">
+      <DependentUpon>PQC030104.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030102_P2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PQC030102_P2.Designer.cs">
+      <DependentUpon>PQC030102_P2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030102_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PQC030102_P1.Designer.cs">
+      <DependentUpon>PQC030102_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030201.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030201.Designer.cs">
+      <DependentUpon>PQC030201.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030112.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030112.Designer.cs">
+      <DependentUpon>PQC030112.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030701.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030701.designer.cs">
+      <DependentUpon>PQC030701.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030702.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030702.designer.cs">
+      <DependentUpon>PQC030702.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030704.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030704.designer.cs">
+      <DependentUpon>PQC030704.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030106.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030106.Designer.cs">
+      <DependentUpon>PQC030106.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031101.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031101.designer.cs">
+      <DependentUpon>PQC031101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031102.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031102.designer.cs">
+      <DependentUpon>PQC031102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030116.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030116.designer.cs">
+      <DependentUpon>PQC030116.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030117.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030117.designer.cs">
+      <DependentUpon>PQC030117.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030705.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030705.designer.cs">
+      <DependentUpon>PQC030705.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030706.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030706.designer.cs">
+      <DependentUpon>PQC030706.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030706_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PQC030706_P1.Designer.cs">
+      <DependentUpon>PQC030706_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC031109.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC031109.designer.cs">
+      <DependentUpon>PQC031109.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030202.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030202.Designer.cs">
+      <DependentUpon>PQC030202.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030301.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030301.designer.cs">
+      <DependentUpon>PQC030301.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030204.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030204.Designer.cs">
+      <DependentUpon>PQC030204.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030205.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030205.Designer.cs">
+      <DependentUpon>PQC030205.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030303.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030303.Designer.cs">
+      <DependentUpon>PQC030303.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PQC030206.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PQC030206.Designer.cs">
+      <DependentUpon>PQC030206.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PQC030107.resx">
+      <DependentUpon>PQC030107.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030109.resx">
+      <DependentUpon>PQC030109.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030114.resx">
+      <DependentUpon>PQC030114.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030115.resx">
+      <DependentUpon>PQC030115.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030119.resx">
+      <DependentUpon>PQC030119.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030203.resx">
+      <DependentUpon>PQC030203.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030701_P1.resx">
+      <DependentUpon>PQC030701_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030113.resx">
+      <DependentUpon>PQC030113.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030101.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PQC030101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030401.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PQC030401.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030501.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PQC030501.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030601.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PQC030601.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030703.resx">
+      <DependentUpon>PQC030703.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030901.resx">
+      <DependentUpon>PQC030901.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031001_P1.resx">
+      <DependentUpon>PQC031001_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031201.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PQC031201.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031202.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PQC031202.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031203.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PQC031203.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031204.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PQC031204.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031205.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PQC031205.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031206.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PQC031206.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030302.resx">
+      <DependentUpon>PQC030302.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031207.resx">
+      <DependentUpon>PQC031207.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030108.resx">
+      <DependentUpon>PQC030108.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030105.resx">
+      <DependentUpon>PQC030105.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031001.resx">
+      <DependentUpon>PQC031001.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030103.resx">
+      <DependentUpon>PQC030103.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030110.resx">
+      <DependentUpon>PQC030110.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030111.resx">
+      <DependentUpon>PQC030111.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031002.resx">
+      <DependentUpon>PQC031002.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030102.resx">
+      <DependentUpon>PQC030102.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031002_P1.resx">
+      <DependentUpon>PQC031002_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031003.resx">
+      <DependentUpon>PQC031003.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030104.resx">
+      <DependentUpon>PQC030104.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030102_P2.resx">
+      <DependentUpon>PQC030102_P2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030102_P1.resx">
+      <DependentUpon>PQC030102_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030201.resx">
+      <DependentUpon>PQC030201.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030112.resx">
+      <DependentUpon>PQC030112.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030701.resx">
+      <DependentUpon>PQC030701.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030702.resx">
+      <DependentUpon>PQC030702.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030704.resx">
+      <DependentUpon>PQC030704.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030106.resx">
+      <DependentUpon>PQC030106.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031101.resx">
+      <DependentUpon>PQC031101.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031102.resx">
+      <DependentUpon>PQC031102.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030116.resx">
+      <DependentUpon>PQC030116.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030117.resx">
+      <DependentUpon>PQC030117.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030705.resx">
+      <DependentUpon>PQC030705.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030706.resx">
+      <DependentUpon>PQC030706.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030706_P1.resx">
+      <DependentUpon>PQC030706_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC031109.resx">
+      <DependentUpon>PQC031109.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030202.resx">
+      <DependentUpon>PQC030202.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030301.resx">
+      <DependentUpon>PQC030301.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030204.resx">
+      <DependentUpon>PQC030204.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030205.resx">
+      <DependentUpon>PQC030205.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030303.resx">
+      <DependentUpon>PQC030303.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PQC030206.resx">
+      <DependentUpon>PQC030206.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qm_main.bmp" />
+    <None Include="SQL\PACKAGE_PQC030107.SQL" />
+    <None Include="SQL\PACKAGE_PQC030115.SQL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\Bad.jpg" />
+    <Content Include="Image\Best.jpg" />
+    <Content Include="Image\Good.jpg" />
+    <Content Include="Image\Warning.jpg" />
+    <Content Include="Image\WeatherLegend.jpg" />
+    <Content Include="Image\Worst.jpg" />
+    <None Include="Miracom.SmartWeb.pfx" />
+    <None Include="Resources\084excel.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Miracom.SmartWeb.UI\Miracom.SmartWeb.UI.csproj">
+      <Project>{E73B77FE-1A4A-435C-B299-8022E0804201}</Project>
+      <Name>Miracom.SmartWeb.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Component</PostBuildEvent>
+  </PropertyGroup>
+</Project>

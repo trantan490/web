@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="RPT1001" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWIPLOTSTS ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="RPT1001_1" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWIPLOTHIS WHERE LOT_ID = :LOT_ID ORDER BY HIST_SEQ
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="20" value="DN01">:LOT_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="RPT1002" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWIPLOTSTS ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="RPT1003" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWIPLOTSTS ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="RPT1101" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWIPLOTHIS WHERE LOT_ID = :LOT_ID ORDER BY HIST_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="20" value="LOT001">:LOT_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="RPT1102" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWIPLOTLOS ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="RPT1201" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RSUMWIPSTS ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="RPT1202" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RSUMWIPMOV ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="RPT1203" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RSUMFACMOV ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1101" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT RS.OPER AS OPERATION,
+MO.OPER_DESC AS OPER_DESC,
+SUM(RS.TOT_LOT) AS TOT_LOT,
+SUM(RS.TOT_QTY_1) AS TOT_QTY_1,
+SUM(RS.TOT_QTY_2) AS TOT_QTY_2,
+SUM(RS.START_LOT + RS.END_LOT) AS PROCESS_LOT,
+SUM(RS.START_QTY_1 + RS.END_QTY_1) AS PROCESS_QTY_1,
+SUM(RS.START_QTY_2 + RS.END_QTY_2) AS PROCESS_QTY_2,
+SUM(RS.HOLD_LOT) AS HOLD_LOT,
+SUM(RS.HOLD_QTY_1) AS HOLD_QTY_1,
+SUM(RS.HOLD_QTY_2) AS HOLD_QTY_2,
+SUM(RS.RWK_LOT) AS RWK_LOT,
+SUM(RS.RWK_QTY_1) AS RWK_QTY_1,
+SUM(RS.RWK_QTY_2) AS RWK_QTY_2
+FROM RSUMWIPSTS RS, MWIPOPRDEF MO
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1102" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT RS.MAT_ID AS MATERIAL,
+RS.MAT_VER AS MATERIAL_VER,
+MM.MAT_DESC AS MAT_DESC,
+SUM(RS.TOT_LOT) AS TOT_LOT,
+SUM(RS.TOT_QTY_1) AS TOT_QTY_1,
+SUM(RS.TOT_QTY_2) AS TOT_QTY_2,
+SUM(RS.START_LOT + RS.END_LOT) AS PROCESS_LOT,
+SUM(RS.START_QTY_1 + RS.END_QTY_1) AS PROCESS_QTY_1,
+SUM(RS.START_QTY_2 + RS.END_QTY_2) AS PROCESS_QTY_2,
+SUM(RS.HOLD_LOT) AS HOLD_LOT,
+SUM(RS.HOLD_QTY_1) AS HOLD_QTY_1,
+SUM(RS.HOLD_QTY_2) AS HOLD_QTY_2,
+SUM(RS.RWK_LOT) AS RWK_LOT,
+SUM(RS.RWK_QTY_1) AS RWK_QTY_1,
+SUM(RS.RWK_QTY_2) AS RWK_QTY_2
+FROM RSUMWIPSTS RS, MWIPMATDEF MM
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1103" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT MAT_ID || ' / ' || MAT_VER
+FROM ( 
+SELECT DISTINCT WS.MAT_ID, WS.MAT_VER
+FROM RSUMWIPSTS WS, MWIPMATDEF MD 
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1103_1" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT OPER, MAT_ID||' / '||MAT_VER, TOT_LOT, TOT_QTY_1, TOT_QTY_2
+FROM (
+SELECT OPER, MAT_ID, MAT_VER, SUM(TOT_LOT) AS TOT_LOT, SUM(TOT_QTY_1) AS TOT_QTY_1, SUM(TOT_QTY_2) AS TOT_QTY_2
+FROM RSUMWIPSTS
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1104" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT DISTINCT WS.OPER 
+FROM RSUMWIPSTS WS, MWIPMATDEF MD
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1104_1" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT RS.OPER, RS.MAT_ID, RS.MAT_VER, NVL(SUM(RS.TOT_LOT),0) AS TOT_LOT, NVL(SUM(RS.TOT_QTY_1),0) AS TOT_QTY_1, NVL(SUM(RS.TOT_QTY_2),0) AS TOT_QTY_2
+FROM RSUMWIPSTS RS, MWIPMATDEF MM
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="DYNAMIC" commandtype="Text" description="STD1106" commandtimeout="60">
+        <commandtext><![CDATA[??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1107" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT WORK_DATE, SUM(S1_BOH_LOT) AS S1_BOH_LOT, SUM(S1_BOH_QTY_1) AS S1_BOH_QTY_1,
+SUM(S1_BOH_QTY_2) AS S1_BOH_QTY_2,SUM(S1_EOH_LOT) AS S1_EOH_LOT, SUM(S1_EOH_QTY_1) AS S1_EOH_QTY_1, 
+SUM(S1_EOH_QTY_2) AS S1_EOH_QTY_2 
+FROM RSUMWIPBOH
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1108" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT WORK_DATE, SUM(S1_BOH_HOLD_LOT) AS S1_BOH_HOLD_LOT, SUM(S1_BOH_HOLD_QTY_1) AS S1_BOH_HOLD_QTY_1,
+SUM(S1_BOH_HOLD_QTY_2) AS S1_BOH_HOLD_QTY_2,SUM(S1_EOH_HOLD_LOT) AS S1_EOH_HOLD_LOT, SUM(S1_EOH_HOLD_QTY_1) AS S1_EOH_HOLD_QTY_1,
+SUM(S1_EOH_HOLD_QTY_2) AS S1_EOH_HOLD_QTY_2 
+FROM RSUMWIPBOH
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1109" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT WORK_DATE, SUM(S1_BOH_RWK_LOT) AS S1_BOH_RWK_LOT, SUM(S1_BOH_RWK_QTY_1) AS S1_BOH_RWK_QTY_1,
+SUM(S1_BOH_RWK_QTY_2) AS S1_BOH_RWK_QTY_2,SUM(S1_EOH_RWK_LOT) AS S1_EOH_RWK_LOT, SUM(S1_EOH_RWK_QTY_1) AS S1_EOH_RWK_QTY_1,
+SUM(S1_EOH_RWK_QTY_2) AS S1_EOH_RWK_QTY_2 
+FROM RSUMWIPBOH
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1110" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT RS.OPER AS OPERATION,
+MO.OPER_DESC AS OPER_DESC,
+SUM(RS.TOT_LOT) AS TOT_LOT,
+SUM(RS.TOT_QTY_1) AS TOT_QTY_1,
+SUM(RS.TOT_QTY_2) AS TOT_QTY_2,
+SUM(RS.START_LOT + RS.END_LOT) AS PROCESS_LOT,
+SUM(RS.START_QTY_1 + RS.END_QTY_1) AS PROCESS_QTY_1,
+SUM(RS.START_QTY_2 + RS.END_QTY_2) AS PROCESS_QTY_2,
+SUM(RS.HOLD_LOT) AS HOLD_LOT,
+SUM(RS.HOLD_QTY_1) AS HOLD_QTY_1,
+SUM(RS.HOLD_QTY_2) AS HOLD_QTY_2,
+SUM(RS.RWK_LOT) AS RWK_LOT,
+SUM(RS.RWK_QTY_1) AS RWK_QTY_1,
+SUM(RS.RWK_QTY_2) AS RWK_QTY_2
+FROM RSUMWIPSTS RS, MWIPOPRDEF MO
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1110_1" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT LOT_ID, LOT_DESC, FACTORY, MAT_ID, MAT_VER, FLOW,
+OPER, QTY_1, QTY_2, QTY_3, OPER_IN_TIME, LOT_TYPE, CREATE_CODE, OWNER_CODE
+FROM RWIPLOTSTS
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1111" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT RS.MAT_ID AS MATERIAL,
+RS.MAT_VER AS MAT_VER,
+MM.MAT_DESC AS MAT_DESC,
+SUM(RS.TOT_LOT) AS TOT_LOT,
+SUM(RS.TOT_QTY_1) AS TOT_QTY_1,
+SUM(RS.TOT_QTY_2) AS TOT_QTY_2,
+SUM(RS.START_LOT + RS.END_LOT) AS PROCESS_LOT,
+SUM(RS.START_QTY_1 + RS.END_QTY_1) AS PROCESS_QTY_1,
+SUM(RS.START_QTY_2 + RS.END_QTY_2) AS PROCESS_QTY_2,
+SUM(RS.HOLD_LOT) AS HOLD_LOT,
+SUM(RS.HOLD_QTY_1) AS HOLD_QTY_1,
+SUM(RS.HOLD_QTY_2) AS HOLD_QTY_2,
+SUM(RS.RWK_LOT) AS RWK_LOT,
+SUM(RS.RWK_QTY_1) AS RWK_QTY_1,
+SUM(RS.RWK_QTY_2) AS RWK_QTY_2
+FROM RSUMWIPSTS RS, MWIPMATDEF MM
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1111_1" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWIPLOTSTS ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="TST1103" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT 
+RS.MAT_ID AS MATERIAL,
+RS.MAT_VER AS MAT_VER,
+MM.MAT_DESC AS MAT_DESC,
+SUM(RS.TOT_LOT) AS TOT_LOT,
+SUM(RS.TOT_QTY_1) AS TOT_QTY_1,
+SUM(RS.TOT_QTY_2) AS TOT_QTY_2,
+SUM(RS.START_LOT + RS.END_LOT) AS PROCESS_LOT,
+SUM(RS.START_QTY_1 + RS.END_QTY_1) AS PROCESS_QTY_1,
+SUM(RS.START_QTY_2 + RS.END_QTY_2) AS PROCESS_QTY_2,
+SUM(RS.HOLD_LOT) AS HOLD_LOT,
+SUM(RS.HOLD_QTY_1) AS HOLD_QTY_1,
+SUM(RS.HOLD_QTY_2) AS HOLD_QTY_2,
+SUM(RS.RWK_LOT) AS RWK_LOT,
+SUM(RS.RWK_QTY_1) AS RWK_QTY_1,
+SUM(RS.RWK_QTY_2) AS RWK_QTY_2
+FROM RSUMWIPSTS RS, MWIPMATDEF MM
+WHERE RS.FACTORY = MM.FACTORY
+AND  RS.MAT_ID = MM.MAT_ID
+AND RS.MAT_VER = MM.MAT_VER
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="FLW_MAT" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT 
+FL.FLOW,
+FL.FLOW_DESC
+FROM MWIPFLWDEF FL,MWIPMATFLW MF
+WHERE MF.FLOW = FL.FLOW
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="OPR_FLW" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT 
+OP.OPER,
+OP.OPER_DESC
+FROM MWIPOPRDEF OP ,MWIPFLWOPR FO
+WHERE FO.OPER = OP.OPER 
+??]]></commandtext>
+    </query>
+</queryxml>

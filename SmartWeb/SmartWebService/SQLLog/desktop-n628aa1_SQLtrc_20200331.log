@@ -1,0 +1,81 @@
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------

@@ -1,0 +1,27 @@
+﻿	BODY {FONT-SIZE: 9pt; COLOR: #151515; FONT-FAMILY: arial}
+	TD {FONT-SIZE: 9pt; COLOR: #151515; FONT-FAMILY: arial}
+	SELECT {FONT-SIZE: 9pt; COLOR: #151515; FONT-FAMILY: arial}
+	INPUT {FONT-SIZE: 9pt; COLOR: #151515; FONT-FAMILY: arial}
+	DIV {FONT-SIZE: 9pt; COLOR: #151515; FONT-FAMILY: arial}
+	FORM {FONT-SIZE: 9pt; COLOR: #151515; FONT-FAMILY: arial}
+	TEXTAREA {FONT-SIZE: 9pt; COLOR: #151515; FONT-FAMILY: arial}
+	CENTER {FONT-SIZE: 9pt; COLOR: #151515; FONT-FAMILY: arial}
+	P {FONT-SIZE: 9pt}
+	BLOCKQUOTE {FONT-SIZE: 9pt}
+	TD {FONT-SIZE: 9pt}
+	BR {FONT-SIZE: 9pt}
+	A:link {FONT-SIZE: 9pt; COLOR: #222222; FONT-FAMILY: arial; TEXT-DECORATION: none}
+	A:visited {FONT-SIZE: 9pt; COLOR: #222222; FONT-FAMILY: arial; TEXT-DECORATION: none}
+	A:active {FONT-SIZE: 9pt; COLOR: #222222}
+	A:hover {COLOR: #3469d5; TEXT-DECORATION: none}
+	.t {LINE-HEIGHT: 14pt; TEXT-ALIGN: justify}
+	.TextBox {FONT-FAMILY:Tahoma, Verdana, Arial; font-size:12px; background-color:White; height:19px; border:1 solid blue;}
+.MESTextBoxDefault
+{
+    border-width : 1px;
+    border-style : solid;
+    border-color: Blue;
+    height : 21px;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: 'Tahoma';
+}

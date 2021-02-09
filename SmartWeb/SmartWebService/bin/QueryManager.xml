@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <sqlconfig sqllog="On" sqllogpath="D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWeb\SQLLog" querypath="D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWeb\SmartWebService\Query" />
+    <connectionxml>
+    <connection conid="MESORA" constring="Provider=OraOLEDB.Oracle.1;Password=RPTMGR;Persist Security Info=True;User ID=RPTMGR;Data Source=HMV2RED" />
+    <!-- <connection conid="MESORA" constring="Provider=OraOLEDB.Oracle.1;Password=MESMGR;Persist Security Info=True;User ID=MESMGR;Data Source=MES28" /> -->
+    </connectionxml>
+</configuration>

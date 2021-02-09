@@ -1,0 +1,1206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91FA7D86-5E01-46BE-8E77-DE12245C48F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Miracom.SmartWeb.UI</RootNamespace>
+    <AssemblyName>Miracom.SmartWeb.StdUI</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <DelaySign>false</DelaySign>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChartFX, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Base, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Borders, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.Borders.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinChart.v8.1, Version=8.1.20081.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Infragistics2.Win.UltraWinChart.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel, Version=1.4.0.0, Culture=neutral, PublicKeyToken=2a924091066e3ab0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.FmbUI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.FmbUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.FWX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.FWX.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.H101INF">
+      <HintPath>..\..\Component\Miracom.SmartWeb.H101INF.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization">
+      <HintPath>..\..\Component\System.Windows.Forms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="transceiverxnet, Version=3.2.70.0, Culture=neutral, PublicKeyToken=ebf86c237689feec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\transceiverxnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseFormControls\udcCUSReport001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReport001.Designer.cs">
+      <DependentUpon>udcCUSReport001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReport002.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReport002.Designer.cs">
+      <DependentUpon>udcCUSReport002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReportMain001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReportMain001.Designer.cs">
+      <DependentUpon>udcCUSReportMain001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReportOven002.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReportOven002.Designer.cs">
+      <DependentUpon>udcCUSReportOven002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReportUpload001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReportUpload001.Designer.cs">
+      <DependentUpon>udcCUSReportUpload001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReportUpload002.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReportUpload002.Designer.cs">
+      <DependentUpon>udcCUSReportUpload002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReportOven001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseFormControls\udcCUSReportOven001.Designer.cs">
+      <DependentUpon>udcCUSReportOven001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseUserControls\udcCUSCondition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseUserControls\udcCUSCondition.Designer.cs">
+      <DependentUpon>udcCUSCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseUserControls\udcCUSFromToCondition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseUserControls\udcCUSFromToCondition.Designer.cs">
+      <DependentUpon>udcCUSFromToCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Board\BRD0001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Board\BRD0001.Designer.cs">
+      <DependentUpon>BRD0001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmnSpdFunction.cs" />
+    <Compile Include="ExtendControls\LoadingPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtendControls\udcDurationDatePlus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtendControls\ExcelHelper.cs" />
+    <Compile Include="ExtendControls\IBaseExtendForm.cs" />
+    <Compile Include="ExtendControls\udcButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtendControls\udcChartFX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExtendControls\udcDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtendControls\udcDurationDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtendControls\udcDurationDate2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtendControls\udcFarPoint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtendControls\udcMSChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtendControls\udcMSChart.Designer.cs">
+      <DependentUpon>udcMSChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendControls\udcTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtendControls\ValuedTreeNode.cs" />
+    <Compile Include="ExtendControls\udcChartFXSpc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmWebMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWebMessageBox.Designer.cs">
+      <DependentUpon>frmWebMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportCommon\RptCUSListFunction.cs" />
+    <Compile Include="ReportCommon\TChartBar.cs" />
+    <Compile Include="ReturnMessageString.cs" />
+    <Compile Include="ReportCommon\udcReport001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportCommon\udcReport001.Designer.cs">
+      <DependentUpon>udcReport001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportCommon\udcReport002.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportCommon\udcReport002.Designer.cs">
+      <DependentUpon>udcReport002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmnExcelFunction.cs" />
+    <Compile Include="CmnInitFunction.cs" />
+    <Compile Include="ReportCommon\udcCondition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportCommon\udcCondition.Designer.cs">
+      <DependentUpon>udcCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportCommon\udcPeriod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportCommon\udcPeriod.Designer.cs">
+      <DependentUpon>udcPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelComponent.cs" />
+    <Compile Include="ReportCommon\udcMCondition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportCommon\udcMCondition.Designer.cs">
+      <DependentUpon>udcMCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\Sample01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sample\Sample01.Designer.cs">
+      <DependentUpon>Sample01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\Sample02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sample\Sample02.Designer.cs">
+      <DependentUpon>Sample02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\Sample10.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sample\Sample10.designer.cs">
+      <DependentUpon>Sample10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\Sample90.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sample\Sample90.Designer.cs">
+      <DependentUpon>Sample90.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\Sample03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sample\Sample03.designer.cs">
+      <DependentUpon>Sample03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1701.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1701.Designer.cs">
+      <DependentUpon>STD1701.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\SEC1103.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\SEC1103.designer.cs">
+      <DependentUpon>SEC1103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\TST1108.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\TST1108.Designer.cs">
+      <DependentUpon>TST1108.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\TST1103.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\TST1103.Designer.cs">
+      <DependentUpon>TST1103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\TST1104.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\TST1104.Designer.cs">
+      <DependentUpon>TST1104.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\TST1105.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\TST1105.Designer.cs">
+      <DependentUpon>TST1105.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\TST1106.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\TST1106.Designer.cs">
+      <DependentUpon>TST1106.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\udcFLXSetupInquiry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\udcFLXSetupInquiry.Designer.cs">
+      <DependentUpon>udcFLXSetupInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\udcFLXViewInquiry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\udcFLXViewInquiry.Designer.cs">
+      <DependentUpon>udcFLXViewInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalConstant.cs" />
+    <Compile Include="GlobalVariable.cs" />
+    <Compile Include="LanguageFunction.cs" />
+    <Compile Include="frmLotHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLotHistory.Designer.cs">
+      <DependentUpon>frmLotHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReportCommon\RptComFunction.cs" />
+    <Compile Include="ReportCommon\RptListFunction.cs" />
+    <Compile Include="ReportCommon\RptMessages.cs" />
+    <Compile Include="ReportCommon\RptUChart.cs" />
+    <Compile Include="StandardReport\SEC1104.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\SEC1104.designer.cs">
+      <DependentUpon>SEC1104.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\SEC1102.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\SEC1102.designer.cs">
+      <DependentUpon>SEC1102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\SEC1101.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\SEC1101.designer.cs">
+      <DependentUpon>SEC1101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CmnListFunction.cs" />
+    <Compile Include="CmnFunction.cs" />
+    <Compile Include="ROWebService.cs">
+    </Compile>
+    <Compile Include="ReportCommon\udcReport003.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportCommon\udcReport003.Designer.cs">
+      <DependentUpon>udcReport003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1101.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1101.Designer.cs">
+      <DependentUpon>STD1101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1102.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1102.Designer.cs">
+      <DependentUpon>STD1102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1103.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1103.Designer.cs">
+      <DependentUpon>STD1103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1104.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1104.Designer.cs">
+      <DependentUpon>STD1104.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1105.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1105.Designer.cs">
+      <DependentUpon>STD1105.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1106.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1106.Designer.cs">
+      <DependentUpon>STD1106.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1107.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1107.Designer.cs">
+      <DependentUpon>STD1107.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1108.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1108.Designer.cs">
+      <DependentUpon>STD1108.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1109.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1109.Designer.cs">
+      <DependentUpon>STD1109.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1110.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1110.Designer.cs">
+      <DependentUpon>STD1110.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1111.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1111.Designer.cs">
+      <DependentUpon>STD1111.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1201.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1201.Designer.cs">
+      <DependentUpon>STD1201.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1202.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1202.Designer.cs">
+      <DependentUpon>STD1202.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1203.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1203.Designer.cs">
+      <DependentUpon>STD1203.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1204.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1204.Designer.cs">
+      <DependentUpon>STD1204.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1205.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1205.Designer.cs">
+      <DependentUpon>STD1205.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1206.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1206.Designer.cs">
+      <DependentUpon>STD1206.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1207.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1207.Designer.cs">
+      <DependentUpon>STD1207.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1208.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1208.Designer.cs">
+      <DependentUpon>STD1208.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1209.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1209.Designer.cs">
+      <DependentUpon>STD1209.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1210.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1210.Designer.cs">
+      <DependentUpon>STD1210.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1301.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1301.Designer.cs">
+      <DependentUpon>STD1301.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1302.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1302.Designer.cs">
+      <DependentUpon>STD1302.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1401.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1401.Designer.cs">
+      <DependentUpon>STD1401.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1402.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1402.Designer.cs">
+      <DependentUpon>STD1402.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1403.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1403.Designer.cs">
+      <DependentUpon>STD1403.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1404.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1404.Designer.cs">
+      <DependentUpon>STD1404.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1405.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1405.Designer.cs">
+      <DependentUpon>STD1405.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1501.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1501.Designer.cs">
+      <DependentUpon>STD1501.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1601.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1601.Designer.cs">
+      <DependentUpon>STD1601.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1602.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1602.Designer.cs">
+      <DependentUpon>STD1602.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1604.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1604.Designer.cs">
+      <DependentUpon>STD1604.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1605.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1605.Designer.cs">
+      <DependentUpon>STD1605.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1606.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1606.Designer.cs">
+      <DependentUpon>STD1606.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1607.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1607.Designer.cs">
+      <DependentUpon>STD1607.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1608.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1608.Designer.cs">
+      <DependentUpon>STD1608.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1609.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1609.Designer.cs">
+      <DependentUpon>STD1609.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1901.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1901.Designer.cs">
+      <DependentUpon>STD1901.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1902.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1902.Designer.cs">
+      <DependentUpon>STD1902.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1903.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1903.Designer.cs">
+      <DependentUpon>STD1903.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1904.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1904.Designer.cs">
+      <DependentUpon>STD1904.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1905.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1905.Designer.cs">
+      <DependentUpon>STD1905.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\TST1107.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\TST1107.Designer.cs">
+      <DependentUpon>TST1107.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardReport\STD1702.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StandardReport\STD1702.Designer.cs">
+      <DependentUpon>STD1702.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseFormControls\udcCUSReport001.resx">
+      <DependentUpon>udcCUSReport001.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFormControls\udcCUSReport002.resx">
+      <DependentUpon>udcCUSReport002.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFormControls\udcCUSReportMain001.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcCUSReportMain001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFormControls\udcCUSReportOven002.resx">
+      <DependentUpon>udcCUSReportOven002.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFormControls\udcCUSReportUpload001.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcCUSReportUpload001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFormControls\udcCUSReportUpload002.resx">
+      <DependentUpon>udcCUSReportUpload002.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFormControls\udcCUSReportOven001.resx">
+      <DependentUpon>udcCUSReportOven001.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseUserControls\udcCUSCondition.resx">
+      <DependentUpon>udcCUSCondition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseUserControls\udcCUSFromToCondition.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcCUSFromToCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Board\BRD0001.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BRD0001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendControls\LoadingPopUp.resx">
+      <DependentUpon>LoadingPopUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendControls\udcDurationDatePlus.resx">
+      <DependentUpon>udcDurationDatePlus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendControls\udcChartFX.resx">
+      <DependentUpon>udcChartFX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendControls\udcDurationDate.resx">
+      <DependentUpon>udcDurationDate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendControls\udcDurationDate2.resx">
+      <DependentUpon>udcDurationDate2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendControls\udcFarPoint.resx">
+      <DependentUpon>udcFarPoint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendControls\udcMSChart.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcMSChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendControls\udcTableForm.resx">
+      <DependentUpon>udcTableForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendControls\ValuedTreeNode.resx">
+      <DependentUpon>ValuedTreeNode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendControls\udcChartFXSpc.resx">
+      <DependentUpon>udcChartFXSpc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWebMessageBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmWebMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="ReportCommon\udcReport001.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcReport001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportCommon\udcReport002.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcReport002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportCommon\udcReport003.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcReport003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportCommon\udcCondition.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportCommon\udcPeriod.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportCommon\udcMCondition.resx">
+      <DependentUpon>udcMCondition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\Sample01.resx">
+      <DependentUpon>Sample01.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\Sample02.resx">
+      <DependentUpon>Sample02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\Sample10.resx">
+      <DependentUpon>Sample10.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\Sample90.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Sample90.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\Sample03.resx">
+      <DependentUpon>Sample03.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1701.resx">
+      <DependentUpon>STD1701.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\SEC1103.resx">
+      <DependentUpon>SEC1103.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\TST1108.resx">
+      <DependentUpon>TST1108.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\TST1103.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TST1103.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\TST1104.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TST1104.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\TST1105.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TST1105.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\TST1106.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TST1106.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\udcFLXSetupInquiry.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcFLXSetupInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\udcFLXViewInquiry.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>udcFLXViewInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageBox.resx">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLotHistory.resx">
+      <DependentUpon>frmLotHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\SEC1104.resx">
+      <DependentUpon>SEC1104.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\SEC1102.resx">
+      <DependentUpon>SEC1102.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\SEC1101.resx">
+      <DependentUpon>SEC1101.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1101.resx">
+      <DependentUpon>STD1101.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1102.resx">
+      <DependentUpon>STD1102.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1103.resx">
+      <DependentUpon>STD1103.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1104.resx">
+      <DependentUpon>STD1104.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1105.resx">
+      <DependentUpon>STD1105.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1106.resx">
+      <DependentUpon>STD1106.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1107.resx">
+      <DependentUpon>STD1107.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1108.resx">
+      <DependentUpon>STD1108.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1109.resx">
+      <DependentUpon>STD1109.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1110.resx">
+      <DependentUpon>STD1110.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1111.resx">
+      <DependentUpon>STD1111.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1201.resx">
+      <DependentUpon>STD1201.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1202.resx">
+      <DependentUpon>STD1202.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1203.resx">
+      <DependentUpon>STD1203.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1204.resx">
+      <DependentUpon>STD1204.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1205.resx">
+      <DependentUpon>STD1205.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1206.resx">
+      <DependentUpon>STD1206.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1207.resx">
+      <DependentUpon>STD1207.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1208.resx">
+      <DependentUpon>STD1208.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1209.resx">
+      <DependentUpon>STD1209.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1210.resx">
+      <DependentUpon>STD1210.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1301.resx">
+      <DependentUpon>STD1301.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1302.resx">
+      <DependentUpon>STD1302.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1401.resx">
+      <DependentUpon>STD1401.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1402.resx">
+      <DependentUpon>STD1402.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1403.resx">
+      <DependentUpon>STD1403.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1404.resx">
+      <DependentUpon>STD1404.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1405.resx">
+      <DependentUpon>STD1405.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1501.resx">
+      <DependentUpon>STD1501.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1601.resx">
+      <DependentUpon>STD1601.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1602.resx">
+      <DependentUpon>STD1602.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1604.resx">
+      <DependentUpon>STD1604.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1605.resx">
+      <DependentUpon>STD1605.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1606.resx">
+      <DependentUpon>STD1606.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1607.resx">
+      <DependentUpon>STD1607.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1608.resx">
+      <DependentUpon>STD1608.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1609.resx">
+      <DependentUpon>STD1609.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1901.resx">
+      <DependentUpon>STD1901.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1902.resx">
+      <DependentUpon>STD1902.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1903.resx">
+      <DependentUpon>STD1903.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1904.resx">
+      <DependentUpon>STD1904.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1905.resx">
+      <DependentUpon>STD1905.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\TST1107.resx">
+      <DependentUpon>TST1107.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardReport\STD1702.resx">
+      <DependentUpon>STD1702.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\014datadel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\012dataexp.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\013datasaveas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\011dataopen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\021prjdown.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\311rowadd.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\313rowdel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\020prjup.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\320datasort.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\320datasort_up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\320datasort_left.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\320datasort_right.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\202copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\001exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002FunctionNode.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\003FunctionNode.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\004dataasc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005datadesc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\006excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\007grpbar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\008useroption.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\009window.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\010msaruncht.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\011dataclose.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\011dataclose1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\012find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\013Setup.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\015view.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Panel.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\084excel.gif" />
+    <None Include="Resources\tabel_back.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\010dataimp.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\loading_wh.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\014Setup.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Miracom.SmartWeb.UI\Miracom.SmartWeb.UI.csproj">
+      <Project>{E73B77FE-1A4A-435C-B299-8022E0804201}</Project>
+      <Name>Miracom.SmartWeb.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Component</PostBuildEvent>
+  </PropertyGroup>
+</Project>

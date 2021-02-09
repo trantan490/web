@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <!-- 2012-08-30-정비재 : Report 개발서버	-->
+    <!--
+    <add key="ApplicationName" value="MES Report(Developer Server)" />
+    <add key="WebServiceUrl" value="http://12.230.54.129/SmartWebservice/SmartWebService.asmx" />
+	-->
+    
+    <!-- 2012-08-30-정비재 : Report 운영서버	-->
+    <!--
+    <add key="ApplicationName" value="MES Report(Real Server)" />
+    <add key="WebServiceUrl" value="http://report.hanamicron.co.kr/SmartWebservice/SmartWebService.asmx" />
+    <add key="WebServiceUrl" value="http://localhost/SmartWebservice/SmartWebService.asmx" />
+    -->
+    
+    <add key="ApplicationName" value="MES Report(VINA 2)" />
+    <add key="WebServiceUrl" value="http://localhost/SmartWebservice/SmartWebService.asmx" />
+    <add key="AssyDefaultFactory" value="HMVA2" />
+    <add key="TestDefaultFactory" value="HMVT2" />
+    <add key="FgsDefaultFactory" value="FGS" />
+    <add key="GlovalSite" value="V2" />
+
+    <!-- Site Code 설정 -->
+    <add key="AssyDefaultFactory" value="HMKA1" />
+    <add key="TestDefaultFactory" value="HMKT1" />
+    <add key="FgsDefaultFactory" value="FGS" />
+    <add key="GlovalSite" value="K1" />
+
+  </appSettings>
+  
+</configuration>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+	
+	<!-- 2013-09-26-정비재 : 해당 Table의 데이터를 SELECT하는 QUERY문.	-->
+	<query statement="Select" queryid="SELECT_RWIPPLNWEK_N_1" commandtype="Text" description="Select RWIPPLNWEK_N Table" commandtimeout="60">
+        <commandtext>
+			<![CDATA[SELECT BASE_DATE, FACTORY, PLAN_WEEK, VERSION, CUSTOMER, MAT_ID, GUBUN
+						  , D0_QTY, D1_QTY, D2_QTY, D3_QTY, D4_QTY, D5_QTY, D6_QTY
+						  , D7_QTY, D8_QTY, D9_QTY, D10_QTY, D11_QTY, D12_QTY, D13_QTY
+						  , SHIP_QTY, RATE, REMAINS, PROBLEM_CLASS, PROBLEM_TYPE, PROBLEM_COMMENT
+						  , HMKA3_QTY, FINISH_QTY, MOLD_QTY, WB_QTY, DA_QTY, SAW_QTY, STOCK_QTY
+						  , CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
+					   FROM RWIPPLNWEK_N
+					  WHERE BASE_DATE = :BASE_DATE
+						AND FACTORY = :FACTORY
+						AND PLAN_WEEK = :PLAN_WEEK
+						AND VERSION = :VERSION
+					  ORDER BY BASE_DATE ASC, FACTORY ASC, PLAN_WEEK ASC, VERSION ASC, CUSTOMER ASC, MAT_ID ASC]]>
+		</commandtext>
+        <parameters>
+			<param direction="Input" dbtype="VarChar" size="8" value="A">:BASE_DATE</param>
+			<param direction="Input" dbtype="VarChar" size="10" value="B">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:PLAN_WEEK</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="D">:VERSION</param>
+        </parameters>
+    </query>
+
+	<!-- 2013-09-26-정비재 : 해당 Table의 데이터를 INSERT하는 QUERY문.	-->
+	<query statement="Insert" queryid="INSERT_RWIPPLNWEK_N_1" commandtype="Text" description="Insert RWIPPLNWEK_N Table" commandtimeout="60">
+		<commandtext>
+			<![CDATA[INSERT INTO RWIPPLNWEK_N(
+								BASE_DATE, FACTORY, PLAN_WEEK, VERSION, CUSTOMER, MAT_ID, GUBUN
+							  , D0_QTY, D1_QTY, D2_QTY, D3_QTY, D4_QTY, D5_QTY, D6_QTY
+							  , D7_QTY, D8_QTY, D9_QTY, D10_QTY, D11_QTY, D12_QTY, D13_QTY
+							  , SHIP_QTY, RATE, REMAINS, PROBLEM_CLASS, PROBLEM_TYPE, PROBLEM_COMMENT
+							  , HMKA3_QTY, FINISH_QTY, MOLD_QTY, WB_QTY, DA_QTY, SAW_QTY, STOCK_QTY
+							  , CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID)
+						VALUES (:BASE_DATE, :FACTORY, :PLAN_WEEK, :VERSION, :CUSTOMER, :MAT_ID, :GUBUN
+							  , :D0_QTY, :D1_QTY, :D2_QTY, :D3_QTY, :D4_QTY, :D5_QTY, :D6_QTY
+							  , :D7_QTY, :D8_QTY, :D9_QTY, :D10_QTY, :D11_QTY, :D12_QTY, :D13_QTY
+							  , :SHIP_QTY, :RATE, :REMAINS, :PROBLEM_CLASS, :PROBLEM_TYPE, :PROBLEM_COMMENT
+							  , :HMKA3_QTY, :FINISH_QTY, :MOLD_QTY, :WB_QTY, :DA_QTY, :SAW_QTY, :STOCK_QTY
+							  , :CREATE_TIME, :CREATE_USER_ID, :UPDATE_TIME, :UPDATE_USER_ID)]]>
+		</commandtext>
+		<parameters>
+			<param direction="Input" dbtype="VarChar" size="8" value="A">:BASE_DATE</param>
+			<param direction="Input" dbtype="VarChar" size="10" value="B">:FACTORY</param>
+			<param direction="Input" dbtype="VarChar" size="6" value="C">:PLAN_WEEK</param>
+			<param direction="Input" dbtype="VarChar" size="3" value="D">:VERSION</param>
+			<param direction="Input" dbtype="VarChar" size="2" value="E">:CUSTOMER</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="F">:MAT_ID</param>
+			<param direction="Input" dbtype="Char" size="1" value="G">:GUBUN</param>
+			<param direction="Input" dbtype="Int32" size="10" value="H">:D0_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="I">:D1_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="J">:D2_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="K">:D3_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="L">:D4_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="M">:D5_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="N">:D6_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="O">:D7_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="P">:D8_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="Q">:D9_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="R">:D10_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="S">:D11_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="T">:D12_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="U">:D13_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="V">:SHIP_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="W">:RATE</param>
+			<param direction="Input" dbtype="Int32" size="10" value="X">:REMAINS</param>
+			<param direction="Input" dbtype="VarChar" size="99" value="Y">:PROBLEM_CLASS</param>
+			<param direction="Input" dbtype="VarChar" size="99" value="Z">:PROBLEM_TYPE</param>
+			<param direction="Input" dbtype="VarChar" size="400" value="A1">:PROBLEM_COMMENT</param>
+			<param direction="Input" dbtype="Int32" size="10" value="B1">:HMKA3_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="C1">:FINISH_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="D1">:MOLD_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="E1">:WB_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="F1">:DA_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="G1">:SAW_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="H1">:STOCK_QTY</param>
+			<param direction="Input" dbtype="VarChar" size="14" value="I1">:CREATE_TIME</param>
+			<param direction="Input" dbtype="VarChar" size="20" value="J1">:CREATE_USER_ID</param>
+			<param direction="Input" dbtype="VarChar" size="14" value="K1">:UPDATE_TIME</param>
+			<param direction="Input" dbtype="VarChar" size="20" value="L1">:UPDATE_USER_ID</param>
+		</parameters>
+	</query>
+
+	<!-- 2013-09-26-정비재 : 해당 Table의 데이터를 DELETE하는 QUERY문.	-->
+	<query statement="Delete" queryid="DELETE_RWIPPLNWEK_N_1" commandtype="Text" description="Delete RWIPPLNWEK_N Table" commandtimeout="60">
+		<commandtext>
+			<![CDATA[DELETE 
+					   FROM RWIPPLNWEK_N 
+					  WHERE BASE_DATE = :BASE_DATE
+						AND FACTORY = :FACTORY
+						AND PLAN_WEEK = :PLAN_WEEK
+						AND VERSION = :VERSION
+						AND CUSTOMER = :CUSTOMER
+						AND MAT_ID = :MAT_ID
+						AND GUBUN = :GUBUN]]>
+		</commandtext>
+		<parameters>
+			<param direction="Input" dbtype="VarChar" size="8" value="A">:BASE_DATE</param>
+			<param direction="Input" dbtype="VarChar" size="10" value="B">:FACTORY</param>
+			<param direction="Input" dbtype="VarChar" size="6" value="C">:PLAN_WEEK</param>
+			<param direction="Input" dbtype="VarChar" size="3" value="D">:VERSION</param>
+			<param direction="Input" dbtype="VarChar" size="2" value="E">:CUSTOMER</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="F">:MAT_ID</param>
+			<param direction="Input" dbtype="Char" size="1" value="G">:GUBUN</param>
+		</parameters>
+	</query>
+	
+	
+</queryxml>

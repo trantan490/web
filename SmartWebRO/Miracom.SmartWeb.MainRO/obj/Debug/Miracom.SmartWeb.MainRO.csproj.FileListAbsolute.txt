@@ -1,0 +1,15 @@
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\obj\Debug\Miracom.SmartWeb.MainRO.csprojResolveAssemblyReference.cache
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.MainRO.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.MainRO.pdb
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.CusDB.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.CusRO.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.FmbDB.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.FmbRO.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.FWX.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.H101INF.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.Query.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.StdDB.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\Miracom.SmartWeb.StdRO.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\bin\Debug\transceiverxnet.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\obj\Debug\Miracom.SmartWeb.MainRO.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.MainRO\obj\Debug\Miracom.SmartWeb.MainRO.pdb

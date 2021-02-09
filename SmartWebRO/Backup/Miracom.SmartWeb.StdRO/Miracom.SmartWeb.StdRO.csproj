@@ -1,0 +1,178 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C55147F1-EF6C-454F-9493-C735B29630D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Miracom.SmartWeb.RO</RootNamespace>
+    <AssemblyName>Miracom.SmartWeb.StdRO</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Miracom.SmartWeb.pfx</AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Miracom.SmartWeb.FWX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SmartWeb\bin\Miracom.SmartWeb.FWX.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.H101INF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.H101INF.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.Query, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.StdDB, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.StdDB.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="StandardReport\FN_COMMON.cs" />
+    <Compile Include="StandardReport\TST1103.cs" />
+    <Compile Include="StandardReport\TST1105.cs" />
+    <Compile Include="StandardReport\TST1106.cs" />
+    <Compile Include="StandardReport\TST1107.cs" />
+    <Compile Include="StdCmnFunction.cs" />
+    <Compile Include="ROQuery.cs" />
+    <Compile Include="StdGlobalConstant.cs" />
+    <Compile Include="StdROMain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StandardReport\STD1101.cs" />
+    <Compile Include="StandardReport\STD1102.cs" />
+    <Compile Include="StandardReport\STD1103.cs" />
+    <Compile Include="StandardReport\STD1104.cs" />
+    <Compile Include="StandardReport\STD1105.cs" />
+    <Compile Include="StandardReport\STD1106.cs" />
+    <Compile Include="StandardReport\STD1107.cs" />
+    <Compile Include="StandardReport\STD1108.cs" />
+    <Compile Include="StandardReport\STD1109.cs" />
+    <Compile Include="StandardReport\STD1110.cs" />
+    <Compile Include="StandardReport\STD1110_1.cs" />
+    <Compile Include="StandardReport\STD1111.cs" />
+    <Compile Include="StandardReport\STD1111_1.cs" />
+    <Compile Include="StandardReport\STD1201.cs" />
+    <Compile Include="StandardReport\STD1202.cs" />
+    <Compile Include="StandardReport\STD1203.cs" />
+    <Compile Include="StandardReport\STD1204.cs" />
+    <Compile Include="StandardReport\STD1205.cs" />
+    <Compile Include="StandardReport\STD1206.cs" />
+    <Compile Include="StandardReport\STD1207.cs" />
+    <Compile Include="StandardReport\STD1208.cs" />
+    <Compile Include="StandardReport\STD1209.cs" />
+    <Compile Include="StandardReport\STD1210.cs" />
+    <Compile Include="StandardReport\STD1301.cs" />
+    <Compile Include="StandardReport\STD1302.cs" />
+    <Compile Include="StandardReport\STD1401.cs" />
+    <Compile Include="StandardReport\STD1402.cs" />
+    <Compile Include="StandardReport\STD1403.cs" />
+    <Compile Include="StandardReport\STD1403_1.cs" />
+    <Compile Include="StandardReport\STD1404.cs" />
+    <Compile Include="StandardReport\STD1405.cs" />
+    <Compile Include="StandardReport\STD1405_1.cs" />
+    <Compile Include="StandardReport\STD1501.cs" />
+    <Compile Include="StandardReport\STD1601.cs" />
+    <Compile Include="StandardReport\STD1602.cs" />
+    <Compile Include="StandardReport\STD1604.cs" />
+    <Compile Include="StandardReport\STD1604_1.cs" />
+    <Compile Include="StandardReport\STD1605.cs" />
+    <Compile Include="StandardReport\STD1605_1.cs" />
+    <Compile Include="StandardReport\STD1606.cs" />
+    <Compile Include="StandardReport\STD1606_1.cs" />
+    <Compile Include="StandardReport\STD1607.cs" />
+    <Compile Include="StandardReport\STD1608.cs" />
+    <Compile Include="StandardReport\STD1608_1.cs" />
+    <Compile Include="StandardReport\STD1609.cs" />
+    <Compile Include="StandardReport\STD1901.cs" />
+    <Compile Include="StandardReport\STD1902.cs" />
+    <Compile Include="StandardReport\STD1903.cs" />
+    <Compile Include="StandardReport\STD1904.cs" />
+    <Compile Include="StandardReport\STD1905.cs" />
+    <Compile Include="TableSelect.cs" />
+    <Compile Include="StdGlobalVariable.cs" />
+    <Compile Include="TableDelete.cs" />
+    <Compile Include="TableSelectCount.cs" />
+    <Compile Include="TableFill.cs" />
+    <Compile Include="TableInsert.cs" />
+    <Compile Include="TableUpdate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Miracom.SmartWeb.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Query\CMN_DYNAMIC.xml" />
+    <Content Include="Query\DB_CWIPPLNWEK_N.xml" />
+    <Content Include="Query\DB_MGCMTBLDAT.xml" />
+    <Content Include="Query\DB_MWIPCALDEF.xml" />
+    <Content Include="Query\DB_MWIPFACDEF.xml" />
+    <Content Include="Query\DB_MWIPFLWDEF.xml" />
+    <Content Include="Query\DB_MWIPLOTSTS.xml" />
+    <Content Include="Query\DB_MWIPMATDEF.xml" />
+    <Content Include="Query\DB_MWIPOPRDEF.xml" />
+    <Content Include="Query\DB_RSUMWIPLTH.xml" />
+    <Content Include="Query\DB_RWEBFLXCOL.xml" />
+    <Content Include="Query\DB_RWEBFLXINQ.xml" />
+    <Content Include="Query\DB_RWEBFUNDEF.xml" />
+    <Content Include="Query\DB_RWEBFUNITM.xml" />
+    <Content Include="Query\DB_RWEBFUNLOG.xml" />
+    <Content Include="Query\DB_RWEBGRPDEF.xml" />
+    <Content Include="Query\DB_RWEBGRPFUN.xml" />
+    <Content Include="Query\DB_RWEBUSRDEF.xml" />
+    <Content Include="Query\DB_RWEBUSRLOG.xml" />
+    <Content Include="Query\DB_RWIPPLNWEK_N.xml" />
+    <Content Include="Query\FN_COMMON.xml" />
+    <Content Include="Query\Production_Output.xml" />
+    <Content Include="Query\Production_Plan.xml" />
+    <Content Include="Query\Productivity.xml" />
+    <Content Include="Query\Quality.xml" />
+    <Content Include="Query\RAS_STATUS.xml" />
+    <Content Include="Query\Resource_Analysis.xml" />
+    <Content Include="Query\Traceability.xml" />
+    <Content Include="Query\WIP_STATUS.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Component
+copy $(TargetPath) $(SolutionDir)..\SmartWeb\SmartWebService\bin
+copy $(ProjectDir)Query\*.xml $(SolutionDir)..\SmartWeb\SmartWebService\Query</PostBuildEvent>
+  </PropertyGroup>
+</Project>

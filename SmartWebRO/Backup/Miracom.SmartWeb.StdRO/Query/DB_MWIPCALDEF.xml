@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_FACTORY.YEAR.MONTH.DAY" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MWIPCALDEF
+WHERE CALENDAR_ID= :CALENDAR_ID AND SYS_YEAR = :SYS_YEAR AND SYS_MONTH =:SYS_MONTH AND SYS_DAY = :SYS_DAY]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:CALENDAR_ID</param>
+            <param direction="Input" dbtype="Int32" size="4" value="2008">:SYS_YEAR</param>
+            <param direction="Input" dbtype="Int32" size="4" value="3">:SYS_MONTH</param>
+            <param direction="Input" dbtype="Int32" size="4" value="2">:SYS_DAY</param>
+        </parameters>
+    </query>
+</queryxml>

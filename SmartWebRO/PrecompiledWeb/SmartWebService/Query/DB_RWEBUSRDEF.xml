@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_0CFACANDUSER" commandtype="Text" description="Select All RWEBUSRDEF Table" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN">:USER_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_0CFACANDGRP" commandtype="Text" description="Select all RWEBUSRDEF Table" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBUSRDEF WHERE FACTORY= :FACTORY AND SEC_GRP_ID= :SEC_GRP_ID ORDER BY USER_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN_GROUP">:SEC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_0CFACTORY" commandtype="Text" description="Select all RWEBUSRDEF Table." commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBUSRDEF WHERE FACTORY= :FACTORY ORDER BY USER_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+        </parameters>
+    </query>
+    <query statement="Insert" queryid="INS_RWEBUSRDEF" commandtype="Text" description="Insert RWEBUSRDEF Table" commandtimeout="60">
+        <commandtext><![CDATA[INSERT INTO RWEBUSRDEF (FACTORY, USER_ID, USER_DESC, PASSWORD, CHG_PASS_FLAG,
+                 USER_GRP_1, USER_GRP_2, USER_GRP_3, USER_GRP_4, USER_GRP_5,
+                 USER_GRP_6, USER_GRP_7, USER_GRP_8, USER_GRP_9, USER_GRP_10,
+                 USER_CMF_1, USER_CMF_2, USER_CMF_3, USER_CMF_4, USER_CMF_5,
+                 USER_CMF_6, USER_CMF_7, USER_CMF_8, USER_CMF_9, USER_CMF_10,
+                 SEC_GRP_ID, PHONE_OFFICE, PHONE_MOBILE, PHONE_HOME, PHONE_OTHER,
+                 ENTER_DATE, RETIRE_DATE, EMAIL_ID, BIRTHDAY, SEX_FLAG,
+                 CREATE_USER_ID, CREATE_TIME, UPDATE_USER_ID, UPDATE_TIME)
+ VALUES (:FACTORY, :USER_ID, :USER_DESC, :PASSWORD, :CHG_PASS_FLAG,
+ 		:USER_GRP_1, :USER_GRP_2, :USER_GRP_3, :USER_GRP_4, :USER_GRP_5,
+ 		:USER_GRP_6, :USER_GRP_7, :USER_GRP_8, :USER_GRP_9, :USER_GRP_10,
+ 		:USER_CMF_1, :USER_CMF_2, :USER_CMF_3, :USER_CMF_4, :USER_CMF_5,
+ 		:USER_CMF_6, :USER_CMF_7, :USER_CMF_8, :USER_CMF_9, :USER_CMF_10,
+ 		:SEC_GRP_ID, :PHONE_OFFICE, :PHONE_MOBILE, :PHONE_HOME, :PHONE_OTHER,
+ 		:ENTER_DATE, :RETIRE_DATE, :EMAIL_ID, :BIRTHDAY, :SEX_FLAG,
+ 		:CREATE_USER_ID, :CREATE_TIME, :UPDATE_USER_ID, :UPDATE_TIME)]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="A">:USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="50" value="B">:USER_DESC</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="C">:PASSWORD</param>
+            <param direction="Input" dbtype="Char" size="1" value=" ">:CHG_PASS_FLAG</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="1">:USER_GRP_1</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="2">:USER_GRP_2</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="3">:USER_GRP_3</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="4">:USER_GRP_4</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="5">:USER_GRP_5</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="6">:USER_GRP_6</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="7">:USER_GRP_7</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="8">:USER_GRP_8</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="9">:USER_GRP_9</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="0">:USER_GRP_10</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="11">:USER_CMF_1</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="12">:USER_CMF_2</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="13">:USER_CMF_3</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="14">:USER_CMF_4</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="15">:USER_CMF_5</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="16">:USER_CMF_6</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="17">:USER_CMF_7</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="18">:USER_CMF_8</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="19">:USER_CMF_9</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="20">:USER_CMF_10</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="21">:PHONE_OFFICE</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="22">:PHONE_MOBILE</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="23">:PHONE_HOME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="24">:PHONE_OTHER</param>
+            <param direction="Input" dbtype="VarChar" size="8" value="25">:ENTER_DATE</param>
+            <param direction="Input" dbtype="VarChar" size="8" value="26">:RETIRE_DATE</param>
+            <param direction="Input" dbtype="VarChar" size="50" value="27">:EMAIL_ID</param>
+            <param direction="Input" dbtype="VarChar" size="8" value="28">:BIRTHDAY</param>
+            <param direction="Input" dbtype="Char" size="1" value="M">:SEX_FLAG</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="29">:CREATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="30">:CREATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="31">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="32">:UPDATE_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UPD_RWEBUSRDEF" commandtype="Text" description="Update RWEBUSRDEF Table" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBUSRDEF
+   SET FACTORY        = :FACTORY,       
+   	   USER_ID        = :USER_ID,       
+   	   USER_DESC      = :USER_DESC,     
+   	   PASSWORD       = :PASSWORD,      
+   	   CHG_PASS_FLAG  = :CHG_PASS_FLAG, 
+   	   USER_GRP_1     = :USER_GRP_1,    
+   	   USER_GRP_2     = :USER_GRP_2,    
+   	   USER_GRP_3     = :USER_GRP_3,    
+   	   USER_GRP_4     = :USER_GRP_4,    
+   	   USER_GRP_5     = :USER_GRP_5,    
+   	   USER_GRP_6     = :USER_GRP_6,    
+   	   USER_GRP_7     = :USER_GRP_7,    
+   	   USER_GRP_8     = :USER_GRP_8,    
+   	   USER_GRP_9     = :USER_GRP_9,    
+   	   USER_GRP_10    = :USER_GRP_10,   
+   	   USER_CMF_1     = :USER_CMF_1,    
+   	   USER_CMF_2     = :USER_CMF_2,    
+   	   USER_CMF_3     = :USER_CMF_3,    
+   	   USER_CMF_4     = :USER_CMF_4,    
+   	   USER_CMF_5     = :USER_CMF_5,    
+   	   USER_CMF_6     = :USER_CMF_6,    
+   	   USER_CMF_7     = :USER_CMF_7,    
+   	   USER_CMF_8     = :USER_CMF_8,    
+   	   USER_CMF_9     = :USER_CMF_9,    
+   	   USER_CMF_10    = :USER_CMF_10,   
+   	   SEC_GRP_ID     = :SEC_GRP_ID,    
+   	   PHONE_OFFICE   = :PHONE_OFFICE,  
+   	   PHONE_MOBILE   = :PHONE_MOBILE,  
+   	   PHONE_HOME     = :PHONE_HOME,    
+   	   PHONE_OTHER    = :PHONE_OTHER,   
+   	   ENTER_DATE     = :ENTER_DATE,    
+   	   RETIRE_DATE    = :RETIRE_DATE,   
+   	   EMAIL_ID       = :EMAIL_ID,      
+   	   BIRTHDAY       = :BIRTHDAY,      
+   	   SEX_FLAG       = :SEX_FLAG,      
+   	   CREATE_USER_ID = :CREATE_USER_ID,
+   	   CREATE_TIME    = :CREATE_TIME,   
+   	   UPDATE_USER_ID = :UPDATE_USER_ID,
+   	   UPDATE_TIME   = :UPDATE_TIME    
+ WHERE FACTORY= :C_FACTORY  AND USER_ID= :C_USER_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="A">:USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="50" value="B1">:USER_DESC</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="C1">:PASSWORD</param>
+            <param direction="Input" dbtype="Char" size="1" value=" ">:CHG_PASS_FLAG</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="1">:USER_GRP_1</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="2">:USER_GRP_2</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="3">:USER_GRP_3</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="4">:USER_GRP_4</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="5">:USER_GRP_5</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="6">:USER_GRP_6</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="7">:USER_GRP_7</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="8">:USER_GRP_8</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="9">:USER_GRP_9</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="0">:USER_GRP_10</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="11">:USER_CMF_1</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="12">:USER_CMF_2</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="13">:USER_CMF_3</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="14">:USER_CMF_4</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="15">:USER_CMF_5</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="16">:USER_CMF_6</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="17">:USER_CMF_7</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="18">:USER_CMF_8</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="19">:USER_CMF_9</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="20">:USER_CMF_10</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="21">:PHONE_OFFICE</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="22">:PHONE_MOBILE</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="23">:PHONE_HOME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="24">:PHONE_OTHER</param>
+            <param direction="Input" dbtype="VarChar" size="8" value="25">:ENTER_DATE</param>
+            <param direction="Input" dbtype="VarChar" size="8" value="26">:RETIRE_DATE</param>
+            <param direction="Input" dbtype="VarChar" size="50" value="27">:EMAIL_ID</param>
+            <param direction="Input" dbtype="VarChar" size="8" value="28">:BIRTHDAY</param>
+            <param direction="Input" dbtype="Char" size="1" value="M">:SEX_FLAG</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="29">:CREATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="30">:CREATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="31">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="32">:UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:C_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="A">:C_USER_ID</param>
+        </parameters>
+    </query>
+    <query statement="Delete" queryid="DEL_RWEBUSRDEF" commandtype="Text" description="Delete RWEBUSERDEF Table" commandtimeout="60">
+        <commandtext><![CDATA[DELETE FROM RWEBUSRDEF WHERE FACTORY= :FACTORY AND USER_ID= :USER_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="A">:USER_ID</param>
+        </parameters>
+    </query>
+</queryxml>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_FACTORY" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MWIPOPRDEF WHERE FACTORY =:FACTORY ORDER BY OPER]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="FABBLW">:FACTORY</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_OPR_FLW" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT OPER,
+ (SELECT OPER_DESC FROM MWIPOPRDEF WHERE OPER = F.OPER) OPER_DESC
+FROM MWIPFLWOPR F
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="SEL_OPR" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT OPER, OPER_DESC  FROM MWIPOPRDEF
+??]]></commandtext>
+    </query>
+</queryxml>

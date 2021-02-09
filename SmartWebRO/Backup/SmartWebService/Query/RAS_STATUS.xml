@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="RPT2001" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RSUMRESTMH ??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="RPT2002" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RSUMRESMOV ??]]></commandtext>
+    </query>
+</queryxml>

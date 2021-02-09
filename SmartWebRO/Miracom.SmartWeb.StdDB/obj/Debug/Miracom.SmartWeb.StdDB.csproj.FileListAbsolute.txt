@@ -1,0 +1,5 @@
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.StdDB\bin\Debug\Miracom.SmartWeb.StdDB.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.StdDB\bin\Debug\Miracom.SmartWeb.StdDB.pdb
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.StdDB\bin\Debug\Miracom.SmartWeb.FWX.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.StdDB\obj\Debug\Miracom.SmartWeb.StdDB.dll
+D:\MESplus_HANA\MESPLUS_HANA\SmartWebV42\SmartWebRO\Miracom.SmartWeb.StdDB\obj\Debug\Miracom.SmartWeb.StdDB.pdb

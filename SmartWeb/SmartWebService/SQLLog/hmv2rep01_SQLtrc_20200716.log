@@ -1,0 +1,2203 @@
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC, LANGUAGE_1, LANGUAGE_2, LANGUAGE_3
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+INSERT INTO RWEBFUNLOG(FACTORY,USER_ID,FUNC_NAME,FUNC_GROUP,VIEW_TIME, UPDATE_TIME)
+VALUES (:p_FACTORY, :p_USER_ID, :p_FUNC_NAME, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT PLAN_WEEK V1    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_DATE = TO_CHAR(SYSDATE,'yyyymmdd')      AND ROWNUM = 1  
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('2020', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('2020', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT LANGUAGE_1 FROM RWEBFUNDEF WHERE FUNC_NAME = 'PRD010401'
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT FACTORY Code, FAC_DESC Data
+  FROM MWIPFACDEF
+ WHERE FAC_GRP_5 = 'Y' 
+ ORDER BY FAC_GRP_4 ASC
+-------------------------------------------------------------
+SELECT OPER, OPER_DESC  FROM MWIPOPRDEF
+  WHERE FACTORY = 'HMVA2'  AND OPER NOT IN ('00001', '00002') AND OPER NOT LIKE 'V%' ORDER BY DECODE(OPER_CMF_2, ' ', 99999, TO_NUMBER(OPER_CMF_2)), OPER
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+        SELECT (SELECT DATA_1 FROM MGCMTBLDAT WHERE TABLE_NAME = 'H_CUSTOMER' AND KEY_1 = MAT_GRP_1 AND ROWNUM=1) AS CUSTOMER,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT_CMF_10, MAT_ID, OPER,  ' ', CASE WHEN OPER <= 'A0200' THEN VENDOR_MAT_ID ELSE BASE_MAT_ID END SAP_CODE
+             , SUM(TOTAL) AS TOTAL
+             , SUM(ASSY_END_QTY0 ) VAL0
+             , SUM(ASSY_END_QTY1 ) VAL1
+             , SUM(ASSY_END_QTY2 ) VAL2
+             , SUM(ASSY_END_QTY3 ) VAL3
+             , SUM(ASSY_END_QTY4 ) VAL4
+             , SUM(ASSY_END_QTY5 ) VAL5
+             , SUM(ASSY_END_QTY6 ) VAL6
+             , SUM(ASSY_END_QTY7 ) VAL7
+             , SUM(ASSY_END_QTY8 ) VAL8
+             , SUM(ASSY_END_QTY9 ) VAL9
+             , SUM(ASSY_END_QTY10 ) VAL10
+             , SUM(ASSY_END_QTY11 ) VAL11
+             , SUM(ASSY_END_QTY12 ) VAL12
+             , SUM(ASSY_END_QTY13 ) VAL13
+             , SUM(ASSY_END_QTY14 ) VAL14
+             , SUM(ASSY_END_QTY15 ) VAL15
+             , SUM(ASSY_END_QTY16 ) VAL16
+             , ROUND(SUM(TOTAL)/17, 1) AVG
+          FROM (
+               SELECT B.MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', B.MAT_CMF_10, B.MAT_ID, A.OPER,  ' ', BASE_MAT_ID,VENDOR_MAT_ID 
+                    , DECODE(WORK_DATE, '20200714', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY0
+                    , DECODE(WORK_DATE, '20200715', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY1
+                    , DECODE(WORK_DATE, '20200716', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY2
+                    , DECODE(WORK_DATE, '20200717', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY3
+                    , DECODE(WORK_DATE, '20200718', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY4
+                    , DECODE(WORK_DATE, '20200719', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY5
+                    , DECODE(WORK_DATE, '20200720', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY6
+                    , DECODE(WORK_DATE, '20200721', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY7
+                    , DECODE(WORK_DATE, '20200722', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY8
+                    , DECODE(WORK_DATE, '20200723', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY9
+                    , DECODE(WORK_DATE, '20200724', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY10
+                    , DECODE(WORK_DATE, '20200725', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY11
+                    , DECODE(WORK_DATE, '20200726', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY12
+                    , DECODE(WORK_DATE, '20200727', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY13
+                    , DECODE(WORK_DATE, '20200728', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY14
+                    , DECODE(WORK_DATE, '20200729', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY15
+                    , DECODE(WORK_DATE, '20200730', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY16
+                    , (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END) TOTAL
+                 FROM (
+                      SELECT FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                           , SUM(END_LOT) AS END_LOT
+                           , SUM(END_QTY_1) AS END_QTY_1
+                           , SUM(END_QTY_2) AS END_QTY_2
+                           , SUM(SHIP_QTY_1) AS SHIP_QTY_1
+                           , SUM(SHIP_QTY_2) AS SHIP_QTY_2
+                        FROM (
+                             SELECT FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                           , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_LOT+S2_OPER_IN_LOT+S3_OPER_IN_LOT),SUM(S1_END_LOT+S2_END_LOT+S3_END_LOT)) END_LOT
+                           , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_QTY_1+S2_OPER_IN_QTY_1+S3_OPER_IN_QTY_1),SUM(S1_END_QTY_1+S2_END_QTY_1+S3_END_QTY_1+S1_END_RWK_QTY_1 + S2_END_RWK_QTY_1 + S3_END_RWK_QTY_1)) END_QTY_1
+                           , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_QTY_2+S2_OPER_IN_QTY_2+S3_OPER_IN_QTY_2),SUM(S1_END_QTY_2+S2_END_QTY_2+S3_END_QTY_2+S1_END_RWK_QTY_2 + S2_END_RWK_QTY_2 + S3_END_RWK_QTY_2)) END_QTY_2
+                           , 0 SHIP_QTY_1
+                           , 0 SHIP_QTY_2
+                        FROM RSUMWIPMOV 
+                       WHERE OPER NOT IN ('AZ010','TZ010','F0000','EZ010', 'SZ010', 'BZ010')
+                    GROUP BY FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                   UNION ALL
+                      SELECT CM_KEY_1 AS FACTORY, MAT_ID
+                           , DECODE(CM_KEY_1,'HMVA2','AZ010','HMKT1','TZ010','FGS','F0000','HMKE1','EZ010','HMKS1','SZ010', 'BZ010') OPER
+                           , LOT_TYPE, MAT_VER,  WORK_DATE,CM_KEY_3
+                           , 0 END_LOT
+                           , 0 END_QTY_1
+                           , 0 END_QTY_2
+                           , SUM(S1_FAC_OUT_QTY_1+S2_FAC_OUT_QTY_1+S3_FAC_OUT_QTY_1) SHIP_QTY_1
+                           , SUM(S1_FAC_OUT_QTY_2+S2_FAC_OUT_QTY_2+S3_FAC_OUT_QTY_2) SHIP_QTY_2
+                        FROM RSUMFACMOV 
+                       WHERE FACTORY NOT IN ('RETURN')
+                    GROUP BY CM_KEY_1, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                             )
+                    GROUP BY FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                    )A
+                  , MWIPMATDEF B 
+              WHERE 1=1 
+                AND A.FACTORY  = 'HMVA2' 
+                AND A.FACTORY = B.FACTORY 
+                AND A.MAT_ID = B.MAT_ID                
+                AND A.MAT_VER = 1 
+                AND B.MAT_VER = 1 
+                AND B.MAT_TYPE = 'FG' 
+                AND A.OPER IN ('A0040', 'A0200', 'A0400')
+                AND A.MAT_ID LIKE '%'  
+                AND A.OPER NOT IN ('00001','00002') 
+                AND A.WORK_DATE BETWEEN '20200714' AND '20200730' 
+         )   
+   WHERE TOTAL > 0           
+GROUP BY MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT_CMF_10, MAT_ID, OPER,  ' ', BASE_MAT_ID,VENDOR_MAT_ID
+ORDER BY MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT_CMF_10, MAT_ID, DECODE(OPER,'AISSUE','A0001','TISSUE','T0001','EISSUE','E0001',OPER),  ' ', BASE_MAT_ID,VENDOR_MAT_ID
+
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC, LANGUAGE_1, LANGUAGE_2, LANGUAGE_3
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+INSERT INTO RWEBFUNLOG(FACTORY,USER_ID,FUNC_NAME,FUNC_GROUP,VIEW_TIME, UPDATE_TIME)
+VALUES (:p_FACTORY, :p_USER_ID, :p_FUNC_NAME, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+
+-------------------------------------------------------------
+SELECT MIN(SYS_DATE) AS START_DAY 
+     , MAX(SYS_DATE) AS END_DAY 
+     , PLAN_YEAR||DECODE(LENGTH(PLAN_WEEK), 1, '0'||PLAN_WEEK, PLAN_WEEK) AS WEEK
+  FROM MWIPCALDEF 
+ WHERE CALENDAR_ID = 'OTD'
+   AND (PLAN_YEAR || LPAD(PLAN_WEEK,2,'0')) IN ( 
+                                                SELECT WW
+                                                  FROM (
+                                                        SELECT WW
+                                                             , ROW_NUMBER() OVER(ORDER BY WW) AS RNK
+                                                          FROM (
+                                                                SELECT DISTINCT PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') AS WW
+                                                                  FROM MWIPCALDEF
+                                                                 WHERE CALENDAR_ID = 'OTD'
+                                                                   AND PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') >= (
+                                                                                                              SELECT MAX(PLAN_YEAR || LPAD(PLAN_WEEK,2,'0')) AS WW
+                                                                                                                FROM MWIPCALDEF
+                                                                                                               WHERE CALENDAR_ID = 'OTD'
+                                                                                                                 AND PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') < (SELECT PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') AS WW FROM MWIPCALDEF WHERE CALENDAR_ID = 'OTD' AND SYS_DATE = '20200716')
+                                                                                                                 AND SYS_DATE >= TO_CHAR(TO_DATE('20200716', 'YYYYMMDD')-14, 'YYYYMMDD')
+                                                                                                             )
+                                                               ) 
+                                                       )
+                                                 WHERE RNK <= 7
+                                               ) 
+ GROUP BY PLAN_YEAR, PLAN_WEEK 
+ ORDER BY PLAN_YEAR, PLAN_WEEK
+
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT MIN(SYS_DATE) AS START_DAY 
+     , MAX(SYS_DATE) AS END_DAY 
+     , PLAN_YEAR||DECODE(LENGTH(PLAN_WEEK), 1, '0'||PLAN_WEEK, PLAN_WEEK) AS WEEK
+  FROM MWIPCALDEF 
+ WHERE CALENDAR_ID = 'SE'
+   AND (PLAN_YEAR || LPAD(PLAN_WEEK,2,'0')) IN ( 
+                                                SELECT WW
+                                                  FROM (
+                                                        SELECT WW
+                                                             , ROW_NUMBER() OVER(ORDER BY WW) AS RNK
+                                                          FROM (
+                                                                SELECT DISTINCT PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') AS WW
+                                                                  FROM MWIPCALDEF
+                                                                 WHERE CALENDAR_ID = 'SE'
+                                                                   AND PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') >= (
+                                                                                                              SELECT MAX(PLAN_YEAR || LPAD(PLAN_WEEK,2,'0')) AS WW
+                                                                                                                FROM MWIPCALDEF
+                                                                                                               WHERE CALENDAR_ID = 'SE'
+                                                                                                                 AND PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') < (SELECT PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') AS WW FROM MWIPCALDEF WHERE CALENDAR_ID = 'SE' AND SYS_DATE = '20200716')
+                                                                                                                 AND SYS_DATE >= TO_CHAR(TO_DATE('20200716', 'YYYYMMDD')-14, 'YYYYMMDD')
+                                                                                                             )
+                                                               ) 
+                                                       )
+                                                 WHERE RNK <= 7
+                                               ) 
+ GROUP BY PLAN_YEAR, PLAN_WEEK 
+ ORDER BY PLAN_YEAR, PLAN_WEEK
+
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT LANGUAGE_2 FROM RWEBFUNDEF WHERE FUNC_NAME = 'PRD011015'
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT MIN(SYS_DATE) AS START_DAY 
+     , MAX(SYS_DATE) AS END_DAY 
+     , PLAN_YEAR||DECODE(LENGTH(PLAN_WEEK), 1, '0'||PLAN_WEEK, PLAN_WEEK) AS WEEK
+  FROM MWIPCALDEF 
+ WHERE CALENDAR_ID = 'OTD'
+   AND (PLAN_YEAR || LPAD(PLAN_WEEK,2,'0')) IN ( 
+                                                SELECT WW
+                                                  FROM (
+                                                        SELECT WW
+                                                             , ROW_NUMBER() OVER(ORDER BY WW) AS RNK
+                                                          FROM (
+                                                                SELECT DISTINCT PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') AS WW
+                                                                  FROM MWIPCALDEF
+                                                                 WHERE CALENDAR_ID = 'OTD'
+                                                                   AND PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') >= (
+                                                                                                              SELECT MAX(PLAN_YEAR || LPAD(PLAN_WEEK,2,'0')) AS WW
+                                                                                                                FROM MWIPCALDEF
+                                                                                                               WHERE CALENDAR_ID = 'OTD'
+                                                                                                                 AND PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') < (SELECT PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') AS WW FROM MWIPCALDEF WHERE CALENDAR_ID = 'OTD' AND SYS_DATE = '20200716')
+                                                                                                                 AND SYS_DATE >= TO_CHAR(TO_DATE('20200716', 'YYYYMMDD')-14, 'YYYYMMDD')
+                                                                                                             )
+                                                               ) 
+                                                       )
+                                                 WHERE RNK <= 7
+                                               ) 
+ GROUP BY PLAN_YEAR, PLAN_WEEK 
+ ORDER BY PLAN_YEAR, PLAN_WEEK
+
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT MIN(SYS_DATE) AS START_DAY 
+     , MAX(SYS_DATE) AS END_DAY 
+     , PLAN_YEAR||DECODE(LENGTH(PLAN_WEEK), 1, '0'||PLAN_WEEK, PLAN_WEEK) AS WEEK
+  FROM MWIPCALDEF 
+ WHERE CALENDAR_ID = 'SE'
+   AND (PLAN_YEAR || LPAD(PLAN_WEEK,2,'0')) IN ( 
+                                                SELECT WW
+                                                  FROM (
+                                                        SELECT WW
+                                                             , ROW_NUMBER() OVER(ORDER BY WW) AS RNK
+                                                          FROM (
+                                                                SELECT DISTINCT PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') AS WW
+                                                                  FROM MWIPCALDEF
+                                                                 WHERE CALENDAR_ID = 'SE'
+                                                                   AND PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') >= (
+                                                                                                              SELECT MAX(PLAN_YEAR || LPAD(PLAN_WEEK,2,'0')) AS WW
+                                                                                                                FROM MWIPCALDEF
+                                                                                                               WHERE CALENDAR_ID = 'SE'
+                                                                                                                 AND PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') < (SELECT PLAN_YEAR || LPAD(PLAN_WEEK,2,'0') AS WW FROM MWIPCALDEF WHERE CALENDAR_ID = 'SE' AND SYS_DATE = '20200716')
+                                                                                                                 AND SYS_DATE >= TO_CHAR(TO_DATE('20200716', 'YYYYMMDD')-14, 'YYYYMMDD')
+                                                                                                             )
+                                                               ) 
+                                                       )
+                                                 WHERE RNK <= 7
+                                               ) 
+ GROUP BY PLAN_YEAR, PLAN_WEEK 
+ ORDER BY PLAN_YEAR, PLAN_WEEK
+
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT (SELECT DATA_1 FROM MGCMTBLDAT@RPTTOMES WHERE FACTORY = 'HMVA2' AND TABLE_NAME = 'H_CUSTOMER' AND KEY_1 = MAT_GRP_1) AS CUSTOMER, MAT_GRP_9 AS MAJOR, MAT_GRP_10 AS PKG, MAT_GRP_6 AS LD_COUNT, MAT_CMF_11 AS PKG_CODE,  ' ', CONV_MAT_ID AS PRODUCT,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ' 
+     , ROUND(SUM(PLAN)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS PLAN 
+     , ROUND(SUM(SHP)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS SHP 
+     , ROUND(SUM(DEF)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS DEF 
+     , GUBUN 
+     , ROUND(SUM(HMK3A)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS HMK3A 
+     , ROUND(SUM(QC_GATE)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS QC_GATE 
+     , ROUND(SUM(PVI)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS PVI 
+     , ROUND(SUM(AVI)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS AVI 
+     , ROUND(SUM(SIG)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS SIG 
+     , ROUND(SUM(SBA)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS SBA 
+     , ROUND(SUM(TIN)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS TIN 
+     , ROUND(SUM(TRIM)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS TRIM 
+     , ROUND(SUM(MK)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS MK 
+     , ROUND(SUM(CURE)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS CURE 
+     , ROUND(SUM(MOLD)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS MOLD 
+     , ROUND(SUM(GATE)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS GATE 
+     , ROUND(SUM(WB9)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS WB9 
+     , ROUND(SUM(DA9)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS DA9 
+     , ROUND(SUM(WB8)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS WB8 
+     , ROUND(SUM(DA8)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS DA8 
+     , ROUND(SUM(WB7)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS WB7 
+     , ROUND(SUM(DA7)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS DA7 
+     , ROUND(SUM(WB6)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS WB6 
+     , ROUND(SUM(DA6)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS DA6 
+     , ROUND(SUM(WB5)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS WB5 
+     , ROUND(SUM(DA5)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS DA5 
+     , ROUND(SUM(WB4)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS WB4 
+     , ROUND(SUM(DA4)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS DA4 
+     , ROUND(SUM(WB3)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS WB3 
+     , ROUND(SUM(DA3)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS DA3 
+     , ROUND(SUM(WB2)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS WB2 
+     , ROUND(SUM(DA2)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS DA2 
+     , ROUND(SUM(WB1)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS WB1 
+     , ROUND(SUM(DA1)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS DA1 
+     , ROUND(SUM(SP)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS SP 
+     , ROUND(SUM(SAW)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS SAW 
+     , ROUND(SUM(BG)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS BG 
+     , ROUND(SUM(HMK2A)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS HMK2A 
+     , ROUND(SUM(WIP_DEF)/DECODE(GUBUN, '설비대수', 1, 1000),0) AS WIP_DEF 
+  FROM (  
+        SELECT MAT_GRP_1, MAT_GRP_9, MAT_GRP_10, MAT_GRP_6, MAT_CMF_11,  ' ', CONV_MAT_ID,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', GUBUN 
+             , MAX(PLAN) AS PLAN 
+             , MAX(SHP) AS SHP 
+             , MAX(DEF) AS DEF 
+             , SUM(DECODE(OPER_GRP_1, 'HMK3A', SUM_DEF, 0)) AS HMK3A 
+             , SUM(DECODE(OPER_GRP_1, 'QC_GATE', SUM_DEF, 0)) AS QC_GATE 
+             , SUM(DECODE(OPER_GRP_1, 'PVI', SUM_DEF, 0)) AS PVI 
+             , SUM(DECODE(OPER_GRP_1, 'AVI', SUM_DEF, 0)) AS AVI 
+             , SUM(DECODE(OPER_GRP_1, 'SIG', SUM_DEF, 0)) AS SIG 
+             , SUM(DECODE(OPER_GRP_1, 'SBA', SUM_DEF, 0)) AS SBA 
+             , SUM(DECODE(OPER_GRP_1, 'TIN', SUM_DEF, 0)) AS TIN 
+             , SUM(DECODE(OPER_GRP_1, 'TRIM', SUM_DEF, 0)) AS TRIM 
+             , SUM(DECODE(OPER_GRP_1, 'MK', SUM_DEF, 0)) AS MK 
+             , SUM(DECODE(OPER_GRP_1, 'CURE', SUM_DEF, 0)) AS CURE 
+             , SUM(DECODE(OPER_GRP_1, 'MOLD', SUM_DEF, 0)) AS MOLD 
+             , SUM(DECODE(OPER_GRP_1, 'GATE', SUM_DEF, 0)) AS GATE 
+             , SUM(DECODE(OPER_GRP_1, 'WB9', SUM_DEF, 0)) AS WB9 
+             , SUM(DECODE(OPER_GRP_1, 'DA9', SUM_DEF, 0)) AS DA9 
+             , SUM(DECODE(OPER_GRP_1, 'WB8', SUM_DEF, 0)) AS WB8 
+             , SUM(DECODE(OPER_GRP_1, 'DA8', SUM_DEF, 0)) AS DA8 
+             , SUM(DECODE(OPER_GRP_1, 'WB7', SUM_DEF, 0)) AS WB7 
+             , SUM(DECODE(OPER_GRP_1, 'DA7', SUM_DEF, 0)) AS DA7 
+             , SUM(DECODE(OPER_GRP_1, 'WB6', SUM_DEF, 0)) AS WB6 
+             , SUM(DECODE(OPER_GRP_1, 'DA6', SUM_DEF, 0)) AS DA6 
+             , SUM(DECODE(OPER_GRP_1, 'WB5', SUM_DEF, 0)) AS WB5 
+             , SUM(DECODE(OPER_GRP_1, 'DA5', SUM_DEF, 0)) AS DA5 
+             , SUM(DECODE(OPER_GRP_1, 'WB4', SUM_DEF, 0)) AS WB4 
+             , SUM(DECODE(OPER_GRP_1, 'DA4', SUM_DEF, 0)) AS DA4 
+             , SUM(DECODE(OPER_GRP_1, 'WB3', SUM_DEF, 0)) AS WB3 
+             , SUM(DECODE(OPER_GRP_1, 'DA3', SUM_DEF, 0)) AS DA3 
+             , SUM(DECODE(OPER_GRP_1, 'WB2', SUM_DEF, 0)) AS WB2 
+             , SUM(DECODE(OPER_GRP_1, 'DA2', SUM_DEF, 0)) AS DA2 
+             , SUM(DECODE(OPER_GRP_1, 'WB1', SUM_DEF, 0)) AS WB1 
+             , SUM(DECODE(OPER_GRP_1, 'DA1', SUM_DEF, 0)) AS DA1 
+             , SUM(DECODE(OPER_GRP_1, 'SP', SUM_DEF, 0)) AS SP 
+             , SUM(DECODE(OPER_GRP_1, 'SAW', SUM_DEF, 0)) AS SAW 
+             , SUM(DECODE(OPER_GRP_1, 'BG', SUM_DEF, 0)) AS BG 
+             , SUM(DECODE(OPER_GRP_1, 'HMK2A',SUM_DEF, 0)) AS HMK2A 
+             , MAX(WIP_TTL) AS WIP_TTL 
+             , MAX(DEF) - MAX(WIP_TTL) AS WIP_DEF 
+          FROM ( 
+                SELECT MAT_GRP_1, MAT_GRP_9, MAT_GRP_10, MAT_GRP_6, MAT_CMF_11,  ' ', CONV_MAT_ID,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ' 
+                     , OPER_GRP_1 
+                     , DECODE(SEQ, 1, 'WIP', 2, '설비대수', 3, 'CAPA현황', 4, '당일 실적', 5, 'D0 잔량', 6, 'D1 잔량', 7, 'D2 잔량', 8, '당주 잔량', 9, '차주 잔량', 10, '월간 잔량') AS GUBUN 
+                     , SUM(DECODE(SEQ, 1, 0, 2, 0, 3, 0, 4, 0, 5, D0_PLAN, 6, D1_PLAN, 7, D2_PLAN, 8, WEEK_PLAN, 9, WEEK2_PLAN, 10, MON_PLAN)) AS PLAN  
+                     , SUM(DECODE(SEQ, 1, 0, 2, 0, 3, 0, 4, 0, 5, SHP_TODAY, 6, SHP_D1, 7, SHP_D2, 8, SHP_WEEK, 9, SHP2_WEEK, 10, SHP_MONTH)) AS SHP 
+                     , SUM(DECODE(SEQ, 1, 0, 2, 0, 3, 0, 4, 0, 5, D0_DEF, 6, D1_DEF, 7, D2_DEF, 8, WEEK_DEF, 9, WEEK2_DEF, 10, MONTH_DEF)) AS DEF 
+                     , SUM(DECODE(SEQ, 1, WIP_QTY, 2, RES_CNT, 3, RES_CAPA, 4, ASSY_END_QTY, 5, D0_SUM_QUANTITY, 6, D1_SUM_QUANTITY, 7, D2_SUM_QUANTITY, 8, WEEK_SUM_QUANTITY, 9, WEEK2_SUM_QUANTITY, 10, MONTH_SUM_QUANTITY)) AS SUM_DEF 
+                     , MAX(DECODE(SEQ, 1, 0, 2, 0, 3, 0, 4, 0, WIP_TTL)) AS WIP_TTL 
+                  FROM ( 
+                        SELECT MAT_GRP_1, MAT_GRP_9, MAT_GRP_10, MAT_GRP_6, MAT_CMF_11,  ' ', CONV_MAT_ID,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', OPER_GRP_1 
+                             , SUM(NVL(D0_PLAN,0)) AS D0_PLAN, SUM(NVL(SHP_TODAY,0)) AS SHP_TODAY, SUM(NVL(D0_DEF,0)) AS D0_DEF 
+                             , SUM(NVL(D1_PLAN,0)) AS D1_PLAN, SUM(NVL(SHP_D1,0)) AS SHP_D1, SUM(NVL(D1_DEF,0)) AS D1_DEF 
+                             , SUM(NVL(D2_PLAN,0)) AS D2_PLAN, SUM(NVL(SHP_D2,0)) AS SHP_D2, SUM(NVL(D2_DEF,0)) AS D2_DEF 
+                             , SUM(NVL(WEEK_PLAN,0)) AS WEEK_PLAN, SUM(NVL(SHP_WEEK,0)) AS SHP_WEEK, SUM(NVL(WEEK_DEF,0)) AS WEEK_DEF 
+                             , SUM(NVL(WEEK2_PLAN,0)) AS WEEK2_PLAN, SUM(NVL(SHP2_WEEK,0)) AS SHP2_WEEK, SUM(NVL(WEEK2_DEF,0)) AS WEEK2_DEF 
+                             , SUM(NVL(MON_PLAN,0)) AS MON_PLAN, SUM(NVL(SHP_MONTH,0)) AS SHP_MONTH, SUM(NVL(MONTH_DEF,0)) AS MONTH_DEF 
+                             , SUM(NVL(ASSY_END_QTY,0)) AS ASSY_END_QTY 
+                             , SUM(NVL(WIP_QTY,0)) AS WIP_QTY 
+                             , SUM(SUM(WIP_QTY)) OVER(PARTITION BY MAT_GRP_1, MAT_GRP_9, MAT_GRP_10, MAT_GRP_6, MAT_CMF_11,  ' ', CONV_MAT_ID,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ') AS WIP_TTL 
+                             , SUM(RES_CNT) AS RES_CNT 
+                             , SUM(RES_CAPA) AS RES_CAPA 
+                             , SUM(NVL(D0_DEF-WIP_SUM_QUANTITY+WIP_QTY,0)) AS D0_SUM_QUANTITY 
+                             , SUM(NVL(D1_DEF-WIP_SUM_QUANTITY+WIP_QTY,0)) AS D1_SUM_QUANTITY 
+                             , SUM(NVL(D2_DEF-WIP_SUM_QUANTITY+WIP_QTY,0)) AS D2_SUM_QUANTITY 
+                             , SUM(NVL(WEEK_DEF-WIP_SUM_QUANTITY+WIP_QTY,0)) AS WEEK_SUM_QUANTITY 
+                             , SUM(NVL(WEEK2_DEF-WIP_SUM_QUANTITY+WIP_QTY,0)) AS WEEK2_SUM_QUANTITY 
+                             , SUM(NVL(MONTH_DEF-WIP_SUM_QUANTITY+WIP_QTY,0)) AS MONTH_SUM_QUANTITY 
+                          FROM ( 
+                                SELECT MAT.MAT_GRP_1, MAT.MAT_GRP_2, MAT.MAT_GRP_4, MAT.MAT_GRP_5, MAT.MAT_GRP_6, MAT.MAT_GRP_7, MAT.MAT_GRP_8, MAT.MAT_GRP_9, MAT.MAT_GRP_10, MAT.MAT_CMF_10, MAT.MAT_CMF_7, MAT.MAT_CMF_8, MAT.MAT_CMF_11, MAT.MAT_ID, MAT.CONV_MAT_ID, MAT.OPER_GRP_1 
+                                     , A.D0_PLAN, A.SHP_TODAY, A.D0_DEF 
+                                     , A.D1_PLAN, A.SHP_D1, A.D1_DEF 
+                                     , A.D2_PLAN, A.SHP_D2, A.D2_DEF 
+                                     , A.WEEK_PLAN, A.SHP_WEEK, A.WEEK_DEF 
+                                     , A.WEEK2_PLAN, A.SHP2_WEEK, A.WEEK2_DEF 
+                                     , A.MON_PLAN, A.SHP_MONTH, A.MONTH_DEF 
+                                     , A.D0_ORI_PLAN 
+                                     , NVL(B.ASSY_END_QTY,0) AS ASSY_END_QTY 
+                                     , MAX(NVL(B.ASSY_END_QTY,0)) OVER(PARTITION BY MAT.MAT_GRP_1, MAT.MAT_GRP_9, MAT.MAT_GRP_10, MAT.MAT_GRP_6, MAT.MAT_CMF_11,  ' ', CONV_MAT_ID,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ') AS CHK_ASSY_END_QTY 
+                                     , NVL(WIP.QTY,0) AS WIP_QTY 
+                                     , RES_CNT 
+                                     , RES_CAPA 
+                                     , SUM(NVL(WIP.QTY,0)) OVER(PARTITION BY A.MAT_ID ORDER BY MAT.MAT_ID, DECODE(MAT.OPER_GRP_1, 'HMK3A', 1, 'QC_GATE', 2, 'PVI', 3, 'AVI', 4, 'SIG', 5, 'SBA', 6, 'TIN', 7, 'TRIM', 8, 'MK', 9, 'CURE', 10, 'MOLD', 11, 'GATE', 12 
+                                                                                                                                , 'WB9', 13, 'DA9', 14, 'WB8', 15, 'DA8', 16, 'WB7', 17, 'DA7', 18, 'WB6', 19, 'DA6', 20, 'WB5', 21, 'DA5', 22, 'WB4', 23, 'DA4', 24 
+                                                                                                                                , 'WB3', 25, 'DA3', 26, 'WB2', 27, 'DA2', 28, 'WB1', 29, 'DA1', 30, 'SP', 31, 'SAW', 32, 'BG', 33, 'HMK2A',34, 35)) AS WIP_SUM_QUANTITY 
+                                  FROM ( 
+                                        SELECT MAT_GRP_1, MAT_GRP_2, MAT_GRP_4, MAT_GRP_5, MAT_GRP_6, MAT_GRP_7, MAT_GRP_8, MAT_GRP_9, MAT_GRP_10, MAT_CMF_10, MAT_CMF_7, MAT_CMF_8, MAT_CMF_11, MAT_ID, OPER_GRP_1 
+                                             , CASE WHEN MAT_GRP_1 = 'SE' AND MAT_GRP_9 = 'MEMORY' THEN 'SEK_________-___' || SUBSTR(MAT_ID, -3) 
+                                                    WHEN MAT_GRP_1 = 'HX' THEN MAT_CMF_10 
+                                                    ELSE MAT_ID 
+                                                END CONV_MAT_ID 
+                                          FROM ( 
+                                                SELECT * 
+                                                  FROM (
+                                                        SELECT A.* 
+                                                          FROM MWIPMATDEF A
+                                                         WHERE 1=1 
+                                                           AND FACTORY = 'HMVA2' 
+                                                           AND DELETE_FLAG = ' ' 
+                                                           AND MAT_TYPE = 'FG' 
+                                                           AND MAT_ID LIKE '%' 
+                                                           AND MAT_GRP_10 NOT LIKE 'COB%' 
+                                                       ) 
+                                               ) 
+                                             , ( 
+                                                SELECT DECODE(LEVEL, 1, 'HMK3A', 2, 'QC_GATE', 3, 'PVI', 4, 'AVI', 5, 'SIG', 6, 'SBA', 7, 'TIN', 8, 'TRIM', 9, 'MK', 10, 'CURE', 11, 'MOLD', 12, 'GATE' 
+                                                                   , 13, 'WB9', 14, 'DA9', 15, 'WB8', 16, 'DA8', 17, 'WB7', 18, 'DA7', 19, 'WB6', 20, 'DA6', 21, 'WB5', 22, 'DA5', 23, 'WB4', 24, 'DA4'
+                                                                   , 25, 'WB3', 26, 'DA3', 27, 'WB2', 28, 'DA2', 29, 'WB1', 30, 'DA1', 31, 'SP', 32, 'SAW', 33, 'BG', 34, 'HMK2A' 
+                                                             ) OPER_GRP_1 
+                                                  FROM DUAL CONNECT BY LEVEL <= 34 
+                                               ) 
+                                       ) MAT 
+                                     , ( 
+                                        SELECT MAT.MAT_ID 
+                                             , SUM(NVL(D0_PLAN, 0) + (NVL(WEEK1_TTL, 0) - NVL(SHP_WEEK_TTL, 0))) AS D0_PLAN 
+                                             , SUM(NVL(D0_PLAN, 0)) AS D0_ORI_PLAN 
+                                             , SUM(NVL(SHP_TODAY, 0)) AS SHP_TODAY 
+                                             , SUM(NVL(D0_PLAN, 0) + (NVL(WEEK1_TTL, 0) - NVL(SHP_WEEK_TTL, 0)) - NVL(SHP_TODAY, 0)) AS D0_DEF 
+                                             , SUM(NVL(D1_PLAN, 0)) AS D1_PLAN 
+                                             , 0 AS SHP_D1 
+                                             , SUM(NVL(D1_PLAN, 0) + NVL(D0_PLAN, 0) + (NVL(WEEK1_TTL, 0) - NVL(SHP_WEEK_TTL, 0)) - NVL(SHP_TODAY, 0)) AS D1_DEF 
+                                             , SUM(NVL(D2_PLAN, 0)) AS D2_PLAN 
+                                             , 0 AS SHP_D2 
+                                             , SUM(NVL(D2_PLAN, 0) + NVL(D1_PLAN, 0) + NVL(D0_PLAN, 0) + (NVL(WEEK1_TTL, 0) - NVL(SHP_WEEK_TTL, 0)) - NVL(SHP_TODAY, 0)) AS D2_DEF 
+                                             , SUM(NVL(WEEK1_PLAN, 0)) AS WEEK_PLAN 
+                                             , SUM(NVL(SHP_WEEK, 0)) AS SHP_WEEK 
+                                             , SUM(NVL(WEEK1_PLAN, 0) - NVL(SHP_WEEK, 0)) AS WEEK_DEF 
+                                             , SUM(NVL(WEEK2_PLAN, 0)) AS WEEK2_PLAN 
+                                             , 0 AS SHP2_WEEK 
+                                             , SUM(NVL(WEEK2_PLAN, 0) + NVL(WEEK1_PLAN, 0) - NVL(SHP_WEEK, 0)) AS WEEK2_DEF 
+                                             , SUM(NVL(CASE WHEN MAT.MAT_GRP_3 IN ('COB') THEN ROUND(MON.RESV_FIELD1/TO_NUMBER(DECODE(MAT.MAT_CMF_13,' ',1,MAT.MAT_CMF_13)),0) 
+                                                    ELSE MON.RESV_FIELD1 
+                                                END,0)) MON_PLAN 
+                                             , SUM(NVL(SHP_MONTH, 0)) AS SHP_MONTH 
+                                             , SUM(NVL(CASE WHEN MAT.MAT_GRP_3 IN ('COB') THEN ROUND(NVL(MON.RESV_FIELD1,0)/TO_NUMBER(DECODE(MAT.MAT_CMF_13,' ',1,MAT.MAT_CMF_13)),0)-NVL(SHP_MONTH, 0) 
+                                                    ELSE NVL(MON.RESV_FIELD1, 0)-NVL(SHP_MONTH, 0) 
+                                                END,0)) MONTH_DEF 
+                                          FROM MWIPMATDEF MAT 
+                                             , ( 
+                                                SELECT FACTORY, MAT_ID 
+                                                     , SUM(CASE WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 1 THEN D0_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 2 THEN D0_QTY + D1_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 3 THEN D0_QTY + D1_QTY + D2_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 4 THEN D0_QTY + D1_QTY + D2_QTY + D3_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 5 THEN D0_QTY + D1_QTY + D2_QTY + D3_QTY + D4_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 6 THEN D0_QTY + D1_QTY + D2_QTY + D3_QTY + D4_QTY + D5_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 3 THEN D0_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 4 THEN D0_QTY + D1_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 5 THEN D0_QTY + D1_QTY + D2_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 6 THEN D0_QTY + D1_QTY + D2_QTY + D3_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 7 THEN D0_QTY + D1_QTY + D2_QTY + D3_QTY + D4_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 1 THEN D0_QTY + D1_QTY + D2_QTY + D3_QTY + D4_QTY + D5_QTY 
+                                                                ELSE 0 
+                                                           END) AS WEEK1_TTL 
+                                                     , SUM(W1_QTY) AS WEEK1_PLAN 
+                                                     , SUM(W2_QTY) AS WEEK2_PLAN 
+                                                     , SUM(NVL(W1_QTY,0) + NVL(W2_QTY,0)) AS WEEK_TTL 
+                                                     , SUM(CASE WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 7 THEN D0_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 1 THEN D1_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 2 THEN D2_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 3 THEN D3_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 4 THEN D4_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 5 THEN D5_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 6 THEN D6_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 2 THEN D0_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 3 THEN D1_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 4 THEN D2_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 5 THEN D3_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 6 THEN D4_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 7 THEN D5_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 1 THEN D6_QTY 
+                                                                ELSE 0 
+                                                           END) AS D0_PLAN 
+                                                     , SUM(CASE WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 7 THEN D1_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 1 THEN D2_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 2 THEN D3_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 3 THEN D4_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 4 THEN D5_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 5 THEN D6_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 6 THEN D7_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 2 THEN D1_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 3 THEN D2_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 4 THEN D3_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 5 THEN D4_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 6 THEN D5_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 7 THEN D6_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 1 THEN D7_QTY 
+                                                                ELSE 0 
+                                                           END) AS D1_PLAN 
+                                                     , SUM(CASE WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 7 THEN D2_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 1 THEN D3_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 2 THEN D4_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 3 THEN D5_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 4 THEN D6_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 5 THEN D7_QTY 
+                                                                WHEN CALENDAR_ID = 'OTD' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 6 THEN D8_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 2 THEN D2_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 3 THEN D3_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 4 THEN D4_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 5 THEN D5_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 6 THEN D6_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 7 THEN D7_QTY 
+                                                                WHEN CALENDAR_ID = 'SE' AND TO_CHAR(TO_DATE('20200716', 'YYYYMMDD'), 'D') = 1 THEN D8_QTY 
+                                                                ELSE 0 
+                                                           END) AS D2_PLAN 
+                                                  FROM ( 
+                                                        SELECT FACTORY, MAT_ID, 'OTD' AS CALENDAR_ID 
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D0_QTY, 0)) AS D0_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D1_QTY, 0)) AS D1_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D2_QTY, 0)) AS D2_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D3_QTY, 0)) AS D3_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D4_QTY, 0)) AS D4_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D5_QTY, 0)) AS D5_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D6_QTY, 0)) AS D6_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D0_QTY, 0)) AS D7_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D1_QTY, 0)) AS D8_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D2_QTY, 0)) AS D9_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D3_QTY, 0)) AS D10_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D4_QTY, 0)) AS D11_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D5_QTY, 0)) AS D12_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D6_QTY, 0)) AS D13_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', WW_QTY, 0)) AS W1_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', WW_QTY, 0)) AS W2_QTY  
+                                                          FROM RWIPPLNWEK  
+                                                         WHERE 1=1  
+                                                           AND FACTORY = 'HMVA2'  
+                                                           AND GUBUN = '3'  
+                                                           AND MAT_ID NOT LIKE 'SES%' 
+                                                           AND PLAN_WEEK IN ('202029','202030') 
+                                                         GROUP BY FACTORY, MAT_ID  
+                                                         UNION ALL 
+                                                        SELECT FACTORY, MAT_ID, 'SE' AS CALENDAR_ID  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D0_QTY, 0)) AS D0_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D1_QTY, 0)) AS D1_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D2_QTY, 0)) AS D2_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D3_QTY, 0)) AS D3_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D4_QTY, 0)) AS D4_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D5_QTY, 0)) AS D5_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', D6_QTY, 0)) AS D6_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D0_QTY, 0)) AS D7_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D1_QTY, 0)) AS D8_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D2_QTY, 0)) AS D9_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D3_QTY, 0)) AS D10_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D4_QTY, 0)) AS D11_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D5_QTY, 0)) AS D12_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', D6_QTY, 0)) AS D13_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202029', WW_QTY, 0)) AS W1_QTY  
+                                                             , SUM(DECODE(PLAN_WEEK, '202030', WW_QTY, 0)) AS W2_QTY  
+                                                          FROM RWIPPLNWEK  
+                                                         WHERE 1=1  
+                                                           AND FACTORY = 'HMVA2'  
+                                                           AND GUBUN = '3'  
+                                                           AND MAT_ID LIKE 'SES%' 
+                                                           AND PLAN_WEEK IN ('202029','202030') 
+                                                         GROUP BY FACTORY, MAT_ID  
+                                                       )  
+                                                 GROUP BY FACTORY, MAT_ID  
+                                               ) PLN 
+                                             , (  
+                                                SELECT FACTORY,MAT_ID, RESV_FIELD1  
+                                                  FROM (  
+                                                        SELECT FACTORY, MAT_ID, SUM(RESV_FIELD1) AS RESV_FIELD1   
+                                                          FROM (  
+                                                                SELECT FACTORY, MAT_ID, SUM(TO_NUMBER(DECODE(RESV_FIELD1,' ',0,RESV_FIELD1))) AS RESV_FIELD1  
+                                                                  FROM CWIPPLNMON  
+                                                                 WHERE 1=1  
+                                                                   AND FACTORY = 'HMVA2'  
+                                                                   AND PLAN_MONTH = '202007' 
+                                                                 GROUP BY FACTORY, MAT_ID 
+                                                               )  
+                                                         GROUP BY FACTORY, MAT_ID 
+                                                       ) 
+                                               ) MON 
+                                             , (  
+                                                SELECT MAT_ID  
+                                                     , SUM(CASE WHEN SHP_QTY_1 > 0 AND WORK_DATE = '20200716' THEN NVL(SHP_QTY_1, 0) ELSE 0 END) AS SHP_TODAY  
+                                                     , SUM(CASE WHEN SHP_QTY_1 > 0 AND MAT_ID LIKE 'SES%' AND WORK_DATE BETWEEN '20200713' AND '20200716' THEN NVL(SHP_QTY_1, 0)  
+                                                                WHEN SHP_QTY_1 > 0 AND MAT_ID NOT LIKE 'SES%' AND WORK_DATE BETWEEN '20200711' AND '20200716' THEN NVL(SHP_QTY_1, 0) 
+                                                                ELSE 0 END) AS SHP_WEEK  
+                                                     , SUM(CASE WHEN SHP_QTY_1 > 0 AND MAT_ID LIKE 'SES%' AND WORK_DATE BETWEEN '20200713' AND '20200715' THEN NVL(SHP_QTY_1, 0)  
+                                                                WHEN SHP_QTY_1 > 0 AND MAT_ID NOT LIKE 'SES%' AND WORK_DATE BETWEEN '20200711' AND '20200715' THEN NVL(SHP_QTY_1, 0)  
+                                                                ELSE 0 END) AS SHP_WEEK_TTL  
+                                                     , SUM(CASE WHEN WORK_DATE BETWEEN '20200701' AND '20200716' THEN NVL(SHP_QTY_1, 0) END) AS SHP_MONTH  
+                                                  FROM VSUMWIPOUT 
+                                                 WHERE 1=1  
+                                                   AND FACTORY  = 'HMVA2'  
+                                                   AND LOT_TYPE = 'W'  
+                                                   AND CM_KEY_2 = 'PROD'  
+                                                   AND CM_KEY_3 LIKE 'P%'
+                                                   AND MAT_ID NOT LIKE 'HX%'  
+                                                   AND WORK_DATE BETWEEN LEAST('20200701', '20200711', '20200713') AND '20200716' 
+                                                 GROUP BY MAT_ID  
+                                                 UNION ALL  
+                                                SELECT MAT_ID  
+                                                     , SUM(CASE WHEN SHP_QTY_1 > 0 AND WORK_DATE = '20200716' THEN NVL(SHP_QTY_1, 0) ELSE 0 END) AS SHP_TODAY  
+                                                     , SUM(CASE WHEN SHP_QTY_1 > 0 AND WORK_DATE BETWEEN '20200711' AND '20200716' THEN NVL(SHP_QTY_1, 0) ELSE 0 END) AS SHP_WEEK  
+                                                     , SUM(CASE WHEN SHP_QTY_1 > 0 AND WORK_DATE BETWEEN '20200711' AND '20200715' THEN NVL(SHP_QTY_1, 0) ELSE 0 END) AS SHP_WEEK_TTL  
+                                                     , SUM(CASE WHEN WORK_DATE BETWEEN '20200701' AND '20200716' THEN NVL(SHP_QTY_1, 0) END) AS SHP_MONTH  
+                                                  FROM VSUMWIPOUT_06 
+                                                 WHERE 1=1  
+                                                   AND FACTORY  = 'HMVA2'  
+                                                   AND LOT_TYPE = 'W'  
+                                                   AND CM_KEY_2 = 'PROD'  
+                                                   AND CM_KEY_3 LIKE 'P%'
+                                                   AND MAT_ID LIKE 'HX%'  
+                                                   AND WORK_DATE BETWEEN '20200701' AND '20200716' 
+                                                 GROUP BY MAT_ID 
+                                               ) SHP 
+                                         WHERE 1=1 
+                                           AND MAT.FACTORY = 'HMVA2' 
+                                           AND MAT.MAT_TYPE = 'FG' 
+                                           AND MAT.DELETE_FLAG = ' ' 
+                                           AND MAT.MAT_ID = PLN.MAT_ID(+) 
+                                           AND MAT.MAT_ID = MON.MAT_ID(+) 
+                                           AND MAT.MAT_ID = SHP.MAT_ID(+) 
+                                         GROUP BY MAT.MAT_ID 
+                                         ORDER BY MAT.MAT_ID 
+                                       ) A 
+                                     , ( 
+                                        SELECT MAT_ID, OPER_GRP_1 
+                                             , SUM(ASSY_END_QTY) AS ASSY_END_QTY 
+                                          FROM ( 
+                                                SELECT B.MAT_ID 
+                                                     , CASE WHEN OPER IN ('A0000', 'A000N') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'HMK2A' 
+                                                            WHEN OPER IN ('A0040') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'BG' 
+                                                            WHEN OPER IN ('A0200', 'A0230') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'SAW' 
+                                                            WHEN OPER IN ('A0400', 'A0401', 'A0333') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'DA1' 
+                                                            WHEN OPER IN ('A0402') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'DA2' 
+                                                            WHEN OPER IN ('A0403') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'DA3' 
+                                                            WHEN OPER IN ('A0404') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'DA4' 
+                                                            WHEN OPER IN ('A0405') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'DA5' 
+                                                            WHEN OPER IN ('A0406') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'DA6' 
+                                                            WHEN OPER IN ('A0407') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'DA7' 
+                                                            WHEN OPER IN ('A0408') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'DA8' 
+                                                            WHEN OPER IN ('A0409') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'DA9' 
+                                                            WHEN OPER IN ('A0600','A0601') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'WB1' 
+                                                            WHEN OPER IN ('A0602') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'WB2' 
+                                                            WHEN OPER IN ('A0603') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'WB3' 
+                                                            WHEN OPER IN ('A0604') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'WB4' 
+                                                            WHEN OPER IN ('A0605') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'WB5' 
+                                                            WHEN OPER IN ('A0606') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'WB6' 
+                                                            WHEN OPER IN ('A0607') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'WB7' 
+                                                            WHEN OPER IN ('A0608') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'WB8' 
+                                                            WHEN OPER IN ('A0609') AND (MAT_GRP_5 IN ('-', '1st', 'Merge') OR MAT_GRP_5 LIKE 'Middle%') THEN 'WB9' 
+                                                            WHEN OPER IN ('A0800', 'A0801', 'A0802', 'A0803', 'A0804', 'A0805', 'A0806', 'A0807', 'A0808', 'A0809') AND MAT_GRP_5 IN ('-', 'Merge') THEN 'GATE' 
+                                                            WHEN OPER IN ('A1000', 'A0910') THEN 'MOLD' 
+                                                            WHEN OPER IN ('A1100') THEN 'CURE' 
+                                                            WHEN OPER IN ('A1150', 'A1500') THEN 'MK' 
+                                                            WHEN OPER IN ('A1200') THEN 'TRIM' 
+                                                            WHEN OPER IN ('A1450') THEN 'TIN' 
+                                                            WHEN OPER IN ('A1300') THEN 'SBA' 
+                                                            WHEN OPER IN ('A1750', 'A1800', 'A1900', 'A1825') THEN 'SIG' 
+                                                            WHEN OPER IN ('A2000') THEN 'AVI' 
+                                                            WHEN OPER IN ('A2050') THEN 'PVI' 
+                                                            WHEN OPER IN ('A2100') THEN 'QC_GATE' 
+                                                            WHEN OPER IN ('AZ010') THEN 'HMK3A' 
+                                                            ELSE ' ' 
+                                                        END OPER_GRP_1 
+                                                     , (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END) ASSY_END_QTY 
+                                                  FROM ( 
+                                                        SELECT FACTORY, MAT_ID, OPER, LOT_TYPE, WORK_DATE, CM_KEY_3 
+                                                             , SUM(END_LOT) AS END_LOT 
+                                                             , SUM(END_QTY_1) AS END_QTY_1 
+                                                             , SUM(END_QTY_2) AS END_QTY_2 
+                                                             , SUM(CASE WHEN SHIP_QTY_1 > 0 THEN SHIP_QTY_1 ELSE 0 END) AS SHIP_QTY_1 
+                                                             , SUM(CASE WHEN SHIP_QTY_2 > 0 THEN SHIP_QTY_2 ELSE 0 END) AS SHIP_QTY_2 
+                                                          FROM ( 
+                                                                SELECT FACTORY, MAT_ID, OPER, LOT_TYPE, WORK_DATE, CM_KEY_3 
+                                                                     , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_LOT+S2_OPER_IN_LOT+S3_OPER_IN_LOT),SUM(S1_END_LOT+S2_END_LOT+S3_END_LOT)) END_LOT 
+                                                                     , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_QTY_1+S2_OPER_IN_QTY_1+S3_OPER_IN_QTY_1),SUM(S1_END_QTY_1+S2_END_QTY_1+S3_END_QTY_1+S1_END_RWK_QTY_1 + S2_END_RWK_QTY_1 + S3_END_RWK_QTY_1)) END_QTY_1 
+                                                                     , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_QTY_2+S2_OPER_IN_QTY_2+S3_OPER_IN_QTY_2),SUM(S1_END_QTY_2+S2_END_QTY_2+S3_END_QTY_2+S1_END_RWK_QTY_2 + S2_END_RWK_QTY_2 + S3_END_RWK_QTY_2)) END_QTY_2 
+                                                                     , 0 SHIP_QTY_1 
+                                                                     , 0 SHIP_QTY_2 
+                                                                  FROM RSUMWIPMOV 
+                                                                 WHERE FACTORY = 'HMVA2' 
+                                                                   AND OPER NOT IN ('AZ010') 
+                                                                   AND MAT_ID NOT LIKE 'HX%' 
+                                                                 GROUP BY FACTORY, MAT_ID, OPER, LOT_TYPE, WORK_DATE, CM_KEY_3 
+                                                                 UNION ALL 
+                                                                SELECT FACTORY, MAT_ID 
+                                                                     , 'AZ010' AS OPER 
+                                                                     , LOT_TYPE, WORK_DATE, CM_KEY_3 
+                                                                     , 0 END_LOT 
+                                                                     , 0 END_QTY_1 
+                                                                     , 0 END_QTY_2 
+                                                                     , SUM(SHP_QTY_1) SHIP_QTY_1 
+                                                                     , SUM(SHP_QTY_2) SHIP_QTY_2 
+                                                                  FROM VSUMWIPOUT 
+                                                                 WHERE FACTORY = 'HMVA2' 
+                                                                   AND MAT_ID NOT LIKE 'HX%' 
+                                                                 GROUP BY FACTORY, MAT_ID, LOT_TYPE, WORK_DATE, CM_KEY_3 
+                                                                 UNION ALL 
+                                                                SELECT FACTORY, MAT_ID, OPER, LOT_TYPE, WORK_DATE, CM_KEY_3 
+                                                                     , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_LOT+S2_OPER_IN_LOT+S3_OPER_IN_LOT),SUM(S1_END_LOT+S2_END_LOT+S3_END_LOT)) END_LOT 
+                                                                     , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_QTY_1+S2_OPER_IN_QTY_1+S3_OPER_IN_QTY_1),SUM(S1_END_QTY_1+S2_END_QTY_1+S3_END_QTY_1+S1_END_RWK_QTY_1 + S2_END_RWK_QTY_1 + S3_END_RWK_QTY_1)) END_QTY_1 
+                                                                     , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_QTY_2+S2_OPER_IN_QTY_2+S3_OPER_IN_QTY_2),SUM(S1_END_QTY_2+S2_END_QTY_2+S3_END_QTY_2+S1_END_RWK_QTY_2 + S2_END_RWK_QTY_2 + S3_END_RWK_QTY_2)) END_QTY_2 
+                                                                     , 0 SHIP_QTY_1 
+                                                                     , 0 SHIP_QTY_2 
+                                                                  FROM CSUMWIPMOV 
+                                                                 WHERE FACTORY = 'HMVA2' 
+                                                                   AND OPER NOT IN ('AZ010') 
+                                                                   AND MAT_ID LIKE 'HX%' 
+                                                                 GROUP BY FACTORY, MAT_ID, OPER, LOT_TYPE, WORK_DATE, CM_KEY_3 
+                                                                 UNION ALL 
+                                                                SELECT FACTORY, MAT_ID 
+                                                                     , 'AZ010' AS OPER 
+                                                                     , LOT_TYPE, WORK_DATE, CM_KEY_3 
+                                                                     , 0 END_LOT 
+                                                                     , 0 END_QTY_1 
+                                                                     , 0 END_QTY_2 
+                                                                     , SUM(SHP_QTY_1) SHIP_QTY_1 
+                                                                     , SUM(SHP_QTY_2) SHIP_QTY_2 
+                                                                  FROM VSUMWIPOUT_06 
+                                                                 WHERE FACTORY = 'HMVA2' 
+                                                                   AND MAT_ID LIKE 'HX%' 
+                                                                 GROUP BY FACTORY, MAT_ID, LOT_TYPE, WORK_DATE, CM_KEY_3 
+                                                               ) 
+                                                         GROUP BY FACTORY, MAT_ID, OPER, LOT_TYPE, WORK_DATE, CM_KEY_3 
+                                                       ) A 
+                                                     , MWIPMATDEF B 
+                                                 WHERE 1=1 
+                                                   AND A.FACTORY  = 'HMVA2' 
+                                                   AND A.FACTORY = B.FACTORY 
+                                                   AND A.MAT_ID = B.MAT_ID 
+                                                   AND B.MAT_TYPE = 'FG' 
+                                                   AND A.MAT_ID LIKE '%' 
+                                                   AND A.CM_KEY_3 LIKE 'P%'
+                                                   AND A.OPER NOT IN ('00001','00002') 
+                                                   AND A.WORK_DATE = '20200716' 
+                                                 ) 
+                                         GROUP BY MAT_ID, OPER_GRP_1 
+                                        HAVING SUM(ASSY_END_QTY) > 0 
+                                       ) B 
+                                     , ( 
+                                        SELECT MAT_ID, OPER_GRP_1, SUM(NVL(QTY,0)) QTY 
+                                          FROM (  
+                                                SELECT MAT_ID 
+                                                     , QTY 
+                                                     , CASE WHEN OPER_GRP_8 = 'HMK2A' THEN 'HMK2A' 
+                                                            WHEN OPER_GRP_8 = 'B/G' THEN 'BG' 
+                                                            WHEN OPER_GRP_8 = 'SAW' THEN 'SAW' 
+                                                            WHEN OPER_GRP_8 = 'S/P' THEN 'SP' 
+                                                            WHEN OPER_GRP_8 IN ('D/A1', 'D/A1 CURE') THEN 'DA1' 
+                                                            WHEN OPER_GRP_8 IN ('D/A2', 'D/A2 CURE') THEN 'DA2' 
+                                                            WHEN OPER_GRP_8 IN ('D/A3', 'D/A3 CURE') THEN 'DA3' 
+                                                            WHEN OPER_GRP_8 IN ('D/A4', 'D/A4 CURE') THEN 'DA4' 
+                                                            WHEN OPER_GRP_8 IN ('D/A5', 'D/A5 CURE') THEN 'DA5' 
+                                                            WHEN OPER_GRP_8 IN ('D/A6', 'D/A6 CURE') THEN 'DA6' 
+                                                            WHEN OPER_GRP_8 IN ('D/A7', 'D/A7 CURE') THEN 'DA7' 
+                                                            WHEN OPER_GRP_8 IN ('D/A8', 'D/A8 CURE') THEN 'DA8' 
+                                                            WHEN OPER_GRP_8 IN ('D/A9', 'D/A9 CURE') THEN 'DA9' 
+                                                            WHEN OPER_GRP_8 = 'W/B1' THEN 'WB1' 
+                                                            WHEN OPER_GRP_8 = 'W/B2' THEN 'WB2' 
+                                                            WHEN OPER_GRP_8 = 'W/B3' THEN 'WB3' 
+                                                            WHEN OPER_GRP_8 = 'W/B4' THEN 'WB4' 
+                                                            WHEN OPER_GRP_8 = 'W/B5' THEN 'WB5' 
+                                                            WHEN OPER_GRP_8 = 'W/B6' THEN 'WB6' 
+                                                            WHEN OPER_GRP_8 = 'W/B7' THEN 'WB7' 
+                                                            WHEN OPER_GRP_8 = 'W/B8' THEN 'WB8' 
+                                                            WHEN OPER_GRP_8 = 'W/B9' THEN 'WB9' 
+                                                            WHEN OPER_GRP_8 = 'GATE' AND MAT_GRP_5 = '-' THEN 'GATE' 
+                                                            WHEN OPER_GRP_8 = 'GATE' AND MAT_GRP_1 = 'SE' AND MAT_GRP_5 = 'Merge' THEN 'GATE' 
+                                                            WHEN OPER_GRP_8 = 'GATE' AND MAT_GRP_1 = 'HX' THEN 'GATE' 
+                                                            WHEN OPER_GRP_8 = 'GATE' AND MAT_GRP_1 NOT IN ('SE','HX') AND SUBSTR(MAT_GRP_4,-1) = SUBSTR(OPER, -1) THEN 'GATE' 
+                                                            WHEN OPER_GRP_8 = 'MOLD' THEN 'MOLD' 
+                                                            WHEN OPER_GRP_8 = 'CURE' THEN 'CURE' 
+                                                            WHEN OPER_GRP_8 = 'M/K' THEN 'MK' 
+                                                            WHEN OPER_GRP_8 = 'TRIM' THEN 'TRIM' 
+                                                            WHEN OPER_GRP_8 = 'TIN' THEN 'TIN' 
+                                                            WHEN OPER_GRP_8 = 'S/B/A' THEN 'SBA' 
+                                                            WHEN OPER_GRP_8 = 'SIG' THEN 'SIG' 
+                                                            WHEN OPER_GRP_8 = 'AVI' THEN 'AVI' 
+                                                            WHEN OPER_GRP_8 = 'V/I' THEN 'PVI' 
+                                                            WHEN OPER_GRP_8 = 'QC GATE' THEN 'QC_GATE' 
+                                                            WHEN OPER_GRP_8 = 'HMK3A' THEN 'HMK3A' 
+                                                            ELSE ' ' 
+                                                        END OPER_GRP_1 
+                                                  FROM ( 
+                                                        SELECT MAT_ID, OPER, OPER_GRP_8, MAT_GRP_1, MAT_GRP_4, MAT_GRP_5, MAT_GRP_10 
+                                                             , CASE WHEN MAT_GRP_1 = 'HX' AND HX_COMP_MIN IS NOT NULL
+                                                                         THEN (CASE WHEN HX_COMP_MIN <> HX_COMP_MAX AND OPER > HX_COMP_MIN AND OPER <= HX_COMP_MAX THEN QTY_1 / NVL(COMP_CNT / 2,1)
+                                                                         WHEN OPER <= HX_COMP_MAX THEN QTY_1 / NVL(COMP_CNT,1)
+                                                                         ELSE QTY_1 END)
+                                                                    WHEN OPER <= 'A0395' THEN QTY_1 / NVL(COMP_CNT,1) 
+                                                                    ELSE QTY_1 
+                                                               END QTY 
+                                                          FROM ( 
+                                                                SELECT A.MAT_ID, B.OPER, B.OPER_GRP_8, C.MAT_GRP_1, C.MAT_GRP_4, C.MAT_GRP_5, C.MAT_GRP_10 
+                                                                     , CASE WHEN MAT_GRP_4 NOT IN ('-','FD','FU') AND MAT_GRP_5 <> '-' THEN CASE WHEN MAT_GRP_5 IN ('1st','Merge') OR MAT_GRP_5 LIKE 'Middle%' THEN QTY_1 ELSE 0 END 
+                                                                            WHEN MAT_GRP_3 IN ('COB', 'BGN') THEN ROUND(QTY_1/TO_NUMBER(DECODE(MAT_CMF_13, ' ', 1, '-', 1, MAT_CMF_13)),0) 
+                                                                            ELSE QTY_1 
+                                                                       END AS QTY_1 
+                                                                     , COMP_CNT  
+                                                                     , HX_COMP_MIN, HX_COMP_MAX 
+                                                                  FROM RWIPLOTSTS A   
+                                                                     , MWIPOPRDEF B   
+                                                                     , VWIPMATDEF C 
+                                                                 WHERE 1 = 1  
+                                                                   AND A.FACTORY = B.FACTORY 
+                                                                   AND A.FACTORY = C.FACTORY 
+                                                                   AND A.OPER = B.OPER 
+                                                                   AND A.MAT_ID = C.MAT_ID 
+                                                                   AND A.FACTORY = 'HMVA2'   
+                                                                   AND A.LOT_TYPE = 'W'  
+                                                                   AND A.LOT_CMF_5 LIKE 'P%'
+                                                                   AND A.LOT_DEL_FLAG = ' '  
+                                                                   AND C.MAT_GRP_2 <> '-' 
+                                                                   AND C.DELETE_FLAG = ' '  
+                                                               ) 
+                                                       ) 
+                                               ) 
+                                         WHERE 1=1 
+                                           AND OPER_GRP_1 <> ' ' 
+                                         GROUP BY MAT_ID, OPER_GRP_1 
+                                        HAVING SUM(NVL(QTY,0)) > 0 
+                                       ) WIP 
+                                     , ( 
+                                        SELECT A.RES_STS_2 AS MAT_ID 
+                                             , A.OPER_GRP_1 
+                                             , SUM(A.RES_CNT) AS RES_CNT 
+                                             , SUM(TRUNC(NVL(NVL(B.UPEH,0) * 24 * A.PERCENT * A.RES_CNT, 0))) AS RES_CAPA 
+                                          FROM ( 
+                                                SELECT FACTORY, RES_STS_2, RES_STS_8 AS OPER, RES_GRP_6 AS RES_MODEL, RES_GRP_7 AS UPEH_GRP, COUNT(RES_ID) AS RES_CNT 
+                                                     , CASE WHEN RES_STS_8 LIKE 'A06%' THEN 0.71
+                                                            WHEN RES_STS_8 LIKE 'A04%' THEN 0.68
+                                                            WHEN RES_STS_8 = 'A0333' THEN 0.68
+                                                            ELSE 0.7
+                                                       END PERCENT 
+                                                     , CASE WHEN RES_STS_8 IN ('A0040') THEN 'BG' 
+                                                            WHEN RES_STS_8 IN ('A0200', 'A0230') THEN 'SAW' 
+                                                            WHEN RES_STS_8 IN ('A0400', 'A0401', 'A0333') THEN 'DA1' 
+                                                            WHEN RES_STS_8 IN ('A0402') THEN 'DA2' 
+                                                            WHEN RES_STS_8 IN ('A0403') THEN 'DA3' 
+                                                            WHEN RES_STS_8 IN ('A0404') THEN 'DA4' 
+                                                            WHEN RES_STS_8 IN ('A0405') THEN 'DA5' 
+                                                            WHEN RES_STS_8 IN ('A0406') THEN 'DA6' 
+                                                            WHEN RES_STS_8 IN ('A0407') THEN 'DA7' 
+                                                            WHEN RES_STS_8 IN ('A0408') THEN 'DA8' 
+                                                            WHEN RES_STS_8 IN ('A0409') THEN 'DA9' 
+                                                            WHEN RES_STS_8 IN ('A0600','A0601') THEN 'WB1' 
+                                                            WHEN RES_STS_8 IN ('A0602') THEN 'WB2' 
+                                                            WHEN RES_STS_8 IN ('A0603') THEN 'WB3' 
+                                                            WHEN RES_STS_8 IN ('A0604') THEN 'WB4' 
+                                                            WHEN RES_STS_8 IN ('A0605') THEN 'WB5' 
+                                                            WHEN RES_STS_8 IN ('A0606') THEN 'WB6' 
+                                                            WHEN RES_STS_8 IN ('A0607') THEN 'WB7' 
+                                                            WHEN RES_STS_8 IN ('A0608') THEN 'WB8' 
+                                                            WHEN RES_STS_8 IN ('A0609') THEN 'WB9' 
+                                                            WHEN RES_STS_8 IN ('A0800', 'A0801', 'A0802', 'A0803', 'A0804', 'A0805', 'A0806', 'A0807', 'A0808', 'A0809') THEN 'GATE' 
+                                                            WHEN RES_STS_8 IN ('A1000', 'A0910') THEN 'MOLD' 
+                                                            WHEN RES_STS_8 IN ('A1100') THEN 'CURE' 
+                                                            WHEN RES_STS_8 IN ('A1150', 'A1500') THEN 'MK' 
+                                                            WHEN RES_STS_8 IN ('A1200') THEN 'TRIM' 
+                                                            WHEN RES_STS_8 IN ('A1450') THEN 'TIN' 
+                                                            WHEN RES_STS_8 IN ('A1300') THEN 'SBA' 
+                                                            WHEN RES_STS_8 IN ('A1750', 'A1800', 'A1900', 'A1825') THEN 'SIG' 
+                                                            WHEN RES_STS_8 IN ('A2000') THEN 'AVI' 
+                                                            WHEN RES_STS_8 IN ('A2050') THEN 'PVI' 
+                                                            WHEN RES_STS_8 IN ('A2100') THEN 'QC_GATE' 
+                                                            ELSE ' ' 
+                                                       END OPER_GRP_1 
+                                                  FROM MRASRESDEF 
+                                                 WHERE 1 = 1  
+                                                   AND FACTORY  = 'HMVA2' 
+                                                   AND RES_CMF_9 = 'Y' 
+                                                   AND RES_CMF_7 = 'Y' 
+                                                   AND DELETE_FLAG = ' ' 
+                                                   AND RES_TYPE='EQUIPMENT' 
+                                                   AND (RES_STS_1 NOT IN ('C200', 'B199') OR RES_UP_DOWN_FLAG = 'U') 
+                                                 GROUP BY FACTORY,RES_STS_2,RES_STS_8,RES_GRP_6,RES_GRP_7  
+                                               ) A 
+                                             , CRASUPHDEF B 
+                                         WHERE 1=1 
+                                           AND A.FACTORY = B.FACTORY(+) 
+                                           AND A.OPER = B.OPER(+) 
+                                           AND A.RES_MODEL = B.RES_MODEL(+) 
+                                           AND A.UPEH_GRP = B.UPEH_GRP(+) 
+                                           AND A.RES_STS_2 = B.MAT_ID(+) 
+                                           AND A.FACTORY  = 'HMVA2' 
+                                           AND A.OPER NOT IN ('00001','00002') 
+                                           AND A.OPER_GRP_1 <> ' ' 
+                                         GROUP BY A.RES_STS_2, A.OPER_GRP_1 
+                                       ) RES 
+                                 WHERE 1=1 
+                                   AND MAT.MAT_ID = A.MAT_ID(+) 
+                                   AND MAT.MAT_ID = B.MAT_ID(+) 
+                                   AND MAT.MAT_ID = WIP.MAT_ID(+) 
+                                   AND MAT.MAT_ID = RES.MAT_ID(+) 
+                                   AND MAT.OPER_GRP_1 = B.OPER_GRP_1(+) 
+                                   AND MAT.OPER_GRP_1 = WIP.OPER_GRP_1(+) 
+                                   AND MAT.OPER_GRP_1 = RES.OPER_GRP_1(+) 
+                               ) 
+                         GROUP BY MAT_GRP_1, MAT_GRP_9, MAT_GRP_10, MAT_GRP_6, MAT_CMF_11,  ' ', CONV_MAT_ID,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', OPER_GRP_1 
+                        HAVING ( 
+                                SUM(NVL(D0_ORI_PLAN,0))+SUM(NVL(D1_PLAN,0))+SUM(NVL(D2_PLAN,0))+SUM(NVL(WEEK_PLAN,0))+SUM(NVL(WEEK2_PLAN,0))+SUM(NVL(MON_PLAN,0))+SUM(NVL(WIP_QTY,0)) 
+                              + SUM(NVL(D0_PLAN,0))+SUM(NVL(SHP_WEEK,0))+SUM(NVL(SHP_MONTH,0))+SUM(NVL(ASSY_END_QTY,0)) 
+                               ) > 0 
+                      ) 
+                    , (SELECT LEVEL AS SEQ FROM DUAL CONNECT BY LEVEL <= 10) 
+                 GROUP BY MAT_GRP_1, MAT_GRP_9, MAT_GRP_10, MAT_GRP_6, MAT_CMF_11,  ' ', CONV_MAT_ID,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', OPER_GRP_1, DECODE(SEQ, 1, 'WIP', 2, '설비대수', 3, 'CAPA현황', 4, '당일 실적', 5, 'D0 잔량', 6, 'D1 잔량', 7, 'D2 잔량', 8, '당주 잔량', 9, '차주 잔량', 10, '월간 잔량') 
+               ) 
+         GROUP BY  MAT_GRP_1, MAT_GRP_9, MAT_GRP_10, MAT_GRP_6, MAT_CMF_11,  ' ', CONV_MAT_ID,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', GUBUN 
+       ) A 
+ WHERE 1=1 
+ GROUP BY MAT_GRP_1, MAT_GRP_9, MAT_GRP_10, MAT_GRP_6, MAT_CMF_11,  ' ', CONV_MAT_ID,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', GUBUN 
+ ORDER BY DECODE(MAT_GRP_1, 'SE', 1, 'HX', 2, 'IM', 3, 'FC', 4, 'IG', 5, 6), CUSTOMER, MAJOR, PKG, LD_COUNT, PKG_CODE,  ' ', PRODUCT,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', DECODE(GUBUN, 'WIP', 1, '설비대수', 2, 'CAPA현황', 3, '당일 실적', 4, 'D0 잔량', 5, 'D1 잔량', 6, 'D2 잔량', 7, '당주 잔량', 8, '차주 잔량', 9, '월간 잔량', 10) 
+
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT (SELECT DATA_1 FROM MGCMTBLDAT@RPTTOMES WHERE FACTORY = 'HMVA2' AND TABLE_NAME = 'H_CUSTOMER' AND KEY_1 = MAT_GRP_1) AS CUSTOMER, MAT_GRP_9 AS MAJOR, MAT_GRP_10 AS PKG, MAT_GRP_6 AS LD_COUNT, MAT_CMF_11 AS PKG_CODE,  ' ', CONV_MAT_ID AS PRODUCT,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ' 
+     , MAX(DECODE(OPER_GRP_1, 'HMK3A', 'T', '', 'F', 'F')) AS HMK3A 
+     , MAX(DECODE(OPER_GRP_1, 'QC_GATE', 'T', '', 'F', 'F')) AS QC_GATE 
+     , MAX(DECODE(OPER_GRP_1, 'PVI', 'T', '', 'F', 'F')) AS PVI 
+     , MAX(DECODE(OPER_GRP_1, 'AVI', 'T', '', 'F', 'F')) AS AVI 
+     , MAX(DECODE(OPER_GRP_1, 'SIG', 'T', '', 'F', 'F')) AS SIG 
+     , MAX(DECODE(OPER_GRP_1, 'SBA', 'T', '', 'F', 'F')) AS SBA 
+     , MAX(DECODE(OPER_GRP_1, 'TIN', 'T', '', 'F', 'F')) AS TIN 
+     , MAX(DECODE(OPER_GRP_1, 'TRIM', 'T', '', 'F', 'F')) AS TRIM 
+     , MAX(DECODE(OPER_GRP_1, 'MK', 'T', '', 'F', 'F')) AS MK 
+     , MAX(DECODE(OPER_GRP_1, 'CURE', 'T', '', 'F', 'F')) AS CURE 
+     , MAX(DECODE(OPER_GRP_1, 'MOLD', 'T', '', 'F', 'F')) AS MOLD 
+     , MAX(DECODE(OPER_GRP_1, 'GATE', 'T', '', 'F', 'F')) AS GATE 
+     , MAX(DECODE(OPER_GRP_1, 'WB9', 'T', '', 'F', 'F')) AS WB9 
+     , MAX(DECODE(OPER_GRP_1, 'DA9', 'T', '', 'F', 'F')) AS DA9 
+     , MAX(DECODE(OPER_GRP_1, 'WB8', 'T', '', 'F', 'F')) AS WB8 
+     , MAX(DECODE(OPER_GRP_1, 'DA8', 'T', '', 'F', 'F')) AS DA8 
+     , MAX(DECODE(OPER_GRP_1, 'WB7', 'T', '', 'F', 'F')) AS WB7 
+     , MAX(DECODE(OPER_GRP_1, 'DA7', 'T', '', 'F', 'F')) AS DA7 
+     , MAX(DECODE(OPER_GRP_1, 'WB6', 'T', '', 'F', 'F')) AS WB6 
+     , MAX(DECODE(OPER_GRP_1, 'DA6', 'T', '', 'F', 'F')) AS DA6 
+     , MAX(DECODE(OPER_GRP_1, 'WB5', 'T', '', 'F', 'F')) AS WB5 
+     , MAX(DECODE(OPER_GRP_1, 'DA5', 'T', '', 'F', 'F')) AS DA5 
+     , MAX(DECODE(OPER_GRP_1, 'WB4', 'T', '', 'F', 'F')) AS WB4 
+     , MAX(DECODE(OPER_GRP_1, 'DA4', 'T', '', 'F', 'F')) AS DA4 
+     , MAX(DECODE(OPER_GRP_1, 'WB3', 'T', '', 'F', 'F')) AS WB3 
+     , MAX(DECODE(OPER_GRP_1, 'DA3', 'T', '', 'F', 'F')) AS DA3  
+     , MAX(DECODE(OPER_GRP_1, 'WB2', 'T', '', 'F', 'F')) AS WB2 
+     , MAX(DECODE(OPER_GRP_1, 'DA2', 'T', '', 'F', 'F')) AS DA2 
+     , MAX(DECODE(OPER_GRP_1, 'WB1', 'T', '', 'F', 'F')) AS WB1 
+     , MAX(DECODE(OPER_GRP_1, 'DA1', 'T', '', 'F', 'F')) AS DA1 
+     , MAX(DECODE(OPER_GRP_1, 'SP', 'T', '', 'F', 'F')) AS SP 
+     , MAX(DECODE(OPER_GRP_1, 'SAW', 'T', '', 'F', 'F')) AS SAW 
+     , MAX(DECODE(OPER_GRP_1, 'BG', 'T', '', 'F', 'F')) AS BG 
+     , MAX(DECODE(OPER_GRP_1, 'HMK2A','T', '', 'F', 'F')) AS HMK2A 
+  FROM ( 
+        SELECT MAT.FACTORY, MAT.MAT_GRP_1, MAT.MAT_GRP_9, MAT.MAT_GRP_10, MAT.MAT_GRP_6, MAT.MAT_CMF_11,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT.MAT_ID, MAT.DELETE_FLAG 
+             , CASE WHEN MAT.MAT_GRP_1 = 'SE' AND MAT.MAT_GRP_9 = 'MEMORY' THEN 'SEK_________-___' || SUBSTR(MAT.MAT_ID, -3) 
+                                                                    WHEN MAT.MAT_GRP_1 = 'HX' THEN MAT.MAT_CMF_10 
+                                                                    ELSE MAT_ID 
+                                                               END CONV_MAT_ID 
+          FROM MWIPMATDEF MAT 
+       ) MAT 
+     , ( 
+        SELECT A.MAT_ID 
+                     , CASE WHEN B.OPER IN ('A0400', 'A0401', 'A0333') THEN 'DA1' 
+                            WHEN B.OPER IN ('A0402') THEN 'DA2' 
+                            WHEN B.OPER IN ('A0403') THEN 'DA3' 
+                            WHEN B.OPER IN ('A0404') THEN 'DA4' 
+                            WHEN B.OPER IN ('A0405') THEN 'DA5' 
+                            WHEN B.OPER IN ('A0406') THEN 'DA6' 
+                            WHEN B.OPER IN ('A0407') THEN 'DA7' 
+                            WHEN B.OPER IN ('A0408') THEN 'DA8' 
+                            WHEN B.OPER IN ('A0409') THEN 'DA9' 
+                            WHEN B.OPER IN ('A0600', 'A0601') THEN 'WB1' 
+                            WHEN B.OPER IN ('A0602') THEN 'WB2' 
+                            WHEN B.OPER IN ('A0603') THEN 'WB3' 
+                            WHEN B.OPER IN ('A0604') THEN 'WB4' 
+                            WHEN B.OPER IN ('A0605') THEN 'WB5' 
+                            WHEN B.OPER IN ('A0606') THEN 'WB6' 
+                            WHEN B.OPER IN ('A0607') THEN 'WB7' 
+                            WHEN B.OPER IN ('A0608') THEN 'WB8' 
+                            WHEN B.OPER IN ('A0609') THEN 'WB9' 
+                            ELSE ' ' 
+                        END OPER_GRP_1 
+          FROM MWIPMATDEF A 
+             , MWIPFLWOPR@RPTTOMES B 
+         WHERE 1=1 
+           AND A.FACTORY = B.FACTORY 
+           AND A.FIRST_FLOW = B.FLOW 
+           AND A.FACTORY = 'HMVA2' 
+           AND A.DELETE_FLAG = ' ' 
+           AND A.MAT_TYPE = 'FG' 
+           AND A.MAT_GRP_5 IN ('-', 'Merge') 
+           AND A.MAT_ID LIKE '%' 
+       ) A 
+ WHERE 1=1 
+   AND MAT.FACTORY = 'HMVA2' 
+   AND MAT.DELETE_FLAG = ' ' 
+   AND MAT.MAT_ID = A.MAT_ID  
+ GROUP BY MAT.MAT_GRP_1, MAT.MAT_GRP_9, MAT.MAT_GRP_10, MAT.MAT_GRP_6, MAT.MAT_CMF_11,  ' ', CONV_MAT_ID,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ' 
+ ORDER BY DECODE(MAT_GRP_1, 'SE', 1, 'HX', 2, 'IM', 3, 'FC', 4, 'IG', 5, 6), CUSTOMER, MAJOR, PKG, LD_COUNT, PKG_CODE,  ' ', PRODUCT,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ' 
+
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+INSERT INTO RWEBFUNLOG(FACTORY,USER_ID,FUNC_NAME,FUNC_GROUP,VIEW_TIME, UPDATE_TIME)
+VALUES (:p_FACTORY, :p_USER_ID, :p_FUNC_NAME, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+
+-------------------------------------------------------------
+SELECT LANGUAGE_2 FROM RWEBFUNDEF WHERE FUNC_NAME = 'MAT070501'
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT A.MAT_TYPE, A.MAT_ID, A.MAT_DESC, A.UNIT_1
+     , SUM(B.INV_QTY) AS INV_QTY
+     , SUM(B.INV_L_QTY) AS INV_L_QTY
+     , SUM(E.WIK_WIP) AS WIK_WIP 
+     , SUM(C.SMT_BEFORE) AS SMT_BEFORE 
+     , SUM(C.SMT_AFTER) AS SMT_AFTER 
+     , SUM(NVL(B.INV_QTY,0)) + SUM(NVL(B.INV_L_QTY,0)) + SUM(NVL(C.QTY_TTL,0)) + SUM(NVL(E.WIK_WIP,0)) AS TTL
+     , SUM(B.QTY_1004) AS QTY_1004 
+     , SUM(D.ORDER_QTY) AS ORDER_QTY
+     , SUM(C.GRADE_A) AS GRADE_A
+     , SUM(C.GRADE_B) AS GRADE_B
+     , SUM(C.IN_QTY) AS IN_QTY
+     , SUM(C.LOT_TTL) AS LOT_TTL
+  FROM MWIPMATDEF A 
+     , ( 
+        SELECT MAT_ID 
+             , SUM(INV_QTY) AS INV_QTY 
+             , SUM(INV_L_QTY) AS INV_L_QTY 
+             , SUM(QTY_1004) AS QTY_1004 
+          FROM ( 
+                SELECT MAT_ID 
+                     , SUM(DECODE(STORAGE_LOCATION, '1000', QUANTITY, '1002', QUANTITY, '1003', QUANTITY, 0)) AS INV_QTY 
+                     , SUM(DECODE(STORAGE_LOCATION, '1001', QUANTITY, 0)) AS INV_L_QTY 
+                     , SUM(DECODE(STORAGE_LOCATION, '1004', QUANTITY, 0)) AS QTY_1004 
+                  FROM CWMSLOTSTS@RPTTOMES 
+                 WHERE 1=1 
+                   AND QUANTITY> 0 
+                   AND STORAGE_LOCATION IN ('1000', '1001', '1002', '1003', '1004') 
+                 GROUP BY MAT_ID 
+                 UNION ALL 
+                SELECT MAT_ID, 0 AS INV_QTY, SUM(QTY_1) AS INV_L_QTY, 0 AS QTY_1004 
+                  FROM CWIPMATSLP@RPTTOMES 
+                 WHERE 1=1 
+                   AND RECV_FLAG = ' ' 
+                   AND IN_TIME BETWEEN '20200714000000' AND '20200716235959' 
+                 GROUP BY MAT_ID 
+               ) 
+         GROUP BY MAT_ID 
+       ) B 
+     , ( 
+        SELECT MAT_ID
+             , SUM(CASE WHEN A.LOT_CMF_9 = 'A' AND B.LOT_ID IS NULL THEN 1 ELSE 0 END) AS GRADE_A
+             , SUM(CASE WHEN A.LOT_CMF_9 = 'B' AND B.LOT_ID IS NULL THEN 1 ELSE 0 END) AS GRADE_B
+             , SUM(CASE WHEN B.LOT_ID IS NOT NULL THEN 1 ELSE 0 END) AS IN_QTY
+             , SUM(CASE WHEN OPER LIKE 'M%' AND OPER <= 'M0330' THEN QTY_1 ELSE 0 END) AS SMT_BEFORE 
+             , SUM(CASE WHEN OPER LIKE 'A%' OR OPER > 'M0330' THEN QTY_1 ELSE 0 END) AS SMT_AFTER 
+             , COUNT(*) AS LOT_TTL 
+             , SUM(QTY_1) AS QTY_TTL 
+          FROM RWIPLOTSTS A 
+             , CRASRESMAT B 
+         WHERE 1=1  
+           AND A.FACTORY = B.FACTORY(+) 
+           AND A.LOT_ID = B.LOT_ID(+) 
+           AND A.FACTORY = 'HMVA2'
+           AND A.LOT_TYPE != 'W'
+           AND A.LOT_DEL_FLAG = ' '
+           AND A.LOT_CMF_2 = '-' 
+           AND A.LOT_CMF_9 != ' ' 
+           AND A.QTY_1 > 0 
+           AND A.OPER NOT IN  ('00001', '00002', 'V0000') 
+         GROUP BY A.MAT_ID  
+       ) C 
+     , ( 
+        SELECT MAT_ID, SUM(ORDER_QUAN) AS ORDER_QTY 
+          FROM RSAPORDQNT 
+         WHERE 1=1 
+           AND CREATE_TIME = TO_CHAR(SYSDATE, 'YYYYMMDD') 
+         GROUP BY MAT_ID 
+       ) D 
+     , ( 
+        SELECT MAT_ID, SUM(LOT_QTY) AS WIK_WIP 
+          FROM ISTMWIKWIP@RPTTOMES 
+         WHERE 1=1 
+           AND CUTOFF_DT = '20200716' || TO_CHAR(SYSDATE, 'HH24')
+         GROUP BY MAT_ID 
+       ) E 
+ WHERE 1=1
+   AND A.MAT_ID = B.MAT_ID(+)
+   AND A.MAT_ID = C.MAT_ID(+)
+   AND A.MAT_ID = D.MAT_ID(+)
+   AND A.MAT_ID = E.MAT_ID(+)
+   AND A.FACTORY = 'HMVA2'
+ GROUP BY A.MAT_TYPE, A.MAT_ID, A.MAT_DESC, A.UNIT_1
+ HAVING SUM(NVL(B.INV_QTY,0)) + SUM(NVL(B.INV_L_QTY,0)) + SUM(NVL(C.LOT_TTL,0)) + SUM(NVL(D.ORDER_QTY,0)) + SUM(NVL(E.WIK_WIP,0)) > 0
+ ORDER BY A.MAT_TYPE, A.MAT_ID 
+
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+INSERT INTO RWEBFUNLOG(FACTORY,USER_ID,FUNC_NAME,FUNC_GROUP,VIEW_TIME, UPDATE_TIME)
+VALUES (:p_FACTORY, :p_USER_ID, :p_FUNC_NAME, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+
+-------------------------------------------------------------
+        SELECT (SELECT DATA_1 FROM MGCMTBLDAT WHERE TABLE_NAME = 'H_CUSTOMER' AND KEY_1 = MAT_GRP_1 AND ROWNUM=1) AS CUSTOMER,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT_CMF_10, MAT_ID, OPER,  ' ', CASE WHEN OPER <= 'A0200' THEN VENDOR_MAT_ID ELSE BASE_MAT_ID END SAP_CODE
+             , SUM(TOTAL) AS TOTAL
+             , SUM(ASSY_END_QTY0 ) VAL0
+             , SUM(ASSY_END_QTY1 ) VAL1
+             , SUM(ASSY_END_QTY2 ) VAL2
+             , SUM(ASSY_END_QTY3 ) VAL3
+             , SUM(ASSY_END_QTY4 ) VAL4
+             , SUM(ASSY_END_QTY5 ) VAL5
+             , SUM(ASSY_END_QTY6 ) VAL6
+             , SUM(ASSY_END_QTY7 ) VAL7
+             , SUM(ASSY_END_QTY8 ) VAL8
+             , SUM(ASSY_END_QTY9 ) VAL9
+             , SUM(ASSY_END_QTY10 ) VAL10
+             , SUM(ASSY_END_QTY11 ) VAL11
+             , SUM(ASSY_END_QTY12 ) VAL12
+             , SUM(ASSY_END_QTY13 ) VAL13
+             , SUM(ASSY_END_QTY14 ) VAL14
+             , SUM(ASSY_END_QTY15 ) VAL15
+             , SUM(ASSY_END_QTY16 ) VAL16
+             , SUM(ASSY_END_QTY17 ) VAL17
+             , ROUND(SUM(TOTAL)/18, 1) AVG
+          FROM (
+               SELECT B.MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', B.MAT_CMF_10, B.MAT_ID, A.OPER,  ' ', BASE_MAT_ID,VENDOR_MAT_ID 
+                    , DECODE(WORK_DATE, '20200714', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY0
+                    , DECODE(WORK_DATE, '20200715', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY1
+                    , DECODE(WORK_DATE, '20200716', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY2
+                    , DECODE(WORK_DATE, '20200717', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY3
+                    , DECODE(WORK_DATE, '20200718', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY4
+                    , DECODE(WORK_DATE, '20200719', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY5
+                    , DECODE(WORK_DATE, '20200720', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY6
+                    , DECODE(WORK_DATE, '20200721', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY7
+                    , DECODE(WORK_DATE, '20200722', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY8
+                    , DECODE(WORK_DATE, '20200723', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY9
+                    , DECODE(WORK_DATE, '20200724', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY10
+                    , DECODE(WORK_DATE, '20200725', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY11
+                    , DECODE(WORK_DATE, '20200726', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY12
+                    , DECODE(WORK_DATE, '20200727', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY13
+                    , DECODE(WORK_DATE, '20200728', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY14
+                    , DECODE(WORK_DATE, '20200729', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY15
+                    , DECODE(WORK_DATE, '20200730', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY16
+                    , DECODE(WORK_DATE, '20200731', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY17
+                    , (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END) TOTAL
+                 FROM (
+                      SELECT FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                           , SUM(END_LOT) AS END_LOT
+                           , SUM(END_QTY_1) AS END_QTY_1
+                           , SUM(END_QTY_2) AS END_QTY_2
+                           , SUM(SHIP_QTY_1) AS SHIP_QTY_1
+                           , SUM(SHIP_QTY_2) AS SHIP_QTY_2
+                        FROM (
+                             SELECT FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                           , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_LOT+S2_OPER_IN_LOT+S3_OPER_IN_LOT),SUM(S1_END_LOT+S2_END_LOT+S3_END_LOT)) END_LOT
+                           , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_QTY_1+S2_OPER_IN_QTY_1+S3_OPER_IN_QTY_1),SUM(S1_END_QTY_1+S2_END_QTY_1+S3_END_QTY_1+S1_END_RWK_QTY_1 + S2_END_RWK_QTY_1 + S3_END_RWK_QTY_1)) END_QTY_1
+                           , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_QTY_2+S2_OPER_IN_QTY_2+S3_OPER_IN_QTY_2),SUM(S1_END_QTY_2+S2_END_QTY_2+S3_END_QTY_2+S1_END_RWK_QTY_2 + S2_END_RWK_QTY_2 + S3_END_RWK_QTY_2)) END_QTY_2
+                           , 0 SHIP_QTY_1
+                           , 0 SHIP_QTY_2
+                        FROM RSUMWIPMOV 
+                       WHERE OPER NOT IN ('AZ010','TZ010','F0000','EZ010', 'SZ010', 'BZ010')
+                    GROUP BY FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                   UNION ALL
+                      SELECT CM_KEY_1 AS FACTORY, MAT_ID
+                           , DECODE(CM_KEY_1,'HMVA2','AZ010','HMKT1','TZ010','FGS','F0000','HMKE1','EZ010','HMKS1','SZ010', 'BZ010') OPER
+                           , LOT_TYPE, MAT_VER,  WORK_DATE,CM_KEY_3
+                           , 0 END_LOT
+                           , 0 END_QTY_1
+                           , 0 END_QTY_2
+                           , SUM(S1_FAC_OUT_QTY_1+S2_FAC_OUT_QTY_1+S3_FAC_OUT_QTY_1) SHIP_QTY_1
+                           , SUM(S1_FAC_OUT_QTY_2+S2_FAC_OUT_QTY_2+S3_FAC_OUT_QTY_2) SHIP_QTY_2
+                        FROM RSUMFACMOV 
+                       WHERE FACTORY NOT IN ('RETURN')
+                    GROUP BY CM_KEY_1, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                             )
+                    GROUP BY FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                    )A
+                  , MWIPMATDEF B 
+              WHERE 1=1 
+                AND A.FACTORY  = 'HMVA2' 
+                AND A.FACTORY = B.FACTORY 
+                AND A.MAT_ID = B.MAT_ID                
+                AND A.MAT_VER = 1 
+                AND B.MAT_VER = 1 
+                AND B.MAT_TYPE = 'FG' 
+                AND A.OPER LIKE '%'
+                AND A.MAT_ID LIKE '%'  
+                AND A.OPER NOT IN ('00001','00002') 
+                AND A.WORK_DATE BETWEEN '20200714' AND '20200731' 
+         )   
+   WHERE TOTAL > 0           
+GROUP BY MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT_CMF_10, MAT_ID, OPER,  ' ', BASE_MAT_ID,VENDOR_MAT_ID
+ORDER BY MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT_CMF_10, MAT_ID, DECODE(OPER,'AISSUE','A0001','TISSUE','T0001','EISSUE','E0001',OPER),  ' ', BASE_MAT_ID,VENDOR_MAT_ID
+
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+INSERT INTO RWEBFUNLOG(FACTORY,USER_ID,FUNC_NAME,FUNC_GROUP,VIEW_TIME, UPDATE_TIME)
+VALUES (:p_FACTORY, :p_USER_ID, :p_FUNC_NAME, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC, LANGUAGE_1, LANGUAGE_2, LANGUAGE_3
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT PLAN_WEEK V1    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_DATE = TO_CHAR(SYSDATE,'yyyymmdd')      AND ROWNUM = 1  
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('2020', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('2020', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT LANGUAGE_1 FROM RWEBFUNDEF WHERE FUNC_NAME = 'PRD010401'
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT FACTORY Code, FAC_DESC Data
+  FROM MWIPFACDEF
+ WHERE FAC_GRP_5 = 'Y' 
+ ORDER BY FAC_GRP_4 ASC
+-------------------------------------------------------------
+SELECT OPER, OPER_DESC  FROM MWIPOPRDEF
+  WHERE FACTORY = 'HMVA2'  AND OPER NOT IN ('00001', '00002') AND OPER NOT LIKE 'V%' ORDER BY DECODE(OPER_CMF_2, ' ', 99999, TO_NUMBER(OPER_CMF_2)), OPER
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+        SELECT (SELECT DATA_1 FROM MGCMTBLDAT WHERE TABLE_NAME = 'H_CUSTOMER' AND KEY_1 = MAT_GRP_1 AND ROWNUM=1) AS CUSTOMER,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT_CMF_10, MAT_ID, OPER,  ' ', CASE WHEN OPER <= 'A0200' THEN VENDOR_MAT_ID ELSE BASE_MAT_ID END SAP_CODE
+             , SUM(TOTAL) AS TOTAL
+             , SUM(ASSY_END_QTY0 ) VAL0
+             , SUM(ASSY_END_QTY1 ) VAL1
+             , SUM(ASSY_END_QTY2 ) VAL2
+             , SUM(ASSY_END_QTY3 ) VAL3
+             , SUM(ASSY_END_QTY4 ) VAL4
+             , SUM(ASSY_END_QTY5 ) VAL5
+             , SUM(ASSY_END_QTY6 ) VAL6
+             , SUM(ASSY_END_QTY7 ) VAL7
+             , ROUND(SUM(TOTAL)/8, 1) AVG
+          FROM (
+               SELECT B.MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', B.MAT_CMF_10, B.MAT_ID, A.OPER,  ' ', BASE_MAT_ID,VENDOR_MAT_ID 
+                    , DECODE(WORK_DATE, '20200709', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY0
+                    , DECODE(WORK_DATE, '20200710', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY1
+                    , DECODE(WORK_DATE, '20200711', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY2
+                    , DECODE(WORK_DATE, '20200712', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY3
+                    , DECODE(WORK_DATE, '20200713', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY4
+                    , DECODE(WORK_DATE, '20200714', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY5
+                    , DECODE(WORK_DATE, '20200715', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY6
+                    , DECODE(WORK_DATE, '20200716', (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END),0) ASSY_END_QTY7
+                    , (CASE WHEN OPER IN ('AZ010','SHIP','TZ010','F0000','EZ010', 'SZ010', 'BZ010') THEN SHIP_QTY_1 ELSE END_QTY_1 END) TOTAL
+                 FROM (
+                      SELECT FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                           , SUM(END_LOT) AS END_LOT
+                           , SUM(END_QTY_1) AS END_QTY_1
+                           , SUM(END_QTY_2) AS END_QTY_2
+                           , SUM(SHIP_QTY_1) AS SHIP_QTY_1
+                           , SUM(SHIP_QTY_2) AS SHIP_QTY_2
+                        FROM (
+                             SELECT FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                           , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_LOT+S2_OPER_IN_LOT+S3_OPER_IN_LOT),SUM(S1_END_LOT+S2_END_LOT+S3_END_LOT)) END_LOT
+                           , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_QTY_1+S2_OPER_IN_QTY_1+S3_OPER_IN_QTY_1),SUM(S1_END_QTY_1+S2_END_QTY_1+S3_END_QTY_1+S1_END_RWK_QTY_1 + S2_END_RWK_QTY_1 + S3_END_RWK_QTY_1)) END_QTY_1
+                           , DECODE(SUBSTR(OPER,2,4),'0000',SUM(S1_OPER_IN_QTY_2+S2_OPER_IN_QTY_2+S3_OPER_IN_QTY_2),SUM(S1_END_QTY_2+S2_END_QTY_2+S3_END_QTY_2+S1_END_RWK_QTY_2 + S2_END_RWK_QTY_2 + S3_END_RWK_QTY_2)) END_QTY_2
+                           , 0 SHIP_QTY_1
+                           , 0 SHIP_QTY_2
+                        FROM RSUMWIPMOV 
+                       WHERE OPER NOT IN ('AZ010','TZ010','F0000','EZ010', 'SZ010', 'BZ010')
+                    GROUP BY FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                   UNION ALL
+                      SELECT CM_KEY_1 AS FACTORY, MAT_ID
+                           , DECODE(CM_KEY_1,'HMVA2','AZ010','HMKT1','TZ010','FGS','F0000','HMKE1','EZ010','HMKS1','SZ010', 'BZ010') OPER
+                           , LOT_TYPE, MAT_VER,  WORK_DATE,CM_KEY_3
+                           , 0 END_LOT
+                           , 0 END_QTY_1
+                           , 0 END_QTY_2
+                           , SUM(S1_FAC_OUT_QTY_1+S2_FAC_OUT_QTY_1+S3_FAC_OUT_QTY_1) SHIP_QTY_1
+                           , SUM(S1_FAC_OUT_QTY_2+S2_FAC_OUT_QTY_2+S3_FAC_OUT_QTY_2) SHIP_QTY_2
+                        FROM RSUMFACMOV 
+                       WHERE FACTORY NOT IN ('RETURN')
+                    GROUP BY CM_KEY_1, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                             )
+                    GROUP BY FACTORY, MAT_ID, OPER, LOT_TYPE, MAT_VER, WORK_DATE, CM_KEY_3
+                    )A
+                  , MWIPMATDEF B 
+              WHERE 1=1 
+                AND A.FACTORY  = 'HMVA2' 
+                AND A.FACTORY = B.FACTORY 
+                AND A.MAT_ID = B.MAT_ID                
+                AND A.MAT_VER = 1 
+                AND B.MAT_VER = 1 
+                AND B.MAT_TYPE = 'FG' 
+                AND A.OPER IN ('A0040', 'A0200', 'A0400', 'A0401', 'A0402', 'A0602')
+                AND A.MAT_ID LIKE '%'  
+                AND A.OPER NOT IN ('00001','00002') 
+                AND A.WORK_DATE BETWEEN '20200709' AND '20200716' 
+         )   
+   WHERE TOTAL > 0           
+GROUP BY MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT_CMF_10, MAT_ID, OPER,  ' ', BASE_MAT_ID,VENDOR_MAT_ID
+ORDER BY MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT_CMF_10, MAT_ID, DECODE(OPER,'AISSUE','A0001','TISSUE','T0001','EISSUE','E0001',OPER),  ' ', BASE_MAT_ID,VENDOR_MAT_ID
+
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+INSERT INTO RWEBFUNLOG(FACTORY,USER_ID,FUNC_NAME,FUNC_GROUP,VIEW_TIME, UPDATE_TIME)
+VALUES (:p_FACTORY, :p_USER_ID, :p_FUNC_NAME, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+
+-------------------------------------------------------------
+SELECT LANGUAGE_1 FROM RWEBFUNDEF WHERE FUNC_NAME = 'PRD010312'
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT FACTORY Code, FAC_DESC Data
+  FROM MWIPFACDEF
+ WHERE FAC_GRP_5 = 'Y' 
+ ORDER BY FAC_GRP_4 ASC
+-------------------------------------------------------------
+SELECT OPER, OPER_DESC  FROM MWIPOPRDEF
+  WHERE FACTORY = 'HMVA2'  AND OPER NOT IN ('00001', '00002') AND OPER NOT LIKE 'V%' ORDER BY DECODE(OPER_CMF_2, ' ', 99999, TO_NUMBER(OPER_CMF_2)), OPER
+-------------------------------------------------------------
+SELECT OPER, OPER_DESC  FROM MWIPOPRDEF
+  WHERE FACTORY = 'HMVA2'  AND OPER NOT IN ('00001', '00002') AND OPER NOT LIKE 'V%' ORDER BY DECODE(OPER_CMF_2, ' ', 99999, TO_NUMBER(OPER_CMF_2)), OPER
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT MIN(SYS_DATE) AS This_Week_First_Day 
+     , MAX(SYS_DATE) AS This_Week_Last_Day
+  FROM MWIPCALDEF
+ WHERE 1=1 
+   AND CALENDAR_ID = 'SE'
+   AND (PLAN_YEAR,PLAN_WEEK) IN (
+                                 SELECT PLAN_YEAR,PLAN_WEEK 
+                                   FROM MWIPCALDEF 
+                                  WHERE 1=1
+                                    AND CALENDAR_ID = 'SE'
+                                    AND SYS_DATE = '20200716')
+
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT NVL((SELECT DATA_1 FROM MGCMTBLDAT WHERE TABLE_NAME = 'H_CUSTOMER' AND KEY_1 = MAT.MAT_GRP_1 AND ROWNUM=1), '-') AS CUSTOMER,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT.MAT_CMF_10 AS PIN_TYPE,  ' ', MAT.MAT_ID AS PRODUCT,  ' ',  ' ' 
+     , ROUND(SUM(TOTAL)/1,0) AS TOTAL 
+     , ROUND(SUM(V0)/1,0) AS  Val0
+     , ROUND(SUM(V1)/1,0) AS  Val1
+     , ROUND(SUM(V2)/1,0) AS  Val2
+     , ROUND(SUM(V3)/1,0) AS  Val3
+     , ROUND(SUM(V4)/1,0) AS  Val4
+     , ROUND(SUM(V5)/1,0) AS  Val5
+     , ROUND(SUM(V6)/1,0) AS  Val6
+     , ROUND(SUM(V7)/1,0) AS  Val7
+     , ROUND(SUM(V8)/1,0) AS  Val8
+     , ROUND(SUM(V9)/1,0) AS  Val9
+     , ROUND(SUM(V10)/1,0) AS  Val10
+     , ROUND(SUM(V11)/1,0) AS  Val11
+     , ROUND(SUM(V12)/1,0) AS  Val12
+     , ROUND(SUM(V13)/1,0) AS  Val13
+     , ROUND(SUM(V14)/1,0) AS  Val14
+     , ROUND(SUM(V15)/1,0) AS  Val15
+     , ROUND(SUM(V16)/1,0) AS  Val16
+     , ROUND(SUM(V17)/1,0) AS  Val17
+     , ROUND(SUM(V18)/1,0) AS  Val18
+     , ROUND(SUM(V19)/1,0) AS  Val19
+     , ROUND(SUM(V20)/1,0) AS  Val20
+     , ROUND(SUM(V21)/1,0) AS  Val21
+     , ROUND(SUM(V22)/1,0) AS  Val22
+     , ROUND(SUM(V23)/1,0) AS  Val23
+     , ROUND(SUM(V24)/1,0) AS  Val24
+     , ROUND(SUM(V25)/1,0) AS  Val25
+     , ROUND(SUM(V26)/1,0) AS  Val26
+     , ROUND(SUM(V27)/1,0) AS  Val27
+     , ROUND(SUM(V28)/1,0) AS  Val28
+     , ROUND(SUM(V29)/1,0) AS  Val29
+     , ROUND(SUM(V30)/1,0) AS  Val30
+     , ROUND(SUM(V31)/1,0) AS  Val31
+     , ROUND(SUM(V32)/1,0) AS  Val32
+     , ROUND(SUM(V33)/1,0) AS  Val33
+     , ROUND(SUM(V34)/1,0) AS  Val34
+     , ROUND(SUM(V35)/1,0) AS  Val35
+     , ROUND(SUM(V36)/1,0) AS  Val36
+     , ROUND(SUM(V37)/1,0) AS  Val37
+     , ROUND(SUM(V38)/1,0) AS  Val38
+     , ROUND(SUM(V39)/1,0) AS  Val39
+     , ROUND(SUM(V40)/1,0) AS  Val40
+     , ROUND(SUM(V41)/1,0) AS  Val41
+     , ROUND(SUM(V42)/1,0) AS  Val42
+     , ROUND(SUM(V43)/1,0) AS  Val43
+     , ROUND(SUM(V44)/1,0) AS  Val44
+     , ROUND(SUM(V45)/1,0) AS  Val45
+     , ROUND(SUM(V46)/1,0) AS  Val46
+     , ROUND(SUM(V47)/1,0) AS  Val47
+     , ROUND(SUM(V48)/1,0) AS  Val48
+     , ROUND(SUM(V49)/1,0) AS  Val49
+     , ROUND(SUM(V50)/1,0) AS  Val50
+     , ROUND(SUM(V51)/1,0) AS  Val51
+     , ROUND(SUM(V52)/1,0) AS  Val52
+     , ROUND(SUM(V53)/1,0) AS  Val53
+     , ROUND(SUM(V54)/1,0) AS  Val54
+     , ROUND(SUM(V55)/1,0) AS  Val55
+     , ROUND(SUM(V56)/1,0) AS  Val56
+     , ROUND(SUM(V57)/1,0) AS  Val57
+     , ROUND(SUM(V58)/1,0) AS  Val58
+     , ROUND(SUM(V59)/1,0) AS  Val59
+     , ROUND(SUM(V60)/1,0) AS  Val60
+     , ROUND(SUM(V61)/1,0) AS  Val61
+     , ROUND(SUM(V62)/1,0) AS  Val62
+     , ROUND(SUM(V63)/1,0) AS  Val63
+     , ROUND(SUM(V64)/1,0) AS  Val64
+     , ROUND(SUM(V65)/1,0) AS  Val65
+     , ROUND(SUM(V66)/1,0) AS  Val66
+     , ROUND(SUM(V67)/1,0) AS  Val67
+     , ROUND(SUM(V68)/1,0) AS  Val68
+     , ROUND(SUM(V69)/1,0) AS  Val69
+     , ROUND(SUM(V70)/1,0) AS  Val70
+     , ROUND(SUM(V71)/1,0) AS  Val71
+     , ROUND(SUM(V72)/1,0) AS  Val72
+     , ROUND(SUM(V73)/1,0) AS  Val73
+     , ROUND(SUM(V74)/1,0) AS  Val74
+     , ROUND(SUM(V75)/1,0) AS  Val75
+     , ROUND(SUM(V76)/1,0) AS  Val76
+     , ROUND(SUM(V77)/1,0) AS  Val77
+     , ROUND(SUM(V78)/1,0) AS  Val78
+     , ROUND(SUM(V79)/1,0) AS  Val79
+     , ROUND(SUM(V80)/1,0) AS  Val80
+     , ROUND(SUM(V81)/1,0) AS  Val81
+     , ROUND(SUM(V82)/1,0) AS  Val82
+     , ROUND(SUM(V83)/1,0) AS  Val83
+     , ROUND(SUM(V84)/1,0) AS  Val84
+     , ROUND(SUM(V85)/1,0) AS  Val85
+     , ROUND(SUM(V86)/1,0) AS  Val86
+     , ROUND(SUM(V87)/1,0) AS  Val87
+     , ROUND(SUM(V88)/1,0) AS  Val88
+     , ROUND(SUM(V89)/1,0) AS  Val89
+     , ROUND(SUM(V90)/1,0) AS  Val90
+     , ROUND(SUM(V91)/1,0) AS  Val91
+     , ROUND(SUM(V92)/1,0) AS  Val92
+     , ROUND(SUM(V93)/1,0) AS  Val93
+     , ROUND(SUM(V94)/1,0) AS  Val94
+     , ROUND(SUM(V95)/1,0) AS  Val95
+     , ROUND(SUM(V96)/1,0) AS  Val96
+     , ROUND(SUM(V97)/1,0) AS  Val97
+     , ROUND(SUM(V98)/1,0) AS  Val98
+     , ROUND(SUM(V99)/1,0) AS  Val99
+     , ROUND(SUM(V100)/1,0) AS  Val100
+     , ROUND(SUM(V101)/1,0) AS  Val101
+     , ROUND(SUM(V102)/1,0) AS  Val102
+     , ROUND(SUM(V103)/1,0) AS  Val103
+     , ROUND(SUM(V104)/1,0) AS  Val104
+     , ROUND(SUM(V105)/1,0) AS  Val105
+     , ROUND(SUM(V106)/1,0) AS  Val106
+     , ROUND(SUM(V107)/1,0) AS  Val107
+     , ROUND(SUM(V108)/1,0) AS  Val108
+     , ROUND(SUM(V109)/1,0) AS  Val109
+     , ROUND(SUM(V110)/1,0) AS  Val110
+     , ROUND(SUM(V111)/1,0) AS  Val111
+     , ROUND(SUM(V112)/1,0) AS  Val112
+     , ROUND(SUM(V113)/1,0) AS  Val113
+     , ROUND(SUM(V114)/1,0) AS  Val114
+     , ROUND(SUM(V115)/1,0) AS  Val115
+     , ROUND(SUM(V116)/1,0) AS  Val116
+     , ROUND(SUM(V117)/1,0) AS  Val117
+     , ROUND(SUM(V118)/1,0) AS  Val118
+     , ROUND(SUM(V119)/1,0) AS  Val119
+     , ROUND(SUM(V120)/1,0) AS  Val120
+     , ROUND(SUM(V121)/1,0) AS  Val121
+     , ROUND(SUM(V122)/1,0) AS  Val122
+     , ROUND(SUM(V123)/1,0) AS  Val123
+     , ROUND(SUM(V124)/1,0) AS  Val124
+     , ROUND(SUM(V125)/1,0) AS  Val125
+     , ROUND(SUM(V126)/1,0) AS  Val126
+     , ROUND(SUM(V127)/1,0) AS  Val127
+     , ROUND(SUM(V128)/1,0) AS  Val128
+     , ROUND(SUM(V129)/1,0) AS  Val129
+     , ROUND(SUM(V130)/1,0) AS  Val130
+     , ROUND(SUM(V131)/1,0) AS  Val131
+     , ROUND(SUM(V132)/1,0) AS  Val132
+     , ROUND(SUM(V133)/1,0) AS  Val133
+     , ROUND(SUM(V134)/1,0) AS  Val134
+     , ROUND(SUM(V135)/1,0) AS  Val135
+     , ROUND(SUM(V136)/1,0) AS  Val136
+     , ROUND(SUM(V137)/1,0) AS  Val137
+     , ROUND(SUM(V138)/1,0) AS  Val138
+     , ROUND(SUM(V139)/1,0) AS  Val139
+     , ROUND(SUM(V140)/1,0) AS  Val140
+     , ROUND(SUM(V141)/1,0) AS  Val141
+     , ROUND(SUM(V142)/1,0) AS  Val142
+     , ROUND(SUM(V143)/1,0) AS  Val143
+     , ROUND(SUM(V144)/1,0) AS  Val144
+     , ROUND(SUM(V145)/1,0) AS  Val145
+     , ROUND(SUM(V146)/1,0) AS  Val146
+     , ROUND(SUM(V147)/1,0) AS  Val147
+     , ROUND(SUM(V148)/1,0) AS  Val148
+     , ROUND(SUM(V149)/1,0) AS  Val149
+     , ROUND(SUM(V150)/1,0) AS  Val150
+     , ROUND(SUM(V151)/1,0) AS  Val151
+     , ROUND(SUM(V152)/1,0) AS  Val152
+     , ROUND(SUM(V153)/1,0) AS  Val153
+     , ROUND(SUM(V154)/1,0) AS  Val154
+     , ROUND(SUM(V155)/1,0) AS  Val155
+     , ROUND(SUM(V156)/1,0) AS  Val156
+     , ROUND(SUM(V157)/1,0) AS  Val157
+     , ROUND(SUM(V158)/1,0) AS  Val158
+     , ROUND(SUM(V159)/1,0) AS  Val159
+     , ROUND(SUM(V160)/1,0) AS  Val160
+     , ROUND(SUM(V161)/1,0) AS  Val161
+     , ROUND(SUM(V162)/1,0) AS  Val162
+     , ROUND(SUM(V163)/1,0) AS  Val163
+     , ROUND(SUM(V164)/1,0) AS  Val164
+     , ROUND(SUM(V165)/1,0) AS  Val165
+     , ROUND(SUM(V166)/1,0) AS  Val166
+     , ROUND(SUM(V167)/1,0) AS  Val167
+     , ROUND(SUM(V168)/1,0) AS  Val168
+     , ROUND(SUM(V169)/1,0) AS  Val169
+     , ROUND(SUM(V170)/1,0) AS  Val170
+     , ROUND(SUM(V171)/1,0) AS  Val171
+     , ROUND(SUM(V172)/1,0) AS  Val172
+     , ROUND(SUM(V173)/1,0) AS  Val173
+     , ROUND(SUM(V174)/1,0) AS  Val174
+     , ROUND(SUM(V175)/1,0) AS  Val175
+     , ROUND(SUM(V176)/1,0) AS  Val176
+     , ROUND(SUM(V177)/1,0) AS  Val177
+     , ROUND(SUM(V178)/1,0) AS  Val178
+     , ROUND(SUM(V179)/1,0) AS  Val179
+     , ROUND(SUM(V180)/1,0) AS  Val180
+     , ROUND(SUM(V181)/1,0) AS  Val181
+     , ROUND(SUM(V182)/1,0) AS  Val182
+     , ROUND(SUM(V183)/1,0) AS  Val183
+     , ROUND(SUM(V184)/1,0) AS  Val184
+     , ROUND(SUM(V185)/1,0) AS  Val185
+     , ROUND(SUM(V186)/1,0) AS  Val186
+     , ROUND(SUM(V187)/1,0) AS  Val187
+     , ROUND(SUM(V188)/1,0) AS  Val188
+     , ROUND(SUM(V189)/1,0) AS  Val189
+     , ROUND(SUM(V190)/1,0) AS  Val190
+     , ROUND(SUM(V191)/1,0) AS  Val191
+     , ROUND(SUM(V192)/1,0) AS  Val192
+     , ROUND(SUM(V193)/1,0) AS  Val193
+     , ROUND(SUM(V194)/1,0) AS  Val194
+     , ROUND(SUM(V195)/1,0) AS  Val195
+     , ROUND(SUM(V196)/1,0) AS  Val196
+     , ROUND(SUM(V197)/1,0) AS  Val197
+     , ROUND(SUM(V198)/1,0) AS  Val198
+     , ROUND(SUM(V199)/1,0) AS  Val199
+     , ROUND(SUM(V200)/1,0) AS  Val200
+     , ROUND(SUM(V201)/1,0) AS  Val201
+     , ROUND(SUM(V202)/1,0) AS  Val202
+     , ROUND(SUM(V203)/1,0) AS  Val203
+     , ROUND(SUM(V204)/1,0) AS  Val204
+     , ROUND(SUM(V205)/1,0) AS  Val205
+     , ROUND(SUM(V206)/1,0) AS  Val206
+     , ROUND(SUM(V207)/1,0) AS  Val207
+     , ROUND(SUM(V208)/1,0) AS  Val208
+     , ROUND(SUM(V209)/1,0) AS  Val209
+     , ROUND(SUM(V210)/1,0) AS  Val210
+     , ROUND(SUM(V211)/1,0) AS  Val211
+     , ROUND(SUM(V212)/1,0) AS  Val212
+     , ROUND(SUM(V213)/1,0) AS  Val213
+     , ROUND(SUM(V214)/1,0) AS  Val214
+     , ROUND(SUM(V215)/1,0) AS  Val215
+     , ROUND(SUM(V216)/1,0) AS  Val216
+     , ROUND(SUM(V217)/1,0) AS  Val217
+     , ROUND(SUM(V218)/1,0) AS  Val218
+     , ROUND(SUM(V219)/1,0) AS  Val219
+     , ROUND(SUM(V220)/1,0) AS  Val220
+     , ROUND(SUM(V221)/1,0) AS  Val221
+     , ROUND(SUM(V222)/1,0) AS  Val222
+     , ROUND(SUM(V223)/1,0) AS  Val223
+     , ROUND(SUM(V224)/1,0) AS  Val224
+     , ROUND(SUM(V225)/1,0) AS  Val225
+     , ROUND(SUM(V226)/1,0) AS  Val226
+     , ROUND(SUM(V227)/1,0) AS  Val227
+     , ROUND(SUM(V228)/1,0) AS  Val228
+     , ROUND(SUM(V229)/1,0) AS  Val229
+     , ROUND(SUM(V230)/1,0) AS  Val230
+     , ROUND(SUM(V231)/1,0) AS  Val231
+     , ROUND(SUM(V232)/1,0) AS  Val232
+     , ROUND(SUM(V233)/1,0) AS  Val233
+     , ROUND(SUM(V234)/1,0) AS  Val234
+     , ROUND(SUM(V235)/1,0) AS  Val235
+     , ROUND(SUM(V236)/1,0) AS  Val236
+     , ROUND(SUM(V237)/1,0) AS  Val237
+     , ROUND(SUM(V238)/1,0) AS  Val238
+     , ROUND(SUM(V239)/1,0) AS  Val239
+     , ROUND(SUM(V240)/1,0) AS  Val240
+     , ROUND(SUM(V241)/1,0) AS  Val241
+     , ROUND(SUM(V242)/1,0) AS  Val242
+     , ROUND(SUM(V243)/1,0) AS  Val243
+     , ROUND(SUM(V244)/1,0) AS  Val244
+     , ROUND(SUM(V245)/1,0) AS  Val245
+     , ROUND(SUM(V246)/1,0) AS  Val246
+     , ROUND(SUM(V247)/1,0) AS  Val247
+     , ROUND(SUM(V248)/1,0) AS  Val248
+     , ROUND(SUM(V249)/1,0) AS  Val249
+     , ROUND(SUM(V250)/1,0) AS  Val250
+     , ROUND(SUM(V251)/1,0) AS  Val251
+     , ROUND(SUM(V252)/1,0) AS  Val252
+     , ROUND(SUM(V253)/1,0) AS  Val253
+     , ROUND(SUM(V254)/1,0) AS  Val254
+     , ROUND(SUM(V255)/1,0) AS  Val255
+     , ROUND(SUM(V256)/1,0) AS  Val256
+     , ROUND(SUM(V257)/1,0) AS  Val257
+     , ROUND(SUM(V258)/1,0) AS  Val258
+     , ROUND(SUM(V259)/1,0) AS  Val259
+     , ROUND(SUM(V260)/1,0) AS  Val260
+     , ROUND(SUM(V261)/1,0) AS  Val261
+     , ROUND(SUM(V262)/1,0) AS  Val262
+     , ROUND(SUM(V263)/1,0) AS  Val263
+     , ROUND(SUM(V264)/1,0) AS  Val264
+     , ROUND(SUM(V265)/1,0) AS  Val265
+     , ROUND(SUM(V266)/1,0) AS  Val266
+     , ROUND(SUM(V267)/1,0) AS  Val267
+     , ROUND(SUM(V268)/1,0) AS  Val268
+     , ROUND(SUM(V269)/1,0) AS  Val269
+     , ROUND(SUM(V270)/1,0) AS  Val270
+     , ROUND(SUM(V271)/1,0) AS  Val271
+     , ROUND(SUM(V272)/1,0) AS  Val272
+     , ROUND(SUM(V273)/1,0) AS  Val273
+     , ROUND(SUM(V274)/1,0) AS  Val274
+     , ROUND(SUM(V275)/1,0) AS  Val275
+     , TRUNC(SUM(SHP_QTY)/1,0) AS SHP_QTY 
+     , ROUND(DECODE(TO_CHAR(TO_DATE('20200716','YYYYMMDD'),'D'), 2, SUM(NVL(PLN.PLAN_W1,0)), 3, SUM(NVL(PLN.PLAN_W1,0)), SUM(NVL(PLN.PLAN_W2,0)) + SUM(NVL(SHP1.ASSY_MONDAY,0)))/1,0) AS PLAN_W1
+     , ROUND(SUM(NVL(SHP1.ASSY_WEEK,0))/1,0)
+     , ROUND((DECODE(TO_CHAR(TO_DATE('20200716','YYYYMMDD'),'D'), 2, SUM(NVL(PLN.PLAN_W1,0)), 3, SUM(NVL(PLN.PLAN_W1,0)), SUM(NVL(PLN.PLAN_W2,0)) + SUM(NVL(SHP1.ASSY_MONDAY,0)))) - SUM(NVL(SHP1.ASSY_WEEK,0))/1,0) AS LACK_WEEK
+  FROM MWIPMATDEF MAT 
+     , ( 
+        SELECT A.MAT_ID, MAX(B.EMC_1) AS EMC_1 
+             , SUM(QTY_1) AS TOTAL 
+             , MAX((SELECT ATTR_VALUE FROM MATRNAMSTS WHERE FACTORY = 'HMVA2' AND ATTR_TYPE = 'MAT_ETC' AND ATTR_NAME = DECODE(LOT_CMF_2, 'SE', 'SEC_VERSION', 'HX', 'HX_VERSION') AND ATTR_KEY = A.MAT_ID)) AS VERSION 
+             , SUM(DECODE(A.OPER, 'A0000', QTY_1,0)) V0
+             , SUM(DECODE(A.OPER, 'A0005', QTY_1,0)) V1
+             , SUM(DECODE(A.OPER, 'A000N', QTY_1,0)) V2
+             , SUM(DECODE(A.OPER, 'A0010', QTY_1,0)) V3
+             , SUM(DECODE(A.OPER, 'A0012', QTY_1,0)) V4
+             , SUM(DECODE(A.OPER, 'A0013', QTY_1,0)) V5
+             , SUM(DECODE(A.OPER, 'A0015', QTY_1,0)) V6
+             , SUM(DECODE(A.OPER, 'A0020', QTY_1,0)) V7
+             , SUM(DECODE(A.OPER, 'A0055', QTY_1,0)) V8
+             , SUM(DECODE(A.OPER, 'A0023', QTY_1,0)) V9
+             , SUM(DECODE(A.OPER, 'A0025', QTY_1,0)) V10
+             , SUM(DECODE(A.OPER, 'A0030', QTY_1,0)) V11
+             , SUM(DECODE(A.OPER, 'A0190', QTY_1,0)) V12
+             , SUM(DECODE(A.OPER, 'A0033', QTY_1,0)) V13
+             , SUM(DECODE(A.OPER, 'A0040', QTY_1,0)) V14
+             , SUM(DECODE(A.OPER, 'A0041', QTY_1,0)) V15
+             , SUM(DECODE(A.OPER, 'A0042', QTY_1,0)) V16
+             , SUM(DECODE(A.OPER, 'A0045', QTY_1,0)) V17
+             , SUM(DECODE(A.OPER, 'A0050', QTY_1,0)) V18
+             , SUM(DECODE(A.OPER, 'A0060', QTY_1,0)) V19
+             , SUM(DECODE(A.OPER, 'A0070', QTY_1,0)) V20
+             , SUM(DECODE(A.OPER, 'A0080', QTY_1,0)) V21
+             , SUM(DECODE(A.OPER, 'A0090', QTY_1,0)) V22
+             , SUM(DECODE(A.OPER, 'A0095', QTY_1,0)) V23
+             , SUM(DECODE(A.OPER, 'A0110', QTY_1,0)) V24
+             , SUM(DECODE(A.OPER, 'A0120', QTY_1,0)) V25
+             , SUM(DECODE(A.OPER, 'A0130', QTY_1,0)) V26
+             , SUM(DECODE(A.OPER, 'A0140', QTY_1,0)) V27
+             , SUM(DECODE(A.OPER, 'A0160', QTY_1,0)) V28
+             , SUM(DECODE(A.OPER, 'A0161', QTY_1,0)) V29
+             , SUM(DECODE(A.OPER, 'A0165', QTY_1,0)) V30
+             , SUM(DECODE(A.OPER, 'A0065', QTY_1,0)) V31
+             , SUM(DECODE(A.OPER, 'A0100', QTY_1,0)) V32
+             , SUM(DECODE(A.OPER, 'A0150', QTY_1,0)) V33
+             , SUM(DECODE(A.OPER, 'A0175', QTY_1,0)) V34
+             , SUM(DECODE(A.OPER, 'A0176', QTY_1,0)) V35
+             , SUM(DECODE(A.OPER, 'A0170', QTY_1,0)) V36
+             , SUM(DECODE(A.OPER, 'A0180', QTY_1,0)) V37
+             , SUM(DECODE(A.OPER, 'A0200', QTY_1,0)) V38
+             , SUM(DECODE(A.OPER, 'A0201', QTY_1,0)) V39
+             , SUM(DECODE(A.OPER, 'A0202', QTY_1,0)) V40
+             , SUM(DECODE(A.OPER, 'A0210', QTY_1,0)) V41
+             , SUM(DECODE(A.OPER, 'A0215', QTY_1,0)) V42
+             , SUM(DECODE(A.OPER, 'A0220', QTY_1,0)) V43
+             , SUM(DECODE(A.OPER, 'A0230', QTY_1,0)) V44
+             , SUM(DECODE(A.OPER, 'A0300', QTY_1,0)) V45
+             , SUM(DECODE(A.OPER, 'A0250', QTY_1,0)) V46
+             , SUM(DECODE(A.OPER, 'A0305', QTY_1,0)) V47
+             , SUM(DECODE(A.OPER, 'A0240', QTY_1,0)) V48
+             , SUM(DECODE(A.OPER, 'A0260', QTY_1,0)) V49
+             , SUM(DECODE(A.OPER, 'A0270', QTY_1,0)) V50
+             , SUM(DECODE(A.OPER, 'A0290', QTY_1,0)) V51
+             , SUM(DECODE(A.OPER, 'A0295', QTY_1,0)) V52
+             , SUM(DECODE(A.OPER, 'A0280', QTY_1,0)) V53
+             , SUM(DECODE(A.OPER, 'A0306', QTY_1,0)) V54
+             , SUM(DECODE(A.OPER, 'A0307', QTY_1,0)) V55
+             , SUM(DECODE(A.OPER, 'A0308', QTY_1,0)) V56
+             , SUM(DECODE(A.OPER, 'A0310', QTY_1,0)) V57
+             , SUM(DECODE(A.OPER, 'A0320', QTY_1,0)) V58
+             , SUM(DECODE(A.OPER, 'A0330', QTY_1,0)) V59
+             , SUM(DECODE(A.OPER, 'A1280', QTY_1,0)) V60
+             , SUM(DECODE(A.OPER, 'A0333', QTY_1,0)) V61
+             , SUM(DECODE(A.OPER, 'A0335', QTY_1,0)) V62
+             , SUM(DECODE(A.OPER, 'A0337', QTY_1,0)) V63
+             , SUM(DECODE(A.OPER, 'A0372', QTY_1,0)) V64
+             , SUM(DECODE(A.OPER, 'A0395', QTY_1,0)) V65
+             , SUM(DECODE(A.OPER, 'A0397', QTY_1,0)) V66
+             , SUM(DECODE(A.OPER, 'A0340', QTY_1,0)) V67
+             , SUM(DECODE(A.OPER, 'A0345', QTY_1,0)) V68
+             , SUM(DECODE(A.OPER, 'A0350', QTY_1,0)) V69
+             , SUM(DECODE(A.OPER, 'A0360', QTY_1,0)) V70
+             , SUM(DECODE(A.OPER, 'A0370', QTY_1,0)) V71
+             , SUM(DECODE(A.OPER, 'A0375', QTY_1,0)) V72
+             , SUM(DECODE(A.OPER, 'A0380', QTY_1,0)) V73
+             , SUM(DECODE(A.OPER, 'A0381', QTY_1,0)) V74
+             , SUM(DECODE(A.OPER, 'A0382', QTY_1,0)) V75
+             , SUM(DECODE(A.OPER, 'A0383', QTY_1,0)) V76
+             , SUM(DECODE(A.OPER, 'A0385', QTY_1,0)) V77
+             , SUM(DECODE(A.OPER, 'A0391', QTY_1,0)) V78
+             , SUM(DECODE(A.OPER, 'A0399', QTY_1,0)) V79
+             , SUM(DECODE(A.OPER, 'A0390', QTY_1,0)) V80
+             , SUM(DECODE(A.OPER, 'A0400', QTY_1,0)) V81
+             , SUM(DECODE(A.OPER, 'A0401', QTY_1,0)) V82
+             , SUM(DECODE(A.OPER, 'A0500', QTY_1,0)) V83
+             , SUM(DECODE(A.OPER, 'A0530', QTY_1,0)) V84
+             , SUM(DECODE(A.OPER, 'A0531', QTY_1,0)) V85
+             , SUM(DECODE(A.OPER, 'A0501', QTY_1,0)) V86
+             , SUM(DECODE(A.OPER, 'A0540', QTY_1,0)) V87
+             , SUM(DECODE(A.OPER, 'A0550', QTY_1,0)) V88
+             , SUM(DECODE(A.OPER, 'A0600', QTY_1,0)) V89
+             , SUM(DECODE(A.OPER, 'A0620', QTY_1,0)) V90
+             , SUM(DECODE(A.OPER, 'A0660', QTY_1,0)) V91
+             , SUM(DECODE(A.OPER, 'A0630', QTY_1,0)) V92
+             , SUM(DECODE(A.OPER, 'A0650', QTY_1,0)) V93
+             , SUM(DECODE(A.OPER, 'A0670', QTY_1,0)) V94
+             , SUM(DECODE(A.OPER, 'A0720', QTY_1,0)) V95
+             , SUM(DECODE(A.OPER, 'A0700', QTY_1,0)) V96
+             , SUM(DECODE(A.OPER, 'A0339', QTY_1,0)) V97
+             , SUM(DECODE(A.OPER, 'A0541', QTY_1,0)) V98
+             , SUM(DECODE(A.OPER, 'A0551', QTY_1,0)) V99
+             , SUM(DECODE(A.OPER, 'A0561', QTY_1,0)) V100
+             , SUM(DECODE(A.OPER, 'A0601', QTY_1,0)) V101
+             , SUM(DECODE(A.OPER, 'A0710', QTY_1,0)) V102
+             , SUM(DECODE(A.OPER, 'A0800', QTY_1,0)) V103
+             , SUM(DECODE(A.OPER, 'A0402', QTY_1,0)) V104
+             , SUM(DECODE(A.OPER, 'A0502', QTY_1,0)) V105
+             , SUM(DECODE(A.OPER, 'A0532', QTY_1,0)) V106
+             , SUM(DECODE(A.OPER, 'A0801', QTY_1,0)) V107
+             , SUM(DECODE(A.OPER, 'A0542', QTY_1,0)) V108
+             , SUM(DECODE(A.OPER, 'A0552', QTY_1,0)) V109
+             , SUM(DECODE(A.OPER, 'A0562', QTY_1,0)) V110
+             , SUM(DECODE(A.OPER, 'A0602', QTY_1,0)) V111
+             , SUM(DECODE(A.OPER, 'A0711', QTY_1,0)) V112
+             , SUM(DECODE(A.OPER, 'A0802', QTY_1,0)) V113
+             , SUM(DECODE(A.OPER, 'A0403', QTY_1,0)) V114
+             , SUM(DECODE(A.OPER, 'A0503', QTY_1,0)) V115
+             , SUM(DECODE(A.OPER, 'A0533', QTY_1,0)) V116
+             , SUM(DECODE(A.OPER, 'A0543', QTY_1,0)) V117
+             , SUM(DECODE(A.OPER, 'A0553', QTY_1,0)) V118
+             , SUM(DECODE(A.OPER, 'A0563', QTY_1,0)) V119
+             , SUM(DECODE(A.OPER, 'A0603', QTY_1,0)) V120
+             , SUM(DECODE(A.OPER, 'A0712', QTY_1,0)) V121
+             , SUM(DECODE(A.OPER, 'A0713', QTY_1,0)) V122
+             , SUM(DECODE(A.OPER, 'A0803', QTY_1,0)) V123
+             , SUM(DECODE(A.OPER, 'A0404', QTY_1,0)) V124
+             , SUM(DECODE(A.OPER, 'A0504', QTY_1,0)) V125
+             , SUM(DECODE(A.OPER, 'A0534', QTY_1,0)) V126
+             , SUM(DECODE(A.OPER, 'A0544', QTY_1,0)) V127
+             , SUM(DECODE(A.OPER, 'A0554', QTY_1,0)) V128
+             , SUM(DECODE(A.OPER, 'A0564', QTY_1,0)) V129
+             , SUM(DECODE(A.OPER, 'A0604', QTY_1,0)) V130
+             , SUM(DECODE(A.OPER, 'A0714', QTY_1,0)) V131
+             , SUM(DECODE(A.OPER, 'A0804', QTY_1,0)) V132
+             , SUM(DECODE(A.OPER, 'A0405', QTY_1,0)) V133
+             , SUM(DECODE(A.OPER, 'A0505', QTY_1,0)) V134
+             , SUM(DECODE(A.OPER, 'A0535', QTY_1,0)) V135
+             , SUM(DECODE(A.OPER, 'A0545', QTY_1,0)) V136
+             , SUM(DECODE(A.OPER, 'A0555', QTY_1,0)) V137
+             , SUM(DECODE(A.OPER, 'A0565', QTY_1,0)) V138
+             , SUM(DECODE(A.OPER, 'A0605', QTY_1,0)) V139
+             , SUM(DECODE(A.OPER, 'A0715', QTY_1,0)) V140
+             , SUM(DECODE(A.OPER, 'A0805', QTY_1,0)) V141
+             , SUM(DECODE(A.OPER, 'A0406', QTY_1,0)) V142
+             , SUM(DECODE(A.OPER, 'A0506', QTY_1,0)) V143
+             , SUM(DECODE(A.OPER, 'A0536', QTY_1,0)) V144
+             , SUM(DECODE(A.OPER, 'A0546', QTY_1,0)) V145
+             , SUM(DECODE(A.OPER, 'A0556', QTY_1,0)) V146
+             , SUM(DECODE(A.OPER, 'A0566', QTY_1,0)) V147
+             , SUM(DECODE(A.OPER, 'A0606', QTY_1,0)) V148
+             , SUM(DECODE(A.OPER, 'A0716', QTY_1,0)) V149
+             , SUM(DECODE(A.OPER, 'A0806', QTY_1,0)) V150
+             , SUM(DECODE(A.OPER, 'A0407', QTY_1,0)) V151
+             , SUM(DECODE(A.OPER, 'A0507', QTY_1,0)) V152
+             , SUM(DECODE(A.OPER, 'A0537', QTY_1,0)) V153
+             , SUM(DECODE(A.OPER, 'A0547', QTY_1,0)) V154
+             , SUM(DECODE(A.OPER, 'A0557', QTY_1,0)) V155
+             , SUM(DECODE(A.OPER, 'A0567', QTY_1,0)) V156
+             , SUM(DECODE(A.OPER, 'A0607', QTY_1,0)) V157
+             , SUM(DECODE(A.OPER, 'A0717', QTY_1,0)) V158
+             , SUM(DECODE(A.OPER, 'A0807', QTY_1,0)) V159
+             , SUM(DECODE(A.OPER, 'A0408', QTY_1,0)) V160
+             , SUM(DECODE(A.OPER, 'A0508', QTY_1,0)) V161
+             , SUM(DECODE(A.OPER, 'A0538', QTY_1,0)) V162
+             , SUM(DECODE(A.OPER, 'A0558', QTY_1,0)) V163
+             , SUM(DECODE(A.OPER, 'A0568', QTY_1,0)) V164
+             , SUM(DECODE(A.OPER, 'A0608', QTY_1,0)) V165
+             , SUM(DECODE(A.OPER, 'A0808', QTY_1,0)) V166
+             , SUM(DECODE(A.OPER, 'A0409', QTY_1,0)) V167
+             , SUM(DECODE(A.OPER, 'A0509', QTY_1,0)) V168
+             , SUM(DECODE(A.OPER, 'A0539', QTY_1,0)) V169
+             , SUM(DECODE(A.OPER, 'A0559', QTY_1,0)) V170
+             , SUM(DECODE(A.OPER, 'A0569', QTY_1,0)) V171
+             , SUM(DECODE(A.OPER, 'A0609', QTY_1,0)) V172
+             , SUM(DECODE(A.OPER, 'A0809', QTY_1,0)) V173
+             , SUM(DECODE(A.OPER, 'A080A', QTY_1,0)) V174
+             , SUM(DECODE(A.OPER, 'A0890', QTY_1,0)) V175
+             , SUM(DECODE(A.OPER, 'A0900', QTY_1,0)) V176
+             , SUM(DECODE(A.OPER, 'A0910', QTY_1,0)) V177
+             , SUM(DECODE(A.OPER, 'A0920', QTY_1,0)) V178
+             , SUM(DECODE(A.OPER, 'A0930', QTY_1,0)) V179
+             , SUM(DECODE(A.OPER, 'A0935', QTY_1,0)) V180
+             , SUM(DECODE(A.OPER, 'A040A', QTY_1,0)) V181
+             , SUM(DECODE(A.OPER, 'A0950', QTY_1,0)) V182
+             , SUM(DECODE(A.OPER, 'A053A', QTY_1,0)) V183
+             , SUM(DECODE(A.OPER, 'A0970', QTY_1,0)) V184
+             , SUM(DECODE(A.OPER, 'A0940', QTY_1,0)) V185
+             , SUM(DECODE(A.OPER, 'A0980', QTY_1,0)) V186
+             , SUM(DECODE(A.OPER, 'A1000', QTY_1,0)) V187
+             , SUM(DECODE(A.OPER, 'A055A', QTY_1,0)) V188
+             , SUM(DECODE(A.OPER, 'A060A', QTY_1,0)) V189
+             , SUM(DECODE(A.OPER, 'A1040', QTY_1,0)) V190
+             , SUM(DECODE(A.OPER, 'A1070', QTY_1,0)) V191
+             , SUM(DECODE(A.OPER, 'A1020', QTY_1,0)) V192
+             , SUM(DECODE(A.OPER, 'A1100', QTY_1,0)) V193
+             , SUM(DECODE(A.OPER, 'A1110', QTY_1,0)) V194
+             , SUM(DECODE(A.OPER, 'A1120', QTY_1,0)) V195
+             , SUM(DECODE(A.OPER, 'A1130', QTY_1,0)) V196
+             , SUM(DECODE(A.OPER, 'A1140', QTY_1,0)) V197
+             , SUM(DECODE(A.OPER, 'A1150', QTY_1,0)) V198
+             , SUM(DECODE(A.OPER, 'A1600', QTY_1,0)) V199
+             , SUM(DECODE(A.OPER, 'A1650', QTY_1,0)) V200
+             , SUM(DECODE(A.OPER, 'A1170', QTY_1,0)) V201
+             , SUM(DECODE(A.OPER, 'A1180', QTY_1,0)) V202
+             , SUM(DECODE(A.OPER, 'A1200', QTY_1,0)) V203
+             , SUM(DECODE(A.OPER, 'A1230', QTY_1,0)) V204
+             , SUM(DECODE(A.OPER, 'A1240', QTY_1,0)) V205
+             , SUM(DECODE(A.OPER, 'A1250', QTY_1,0)) V206
+             , SUM(DECODE(A.OPER, 'A1260', QTY_1,0)) V207
+             , SUM(DECODE(A.OPER, 'A1270', QTY_1,0)) V208
+             , SUM(DECODE(A.OPER, 'A1300', QTY_1,0)) V209
+             , SUM(DECODE(A.OPER, 'A1350', QTY_1,0)) V210
+             , SUM(DECODE(A.OPER, 'A1370', QTY_1,0)) V211
+             , SUM(DECODE(A.OPER, 'A1380', QTY_1,0)) V212
+             , SUM(DECODE(A.OPER, 'A1050', QTY_1,0)) V213
+             , SUM(DECODE(A.OPER, 'A1420', QTY_1,0)) V214
+             , SUM(DECODE(A.OPER, 'A1440', QTY_1,0)) V215
+             , SUM(DECODE(A.OPER, 'A1450', QTY_1,0)) V216
+             , SUM(DECODE(A.OPER, 'A1821', QTY_1,0)) V217
+             , SUM(DECODE(A.OPER, 'A1460', QTY_1,0)) V218
+             , SUM(DECODE(A.OPER, 'A1470', QTY_1,0)) V219
+             , SUM(DECODE(A.OPER, 'A1500', QTY_1,0)) V220
+             , SUM(DECODE(A.OPER, 'A1550', QTY_1,0)) V221
+             , SUM(DECODE(A.OPER, 'A1610', QTY_1,0)) V222
+             , SUM(DECODE(A.OPER, 'A1560', QTY_1,0)) V223
+             , SUM(DECODE(A.OPER, 'A1720', QTY_1,0)) V224
+             , SUM(DECODE(A.OPER, 'A1730', QTY_1,0)) V225
+             , SUM(DECODE(A.OPER, 'A1740', QTY_1,0)) V226
+             , SUM(DECODE(A.OPER, 'A1750', QTY_1,0)) V227
+             , SUM(DECODE(A.OPER, 'A1755', QTY_1,0)) V228
+             , SUM(DECODE(A.OPER, 'A1760', QTY_1,0)) V229
+             , SUM(DECODE(A.OPER, 'A1765', QTY_1,0)) V230
+             , SUM(DECODE(A.OPER, 'A1766', QTY_1,0)) V231
+             , SUM(DECODE(A.OPER, 'A1763', QTY_1,0)) V232
+             , SUM(DECODE(A.OPER, 'A1770', QTY_1,0)) V233
+             , SUM(DECODE(A.OPER, 'A1780', QTY_1,0)) V234
+             , SUM(DECODE(A.OPER, 'A1790', QTY_1,0)) V235
+             , SUM(DECODE(A.OPER, 'A1795', QTY_1,0)) V236
+             , SUM(DECODE(A.OPER, 'A1860', QTY_1,0)) V237
+             , SUM(DECODE(A.OPER, 'A1850', QTY_1,0)) V238
+             , SUM(DECODE(A.OPER, 'A1390', QTY_1,0)) V239
+             , SUM(DECODE(A.OPER, 'A1800', QTY_1,0)) V240
+             , SUM(DECODE(A.OPER, 'A1805', QTY_1,0)) V241
+             , SUM(DECODE(A.OPER, 'A1810', QTY_1,0)) V242
+             , SUM(DECODE(A.OPER, 'A1811', QTY_1,0)) V243
+             , SUM(DECODE(A.OPER, 'A1812', QTY_1,0)) V244
+             , SUM(DECODE(A.OPER, 'A1816', QTY_1,0)) V245
+             , SUM(DECODE(A.OPER, 'A1820', QTY_1,0)) V246
+             , SUM(DECODE(A.OPER, 'A1825', QTY_1,0)) V247
+             , SUM(DECODE(A.OPER, 'A1826', QTY_1,0)) V248
+             , SUM(DECODE(A.OPER, 'A1920', QTY_1,0)) V249
+             , SUM(DECODE(A.OPER, 'A1960', QTY_1,0)) V250
+             , SUM(DECODE(A.OPER, 'A1815', QTY_1,0)) V251
+             , SUM(DECODE(A.OPER, 'A1830', QTY_1,0)) V252
+             , SUM(DECODE(A.OPER, 'A1710', QTY_1,0)) V253
+             , SUM(DECODE(A.OPER, 'A1840', QTY_1,0)) V254
+             , SUM(DECODE(A.OPER, 'A1900', QTY_1,0)) V255
+             , SUM(DECODE(A.OPER, 'A1910', QTY_1,0)) V256
+             , SUM(DECODE(A.OPER, 'A1950', QTY_1,0)) V257
+             , SUM(DECODE(A.OPER, 'A2000', QTY_1,0)) V258
+             , SUM(DECODE(A.OPER, 'A2010', QTY_1,0)) V259
+             , SUM(DECODE(A.OPER, 'A2020', QTY_1,0)) V260
+             , SUM(DECODE(A.OPER, 'A2025', QTY_1,0)) V261
+             , SUM(DECODE(A.OPER, 'A1819', QTY_1,0)) V262
+             , SUM(DECODE(A.OPER, 'A2030', QTY_1,0)) V263
+             , SUM(DECODE(A.OPER, 'A2040', QTY_1,0)) V264
+             , SUM(DECODE(A.OPER, 'A2041', QTY_1,0)) V265
+             , SUM(DECODE(A.OPER, 'A2042', QTY_1,0)) V266
+             , SUM(DECODE(A.OPER, 'A2070', QTY_1,0)) V267
+             , SUM(DECODE(A.OPER, 'A2050', QTY_1,0)) V268
+             , SUM(DECODE(A.OPER, 'A2150', QTY_1,0)) V269
+             , SUM(DECODE(A.OPER, 'A2200', QTY_1,0)) V270
+             , SUM(DECODE(A.OPER, 'A2100', QTY_1,0)) V271
+             , SUM(DECODE(A.OPER, 'A2300', QTY_1,0)) V272
+             , SUM(DECODE(A.OPER, 'A2350', QTY_1,0)) V273
+             , SUM(DECODE(A.OPER, 'AZ009', QTY_1,0)) V274
+             , SUM(DECODE(A.OPER, 'AZ010', QTY_1,0)) V275
+          FROM RWIPLOTSTS A, CLOTCRDDAT@RPTTOMES B 
+         WHERE 1=1 
+           AND A.FACTORY = B.FACTORY(+) 
+           AND A.MAT_ID = B.MAT_ID(+) 
+           AND A.LOT_DEL_FLAG = ' ' 
+           AND A.LOT_TYPE = 'W' 
+           AND A.MAT_ID LIKE '%' 
+           AND A.FACTORY = 'HMVA2' 
+           AND A.OPER BETWEEN 'A0000' AND 'AZ010' 
+         GROUP BY A.MAT_ID 
+       ) WIP 
+     , ( 
+        SELECT MAT_ID 
+             , SUM(S1_FAC_OUT_QTY_1+S2_FAC_OUT_QTY_1+S3_FAC_OUT_QTY_1) AS SHP_QTY  
+          FROM RSUMFACMOV
+         WHERE CM_KEY_1 = 'HMVA2' 
+           AND MAT_ID LIKE '%' 
+           AND WORK_DATE = '20200716'
+           AND FACTORY NOT IN ('RETURN')
+           AND LOT_TYPE = 'W'
+         GROUP BY MAT_ID 
+       ) SHP 
+     , ( 
+        SELECT MAT_ID 
+             , SUM(DECODE(WORK_DATE, '20200713', NVL(S1_FAC_OUT_QTY_1 + S2_FAC_OUT_QTY_1 + S3_FAC_OUT_QTY_1 + S4_FAC_OUT_QTY_1, 0), 0)) AS ASSY_MONDAY  
+             , SUM(NVL(S1_FAC_OUT_QTY_1 + S2_FAC_OUT_QTY_1 + S3_FAC_OUT_QTY_1 + S4_FAC_OUT_QTY_1, 0)) AS ASSY_WEEK 
+          FROM RSUMFACMOV 
+         WHERE CM_KEY_1 = 'HMVA2' 
+           AND LOT_TYPE = 'W'
+           AND CM_KEY_2 = 'PROD' 
+           AND CM_KEY_3 LIKE 'P%' 
+           AND MAT_ID LIKE 'SES%' 
+           AND WORK_DATE BETWEEN '20200713' AND '20200719'
+         GROUP BY MAT_ID 
+       ) SHP1 
+     , ( 
+        SELECT MAT_ID 
+             , SUM(PLAN_QTY) PLAN_W1 
+             , SUM(DECODE(PLAN_DAY, '20200713', 0, PLAN_QTY)) AS PLAN_W2 
+          FROM ( 
+                SELECT * 
+                  FROM CWIPPLNDAY 
+                 WHERE 1=1 
+                   AND FACTORY = 'HMVA2' 
+                   AND PLAN_DAY BETWEEN '20200713' AND '20200719'
+                   AND IN_OUT_FLAG = 'OUT'
+                   AND CLASS = 'ASSY'
+               ) B
+         GROUP BY MAT_ID 
+       ) PLN 
+ WHERE 1=1 
+   AND MAT.MAT_ID = WIP.MAT_ID(+) 
+   AND MAT.MAT_ID = SHP.MAT_ID(+) 
+   AND MAT.MAT_ID = SHP1.MAT_ID(+) 
+   AND MAT.MAT_ID = PLN.MAT_ID(+) 
+   AND MAT.FACTORY = 'HMVA2' 
+   AND MAT.MAT_ID LIKE '%' 
+ GROUP BY MAT.MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT.MAT_CMF_10,  ' ', MAT.MAT_ID,  ' ',  ' '
+HAVING (NVL(SUM(TOTAL),0) + NVL(SUM(SHP_QTY),0)  + NVL(SUM(ASSY_WEEK),0) + NVL(SUM(PLAN_W1),0)) > 0     
+ ORDER BY MAT.MAT_GRP_1,  ' ',  ' ',  ' ',  ' ',  ' ',  ' ',  ' ', MAT.MAT_CMF_10,  ' ', MAT.MAT_ID,  ' ',  ' ' 
+-------------------------------------------------------------

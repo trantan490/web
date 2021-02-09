@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Insert" queryid="INS_RWEBUSRLOG" commandtype="Text" description="Insert to RWEBUSRLOG Table(웹통계)" commandtimeout="60">
+        <commandtext><![CDATA[INSERT INTO RWEBUSRLOG(LOG_FLAG, USER_ID, FUNC_NAME,USER_GROUPEHd, START_TIME, UPDATE_TIME)
+VALUES (:p_LOG_FLAG, :p_USER_ID, :p_FUNC_NAME, :p_USER_GRUOP, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="5" value="C">:p_LOG_FLAG</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="WEBADMIN">:p_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="B">:p_FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN">:p_USER_GRUOP</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="B">:p_FUNC_GROUP</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UPD_RWEBUSRLOG" commandtype="Text" description="Update RWEBUSRLOG Table(웹통계)" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBUSRLOG
+   SET START_TIME = :p_FROM_TIME, END_TIME = :p_TO_TIME,
+       TIME_INTERVAL = :p_INTERVAL
+ WHERE LOG_FLAG= :p_LOG_FLAG
+   AND USER_ID= :p_USER_ID
+   AND FUNC_NAME= :p_FUNC_NAME
+   AND UPDATE_TIME= :p_UPDATE_TIME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="5" value="C">:p_LOG_FLAG</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="WEBADMIN">:p_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="C">:p_FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="17" value="20070101201111">:p_UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="17" value="20070101201111">:p_FROM_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="17" value="20070101201109">:p_TO_TIME</param>
+            <param direction="Input" dbtype="Number" size="12" value="2">:p_INTERVAL</param>
+        </parameters>
+    </query>
+    <query statement="Delete" queryid="DEL_RWEBUSRLOG" commandtype="Text" description="Delete RWEBUSRLOG Table(웹통계)" commandtimeout="60">
+        <commandtext><![CDATA[DELETE FROM RWEBUSRLOG
+ WHERE LOG_FLAG = :p_LOG_FLAG
+   AND USER_ID= :p_USER_ID
+   AND FUNC_NAME= :p_FUNC_NAME
+   AND UPDATE_TIME= :p_UPDATE_TIME
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="5" value="C">:p_LOG_FLAG</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="WEBADMIN">:p_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="C">:p_FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="17" value="20070101201111">:p_UPDATE_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_0C_FACT.USER.FUNC.DATE" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBUSRLOG
+ WHERE FACTORY= :p_FACTORY
+   AND USER_ID= :p_USER_ID
+   AND FUNC_NAME= :p_FUNC_NAME
+   AND UPDATE_TIME= :p_UPDATE_TIME
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:p_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:p_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="C">:p_FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="17" value="20070101201111">:p_UPDATE_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_9C_WEBLOG" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT B.SEC_GRP_ID, B.USER_ID, B.USER_DESC, A.START_TIME, A.END_TIME, C.FUNC_NAME, C.FUNC_DESC,
+      AVG(A.TIME_INTERVAL), COUNT(A.USER_ID)
+  FROM RWEBUSRLOG A, RWEBUSRDEF B, RWEBFUNDEF C
+ WHERE A.FACTORY= :p_FACTORY
+   AND A.FACTORY = B.FACTORY
+   AND A.USER_ID = B.USER_ID
+   AND A.FUNC_NAME = C.FUNC_NAME
+   AND A.START_TIME BETWEEN :p_FROM_TIME+'000000' AND :p_TO_TIME+'235959'
+ GROUP BY B.SEC_GRP_ID, B.USER_ID, B.USER_DESC, A.START_TIME, A.END_TIME, C.FUNC_NAME, C.FUNC_DESC
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:p_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="20070101">:p_FROM_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="20071231">:p_TO_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_4C_FACT.USER.FUNC.DATE" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT USER_ID, FUNC_NAME, SUM(TIME_INTERVAL), COUNT(*)
+  FROM RWEBUSRLOG
+ WHERE FACTORY= :p_FACTORY
+   AND START_TIME BETWEEN :p_FROM_TIME+'000000' AND :p_TO_TIME+'235959'
+ GROUP BY USER_ID,FUNC_NAME
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:p_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="17" value="20070101">:p_FROM_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="17" value="20071231">:p_TO_TIME</param>
+        </parameters>
+    </query>
+</queryxml>

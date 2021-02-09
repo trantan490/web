@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="STD1601" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT WM.MAT_ID, WM.MAT_VER, MD.MAT_DESC,
+NVL(SUM(WM.S1_LOSS_QTY_1+WM.S2_LOSS_QTY_1+WM.S3_LOSS_QTY_1+WM.S4_LOSS_QTY_1),0) AS LOSS_QTY
+,NVL(SUM(WM.S1_END_QTY_1+WM.S2_END_QTY_1+WM.S3_END_QTY_1+WM.S4_END_QTY_1),0) AS END_QTY
+FROM RSUMWIPMOV WM, MWIPMATDEF MD
+WHERE WM.FACTORY = MD.FACTORY
+AND WM.MAT_ID=MD.MAT_ID
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1602" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT WM.OPER, OD.OPER_DESC,
+NVL(SUM(WM.S1_LOSS_QTY_1+WM.S2_LOSS_QTY_1+WM.S3_LOSS_QTY_1+WM.S4_LOSS_QTY_1),0) AS LOSS_QTY
+,NVL(SUM(WM.S1_END_QTY_1+WM.S2_END_QTY_1+WM.S3_END_QTY_1+WM.S4_END_QTY_1),0) AS END_QTY
+FROM RSUMWIPMOV WM, MWIPOPRDEF OD 
+WHERE WM.FACTORY = OD.FACTORY AND WM.OPER=OD.OPER
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1604" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT LL.LOSS_CODE, TD.DATA_1, LL.LOSS_QTY
+FROM
+(SELECT FACTORY, LOSS_CODE, SUM(LOSS_QTY) AS LOSS_QTY
+FROM RWIPLOTLSM
+WHERE FACTORY=:FACTORY
+AND QTY_FLAG='1'
+AND TRAN_TIME BETWEEN :FROM_TRAN_TIME AND :TO_TRAN_TIME
+AND HIST_DEL_FLAG=' '
+GROUP BY FACTORY, LOSS_CODE) LL LEFT OUTER JOIN MGCMTBLDAT TD
+ON LL.FACTORY = TD.FACTORY 
+AND LL.LOSS_CODE = TD.KEY_1
+AND TD.TABLE_NAME='LOSS_CODE'
+ORDER BY LL.LOSS_QTY DESC]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SIL300">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="20030101000000">:FROM_TRAN_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="20080118235959">:TO_TRAN_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="STD1604_1" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT  LOT_ID, HIST_SEQ, QTY_FLAG, TRAN_TIME,
+        HIST_DEL_FLAG, FACTORY, MAT_ID, FLOW, OPER, RES_ID, SEQ_NUM, LOSS_CODE, LOSS_QTY
+FROM    RWIPLOTLSM
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1605" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT LR.RWK_CODE, NVL(TD.DATA_1,' ') AS RWK_CODE_DESC , LR.RECORD_COUNT
+FROM
+(SELECT FACTORY, RWK_CODE, COUNT(*) AS RECORD_COUNT
+FROM RWIPLOTRWK
+WHERE FACTORY=:FACTORY
+AND TRAN_TIME BETWEEN :FROM_TRAN_TIME AND :TO_TRAN_TIME
+AND HIST_DEL_FLAG=' '
+GROUP BY FACTORY, RWK_CODE) LR LEFT OUTER  JOIN MGCMTBLDAT TD
+ON LR.FACTORY = TD.FACTORY 
+AND LR.RWK_CODE = TD.KEY_1
+AND TD.TABLE_NAME='RWK_CODE'
+ORDER BY LR.RECORD_COUNT DESC]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SIL300">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="20030101000000">:FROM_TRAN_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="20080118235959">:TO_TRAN_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="STD1605_1" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT  LOT_ID, HIST_SEQ, TRAN_TIME,
+        HIST_DEL_FLAG,FACTORY, MAT_ID, FLOW, OPER, RES_ID, CAUSE_FLOW, CAUSE_OPER, CAUSE_RES_ID, QTY_1, QTY_2, QTY_3,
+        RWK_CODE, RWK_COUNT, RWK_RET_FLOW, RWK_RET_OPER, RWK_END_FLOW, RWK_END_OPER, RWK_RET_CLEAR_FLAG, RWK_USER_ID,
+        RWK_COMMENT, USER_ID_1, USER_TIME_1, USER_COMMENT_1, USER_ID_2, USER_TIME_2, USER_COMMENT_2, USER_ID_3,
+        USER_TIME_3, USER_COMMENT_3
+FROM RWIPLOTRWK 
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1606" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT LH.HOLD_CODE, NVL(TD.DATA_1,' ') AS HOLD_CODE_DESC , LH.RECORD_COUNT
+FROM
+(SELECT FACTORY, HOLD_CODE, COUNT(*) AS RECORD_COUNT
+FROM RWIPLOTHLD
+WHERE FACTORY=:FACTORY
+AND HOLD_TRAN_TIME BETWEEN :FROM_HOLD_TRAN_TIME AND :TO_HOLD_TRAN_TIME
+AND HIST_DEL_FLAG=' '
+GROUP BY FACTORY, HOLD_CODE) LH LEFT OUTER  JOIN MGCMTBLDAT TD
+ON LH.FACTORY = TD.FACTORY
+AND LH.HOLD_CODE = TD.KEY_1
+AND TD.TABLE_NAME='HOLD_CODE'
+ORDER BY LH.RECORD_COUNT DESC]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SIL300">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="20030101000000">:FROM_HOLD_TRAN_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="20080118235959">:TO_HOLD_TRAN_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="STD1606_1" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT 
+LOT_ID, HIST_SEQ, HOLD_TRAN_TIME, RELEASE_TRAN_TIME,
+HIST_DEL_FLAG, RELEASE_HIST_SEQ, FACTORY, MAT_ID,
+FLOW, OPER, RES_ID, CAUSE_FLOW, CAUSE_OPER, CAUSE_RES_ID,
+QTY_1, QTY_2, QTY_3, CMF_1, CMF_2, CMF_3, CMF_4, CMF_5,
+CMF_6, CMF_7, CMF_8, CMF_9, CMF_10, HOLD_CODE, HOLD_USER_ID,
+HOLD_COMMENT, RELEASE_CODE, RELEASE_USER_ID, RELEASE_COMMENT, USER_ID_1,
+USER_TIME_1, USER_COMMENT_1, USER_ID_2, USER_TIME_2, USER_COMMENT_2, 
+USER_ID_3, USER_TIME_3, USER_COMMENT_3
+FROM RWIPLOTHLD
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1607" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT LT.MAT_ID AS MATERIAL, LT.MAT_VER, LT.FLOW, LT.OPER, LT.LOT_ID,
+       LT.FAC_IN_TIME AS FACTORY_IN_TIME, LT.OPER_IN_TIME,
+       LTRIM (TO_CHAR (CT.FAC_DURATION, '99990.0000')) as FAC_DURATION,
+       LTRIM (TO_CHAR (CT.OPER_DURATION, '99990.0000')) as OPER_DURATION,
+       LTRIM (TO_CHAR (CT.EXP_CYCLE_TIME, '99990.0000')) as EXP_CYCLE_TIME,
+       DECODE (CT.EXP_CYCLE_TIME,
+               0, '0',
+               LTRIM (TO_CHAR (CT.FAC_DURATION / CT.EXP_CYCLE_TIME,
+                               '990.0000'
+                              )
+                     )
+              ) AS RATE,
+       SUBSTR(LT.SCH_DUE_TIME, 1, 8) AS SCH_DUE_TIME
+  FROM (SELECT LOT_ID, FACTORY, MAT_ID, MAT_VER,
+                 (SYSDATE - TO_DATE (FAC_IN_TIME, 'YYYYMMDDHH24MISS')
+                 )
+               * 24 AS FAC_DURATION,
+               (SYSDATE - TO_DATE (OPER_IN_TIME, 'YYYYMMDDHH24MISS')
+                 )
+               * 24 AS OPER_DURATION,
+                 (  TO_DATE (SCH_DUE_TIME, 'YYYYMMDDHH24MISS')
+                  - TO_DATE (FAC_IN_TIME, 'YYYYMMDDHH24MISS')
+                 )
+               * 24 AS EXP_CYCLE_TIME,
+                 (SYSDATE - TO_DATE (FAC_IN_TIME, 'YYYYMMDDHH24MISS')
+                 )
+               / (  TO_DATE (SCH_DUE_TIME, 'YYYYMMDDHH24MISS')
+                  - TO_DATE (FAC_IN_TIME, 'YYYYMMDDHH24MISS')
+                 ) AS RATE
+          FROM RWIPLOTSTS
+         WHERE SCH_DUE_TIME <> ' ') CT,
+       RWIPLOTSTS LT,
+       MWIPMATDEF MM
+ WHERE LT.LOT_ID = CT.LOT_ID
+   AND LT.FACTORY = MM.FACTORY
+   AND LT.FACTORY = CT.FACTORY
+   AND LT.MAT_ID = MM.MAT_ID
+   AND LT.MAT_ID = CT.MAT_ID
+   AND LT.MAT_VER = MM.MAT_VER
+   AND LT.MAT_VER = CT.MAT_VER
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1608" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT A.LOT_ID,A.MAT_ID,A.OLD_OPER,A.TRAN_CODE,A.TRAN_TIME,A.OLD_OPER_IN_TIME,A.QTY_1,A.LOT_CMF_1 AS LINE_YIELD, A.LOT_CMF_2 AS SECTION_YIELD, A.LOT_CMF_3 AS WORKCELL_YIELD,
+       B.OPER_CMF_6 AS LINE ,B.OPER_CMF_7 AS SECTION,B.OPER_CMF_8 AS WORKCELL
+FROM RWIPLOTHIS A, MWIPOPRDEF B
+WHERE A.OLD_FACTORY = B.FACTORY
+  AND A.HIST_DEL_FLAG=' ' 
+  AND A.OPER <> A.OLD_OPER
+  AND A.OLD_OPER = B.OPER
+??
+]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1608_1" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT C.OPER,C.LOT_ID,C.SUBLOT_ID,C.GRADE,C.LOSS_CODE
+FROM RWIPLOTHIS A, MWIPSLTLOS C
+WHERE A.OLD_FACTORY = C.FACTORY
+  AND A.LOT_ID = C.LOT_ID
+  AND A.OLD_OPER=C.OPER
+  AND A.OPER <> A.OLD_OPER
+  AND A.HIST_DEL_FLAG=' ' 
+  AND C.HIST_DEL_FLAG=' '
+  AND (C.GRADE='S' OR C.GRADE='F' OR C.GRADE='R')
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1609" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT LOT_ID, MAT_ID, TRAN_CODE, OLD_OPER, OPER, QTY_1, OLD_FAC_IN_TIME,
+       OLD_OPER_IN_TIME, 
+ --START_TIME, 
+TRAN_TIME,
+--       DECODE (START_TIME,
+--               ' ', ' ',
+ --              TRIM(TO_CHAR(((  TO_DATE (START_TIME, 'YYYYMMDDHH24MISS')
+ --                - TO_DATE (OLD_OPER_IN_TIME, 'YYYYMMDDHH24MISS')
+ --               )
+  --             ), '99990.0000'))
+  --            ) AS QUEUE_TIME,
+  --     DECODE (START_TIME,
+   --            ' ', ' ',
+    --           TRIM(TO_CHAR(((  TO_DATE (TRAN_TIME, 'YYYYMMDDHH24MISS')
+   --              - TO_DATE (START_TIME, 'YYYYMMDDHH24MISS')
+   --             )
+   --            ), '99990.0000'))
+   --           ) AS PROCESS_TIME,
+         TRIM(TO_CHAR((  TO_DATE (TRAN_TIME, 'YYYYMMDDHH24MISS')
+          - TO_DATE (OLD_OPER_IN_TIME, 'YYYYMMDDHH24MISS')
+         )
+       * 24, '99990.0000')) AS OPER_CYCLE_TIME,
+         TRIM(TO_CHAR((  TO_DATE (TRAN_TIME, 'YYYYMMDDHH24MISS')
+          - TO_DATE (OLD_FAC_IN_TIME, 'YYYYMMDDHH24MISS')
+         )
+       * 24, '99990.0000')) AS CUM_CYCLE_TIME
+  FROM RWIPLOTHIS
+ WHERE HIST_DEL_FLAG = ' ' AND OPER <> OLD_OPER
+??]]></commandtext>
+    </query>
+</queryxml>

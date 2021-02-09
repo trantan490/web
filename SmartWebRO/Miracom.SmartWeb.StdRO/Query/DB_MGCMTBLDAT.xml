@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_FACTORY.TABLE_NAME" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MGCMTBLDAT 
+WHERE  FACTORY = :FACTORY AND TABLE_NAME = :TABLE_NAME
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="FLEXWIP_COLUMN">:TABLE_NAME</param>
+        </parameters>
+    </query>
+</queryxml>

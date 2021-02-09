@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+
+	<!-- 2013-09-26-정비재 : 해당 Table의 데이터를 SELECT하는 QUERY문.	-->
+	<query statement="Select" queryid="SELECT_CWIPPLNWEK_N_1" commandtype="Text" description="Select CWIPPLNWEK_N Table" commandtimeout="60">
+        <commandtext>
+			<![CDATA[SELECT FACTORY, PLAN_YEAR, VERSION, CUSTOMER, GUBUN, PLAN_WEEK, MAT_ID, BASE_MAT_ID
+						  , D0_QTY, D1_QTY, D2_QTY, D3_QTY, D4_QTY, D5_QTY, D6_QTY
+						  , D7_QTY, D8_QTY, D9_QTY, D10_QTY, D11_QTY, D12_QTY, D13_QTY
+						  , W1_QTY, W2_QTY, W3_QTY, W4_QTY, W5_QTY, W6_QTY, W7_QTY
+						  , W8_QTY, W9_QTY, W10_QTY, W11_QTY, W12_QTY
+						  , RESV_FIELD_1, RESV_FIELD_2, RESV_FIELD_3, RESV_FIELD_4, RESV_FIELD_5
+						  , RESV_FIELD_6, RESV_FIELD_7, RESV_FIELD_8, RESV_FIELD_9, RESV_FIELD_10
+						  , RESV_FLAG_1, RESV_FLAG_2, RESV_FLAG_3, RESV_FLAG_4, RESV_FLAG_5
+						  , CREATE_TIME, UPDATE_TIME
+					   FROM CWIPPLNWEK_N@RPTTOMES
+					  WHERE FACTORY = :FACTORY
+						AND PLAN_WEEK = :PLAN_WEEK
+						AND VERSION = :VERSION
+					  ORDER BY FACTORY ASC, PLAN_WEEK ASC, VERSION ASC, CUSTOMER ASC, MAT_ID ASC]]>
+		</commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:PLAN_WEEK</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:VERSION</param>
+        </parameters>
+    </query>
+
+	<!-- 2013-09-26-정비재 : 해당 Table의 데이터를 INSERT하는 QUERY문.	-->
+    <query statement="Insert" queryid="INSERT_CWIPPLNWEK_N_1" commandtype="Text" description="Insert CWIPPLNWEK_N Table" commandtimeout="60">
+        <commandtext>
+			<![CDATA[INSERT INTO CWIPPLNWEK_N@RPTTOMES(
+							 FACTORY, PLAN_YEAR, VERSION, CUSTOMER, GUBUN, PLAN_WEEK, MAT_ID, BASE_MAT_ID
+						   , D0_QTY, D1_QTY, D2_QTY, D3_QTY, D4_QTY, D5_QTY, D6_QTY
+						   , D7_QTY, D8_QTY, D9_QTY, D10_QTY, D11_QTY, D12_QTY, D13_QTY
+						   , W1_QTY, W2_QTY, W3_QTY, W4_QTY, W5_QTY, W6_QTY, W7_QTY
+						   , W8_QTY, W9_QTY, W10_QTY, W11_QTY, W12_QTY
+						   , RESV_FIELD_1, RESV_FIELD_2, RESV_FIELD_3, RESV_FIELD_4, RESV_FIELD_5
+						   , RESV_FIELD_6, RESV_FIELD_7, RESV_FIELD_8, RESV_FIELD_9, RESV_FIELD_10
+						   , RESV_FLAG_1, RESV_FLAG_2, RESV_FLAG_3, RESV_FLAG_4, RESV_FLAG_5
+						   , CREATE_TIME, UPDATE_TIME)
+					VALUES (:FACTORY, :PLAN_YEAR, :VERSION, :CUSTOMER, :GUBUN, :PLAN_WEEK, :MAT_ID, :BASE_MAT_ID
+						  , :D0_QTY, :D1_QTY, :D2_QTY, :D3_QTY, :D4_QTY, :D5_QTY, :D6_QTY
+						  , :D7_QTY, :D8_QTY, :D9_QTY, :D10_QTY, :D11_QTY, :D12_QTY, :D13_QTY
+						  , :W1_QTY, :W2_QTY, :W3_QTY, :W4_QTY, :W5_QTY, :W6_QTY, :W7_QTY
+						  , :W8_QTY, :W9_QTY, :W10_QTY, :W11_QTY, :W12_QTY
+						  , :RESV_FIELD_1, :RESV_FIELD_2, :RESV_FIELD_3, :RESV_FIELD_4, :RESV_FIELD_5
+						  , :RESV_FIELD_6, :RESV_FIELD_7, :RESV_FIELD_8, :RESV_FIELD_9, :RESV_FIELD_10
+						  , :RESV_FLAG_1, :RESV_FLAG_2, :RESV_FLAG_3, :RESV_FLAG_4, :RESV_FLAG_5
+						  , :CREATE_TIME, :UPDATE_TIME)]]>
+		</commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+			<param direction="Input" dbtype="VarChar" size="4" value="B">:PLAN_YEAR</param>
+			<param direction="Input" dbtype="VarChar" size="3" value="C">:VERSION</param>
+			<param direction="Input" dbtype="VarChar" size="2" value="D">:CUSTOMER</param>
+			<param direction="Input" dbtype="Char" size="1" value="E">:GUBUN</param>
+			<param direction="Input" dbtype="VarChar" size="6" value="F">:PLAN_WEEK</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="G">:MAT_ID</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="H">:BASE_MAT_ID</param>
+			<param direction="Input" dbtype="Int32" size="10" value="I">:D0_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="J">:D1_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="K">:D2_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="L">:D3_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="M">:D4_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="N">:D5_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="O">:D6_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="P">:D7_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="Q">:D8_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="R">:D9_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="S">:D10_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="T">:D11_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="U">:D12_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="V">:D13_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="W">:W1_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="X">:W2_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="Y">:W3_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="Z">:W4_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="A1">:W5_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="B1">:W6_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="C1">:W7_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="D1">:W8_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="E1">:W9_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="F1">:W10_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="G1">:W11_QTY</param>
+			<param direction="Input" dbtype="Int32" size="10" value="H1">:W12_QTY</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="I1">:RESV_FIELD_1</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="J1">:RESV_FIELD_2</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="K1">:RESV_FIELD_3</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="L1">:RESV_FIELD_4</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="M1">:RESV_FIELD_5</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="N1">:RESV_FIELD_6</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="O1">:RESV_FIELD_7</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="P1">:RESV_FIELD_8</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="Q1">:RESV_FIELD_9</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="R1">:RESV_FIELD_10</param>
+			<param direction="Input" dbtype="Char" size="1" value="S1">:RESV_FLAG_1</param>
+			<param direction="Input" dbtype="Char" size="1" value="T1">:RESV_FLAG_2</param>
+			<param direction="Input" dbtype="Char" size="1" value="U1">:RESV_FLAG_3</param>
+			<param direction="Input" dbtype="Char" size="1" value="V1">:RESV_FLAG_4</param>
+			<param direction="Input" dbtype="Char" size="1" value="W1">:RESV_FLAG_5</param>
+			<param direction="Input" dbtype="VarChar" size="14" value="X1">:CREATE_TIME</param>
+			<param direction="Input" dbtype="VarChar" size="14" value="Y1">:UPDATE_TIME</param>
+        </parameters>
+    </query>
+
+	<!-- 2013-09-26-정비재 : 해당 Table의 데이터를 DELETE하는 QUERY문.	-->
+	<query statement="Delete" queryid="DELETE_CWIPPLNWEK_N_1" commandtype="Text" description="Delete CWIPPLNWEK_N Table" commandtimeout="60">
+		<commandtext>
+			<![CDATA[DELETE 
+					   FROM CWIPPLNWEK_N@RPTTOMES
+					  WHERE FACTORY = :FACTORY
+					    AND PLAN_YEAR = :PLAN_YEAR
+						AND VERSION = :VERSION
+						AND CUSTOMER = :CUSTOMER
+						AND GUBUN = :GUBUN
+						AND PLAN_WEEK = :PLAN_WEEK
+						AND MAT_ID = :MAT_ID]]>
+		</commandtext>
+		<parameters>
+			<param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+			<param direction="Input" dbtype="VarChar" size="4" value="B">:PLAN_YEAR</param>
+			<param direction="Input" dbtype="VarChar" size="3" value="C">:VERSION</param>
+			<param direction="Input" dbtype="VarChar" size="2" value="D">:CUSTOMER</param>
+			<param direction="Input" dbtype="Char" size="1" value="E">:GUBUN</param>
+			<param direction="Input" dbtype="VarChar" size="6" value="F">:PLAN_WEEK</param>
+			<param direction="Input" dbtype="VarChar" size="30" value="G">:MAT_ID</param>
+		</parameters>
+	</query>
+	
+	
+</queryxml>

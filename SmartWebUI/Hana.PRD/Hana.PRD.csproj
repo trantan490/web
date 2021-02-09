@@ -1,0 +1,1729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{030F333E-CA7D-48D6-AB19-C7F9D31F0FFB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hana.PRD</RootNamespace>
+    <AssemblyName>Hana.PRD</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <StartupObject>
+    </StartupObject>
+    <DelaySign>false</DelaySign>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChartFX, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Base, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Borders, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.Borders.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinChart.v8.1, Version=8.1.20081.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Infragistics2.Win.UltraWinChart.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel, Version=1.4.0.0, Culture=neutral, PublicKeyToken=2a924091066e3ab0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.FWX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.FWX.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.H101INF, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <HintPath>..\..\Component\Miracom.SmartWeb.H101INF.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.StdUI, Version=4.2.1.1, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.StdUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.UI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\Component\Office.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PRD010228.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010228.Designer.cs">
+      <DependentUpon>PRD010228.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010315.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010315.Designer.cs">
+      <DependentUpon>PRD010315.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010220_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010220_P1.Designer.cs">
+      <DependentUpon>PRD010220_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010219.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010219.designer.cs">
+      <DependentUpon>PRD010219.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010102.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010102.designer.cs">
+      <DependentUpon>PRD010102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010103.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010103.designer.cs">
+      <DependentUpon>PRD010103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010208.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010208.designer.cs">
+      <DependentUpon>PRD010208.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010220.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010220.Designer.cs">
+      <DependentUpon>PRD010220.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010221.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010221.Designer.cs">
+      <DependentUpon>PRD010221.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010221_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010221_P1.Designer.cs">
+      <DependentUpon>PRD010221_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010306.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010306.designer.cs">
+      <DependentUpon>PRD010306.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010306_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010306_P1.Designer.cs">
+      <DependentUpon>PRD010306_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010307.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010307.Designer.cs">
+      <DependentUpon>PRD010307.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010101.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010101.Designer.cs">
+      <DependentUpon>PRD010101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010201.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010201.Designer.cs">
+      <DependentUpon>PRD010201.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010203.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010203.Designer.cs">
+      <DependentUpon>PRD010203.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010301.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010301.Designer.cs">
+      <DependentUpon>PRD010301.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010303.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010303.Designer.cs">
+      <DependentUpon>PRD010303.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010304.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010304.Designer.cs">
+      <DependentUpon>PRD010304.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010305.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010305.Designer.cs">
+      <DependentUpon>PRD010305.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010401.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010401.Designer.cs">
+      <DependentUpon>PRD010401.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010403.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010403.Designer.cs">
+      <DependentUpon>PRD010403.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010404.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010404.Designer.cs">
+      <DependentUpon>PRD010404.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010402.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010402.designer.cs">
+      <DependentUpon>PRD010402.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010406.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010406.designer.cs">
+      <DependentUpon>PRD010406.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010407.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010407.designer.cs">
+      <DependentUpon>PRD010407.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010411.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010411.designer.cs">
+      <DependentUpon>PRD010411.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010420.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010420.Designer.cs">
+      <DependentUpon>PRD010420.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010421.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010421.Designer.cs">
+      <DependentUpon>PRD010421.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010421_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010421_P1.Designer.cs">
+      <DependentUpon>PRD010421_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010501.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010501.Designer.cs">
+      <DependentUpon>PRD010501.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010501_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010501_P1.Designer.cs">
+      <DependentUpon>PRD010501_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010503.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010503.Designer.cs">
+      <DependentUpon>PRD010503.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010603.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010603.designer.cs">
+      <DependentUpon>PRD010603.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010603_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010603_P1.Designer.cs">
+      <DependentUpon>PRD010603_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010604.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010604.designer.cs">
+      <DependentUpon>PRD010604.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010605.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010605.designer.cs">
+      <DependentUpon>PRD010605.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010606.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010606.designer.cs">
+      <DependentUpon>PRD010606.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010801.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010801.Designer.cs">
+      <DependentUpon>PRD010801.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011006.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011006.designer.cs">
+      <DependentUpon>PRD011006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011007.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011007.designer.cs">
+      <DependentUpon>PRD011007.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011008.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011008.designer.cs">
+      <DependentUpon>PRD011008.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011009.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011009.designer.cs">
+      <DependentUpon>PRD011009.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011009_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011009_P1.Designer.cs">
+      <DependentUpon>PRD011009_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011009_P2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011009_P2.designer.cs">
+      <DependentUpon>PRD011009_P2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011009_P3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011009_P3.designer.cs">
+      <DependentUpon>PRD011009_P3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011010.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011010.Designer.cs">
+      <DependentUpon>PRD011010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011010_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011010_P1.Designer.cs">
+      <DependentUpon>PRD011010_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011010_P2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011010_P2.Designer.cs">
+      <DependentUpon>PRD011010_P2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011013.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011013.designer.cs">
+      <DependentUpon>PRD011013.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011014.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011014.designer.cs">
+      <DependentUpon>PRD011014.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011015.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011015.designer.cs">
+      <DependentUpon>PRD011015.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PRD010807.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010807.Designer.cs">
+      <DependentUpon>PRD010807.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010226.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010226.Designer.cs">
+      <DependentUpon>PRD010226.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010227.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010227.Designer.cs">
+      <DependentUpon>PRD010227.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010425.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010425.designer.cs">
+      <DependentUpon>PRD010425.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010426.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010426.Designer.cs">
+      <DependentUpon>PRD010426.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010229.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010229.Designer.cs">
+      <DependentUpon>PRD010229.cs</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SQL\PACKAGE_PRD010103.SQL" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PRD010502.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010502.Designer.cs">
+      <DependentUpon>PRD010502.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010405.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010405.Designer.cs">
+      <DependentUpon>PRD010405.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010202.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010202.Designer.cs">
+      <DependentUpon>PRD010202.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010602.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010602.designer.cs">
+      <DependentUpon>PRD010602.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010701.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010701.Designer.cs">
+      <DependentUpon>PRD010701.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010607.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010607.designer.cs">
+      <DependentUpon>PRD010607.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010408.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010408.designer.cs">
+      <DependentUpon>PRD010408.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010409.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010409.designer.cs">
+      <DependentUpon>PRD010409.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010204.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010204.Designer.cs">
+      <DependentUpon>PRD010204.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010205.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010205.Designer.cs">
+      <DependentUpon>PRD010205.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010901.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010901.designer.cs">
+      <DependentUpon>PRD010901.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010608.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010608.designer.cs">
+      <DependentUpon>PRD010608.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010609.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010609.designer.cs">
+      <DependentUpon>PRD010609.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010702.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010702.Designer.cs">
+      <DependentUpon>PRD010702.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010703.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010703.Designer.cs">
+      <DependentUpon>PRD010703.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010704.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010704.Designer.cs">
+      <DependentUpon>PRD010704.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010610.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010610.designer.cs">
+      <DependentUpon>PRD010610.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010902.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010902.Designer.cs">
+      <DependentUpon>PRD010902.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010903.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010903.Designer.cs">
+      <DependentUpon>PRD010903.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010903_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010903_P1.Designer.cs">
+      <DependentUpon>PRD010903_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010206.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010206.Designer.cs">
+      <DependentUpon>PRD010206.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010909.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010909.Designer.cs">
+      <DependentUpon>PRD010909.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010207.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010207.Designer.cs">
+      <DependentUpon>PRD010207.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010410.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010410.Designer.cs">
+      <DependentUpon>PRD010410.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010209.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010209.Designer.cs">
+      <DependentUpon>PRD010209.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010210.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010210.Designer.cs">
+      <DependentUpon>PRD010210.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010211.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010211.Designer.cs">
+      <DependentUpon>PRD010211.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010212.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010212.Designer.cs">
+      <DependentUpon>PRD010212.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010312.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010312.Designer.cs">
+      <DependentUpon>PRD010312.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010313.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010313.Designer.cs">
+      <DependentUpon>PRD010313.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010308.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010308.Designer.cs">
+      <DependentUpon>PRD010308.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010904.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010904.Designer.cs">
+      <DependentUpon>PRD010904.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010904_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010904_P1.Designer.cs">
+      <DependentUpon>PRD010904_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010412.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010412.designer.cs">
+      <DependentUpon>PRD010412.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011001.Designer.cs">
+      <DependentUpon>PRD011001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010502_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010502_P1.Designer.cs">
+      <DependentUpon>PRD010502_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011002.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011002.designer.cs">
+      <DependentUpon>PRD011002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010413.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010413.designer.cs">
+      <DependentUpon>PRD010413.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010414.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010414.designer.cs">
+      <DependentUpon>PRD010414.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010415.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010415.designer.cs">
+      <DependentUpon>PRD010415.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010416.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010416.designer.cs">
+      <DependentUpon>PRD010416.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010417.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010417.designer.cs">
+      <DependentUpon>PRD010417.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010905.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010905.Designer.cs">
+      <DependentUpon>PRD010905.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010418.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010418.designer.cs">
+      <DependentUpon>PRD010418.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010418_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010418_P1.Designer.cs">
+      <DependentUpon>PRD010418_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011003.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011003.designer.cs">
+      <DependentUpon>PRD011003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010802.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010802.Designer.cs">
+      <DependentUpon>PRD010802.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010419.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010419.designer.cs">
+      <DependentUpon>PRD010419.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011004.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011004.designer.cs">
+      <DependentUpon>PRD011004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010906.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010906.Designer.cs">
+      <DependentUpon>PRD010906.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010213.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010213.Designer.cs">
+      <DependentUpon>PRD010213.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010214.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010214.Designer.cs">
+      <DependentUpon>PRD010214.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010215.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010215.Designer.cs">
+      <DependentUpon>PRD010215.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010803.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010803.Designer.cs">
+      <DependentUpon>PRD010803.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010804.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010804.Designer.cs">
+      <DependentUpon>PRD010804.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010216.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010216.Designer.cs">
+      <DependentUpon>PRD010216.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010218.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010218.Designer.cs">
+      <DependentUpon>PRD010218.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010217.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010217.Designer.cs">
+      <DependentUpon>PRD010217.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010611.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010611.Designer.cs">
+      <DependentUpon>PRD010611.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010907.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010907.Designer.cs">
+      <DependentUpon>PRD010907.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010422.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010422.Designer.cs">
+      <DependentUpon>PRD010422.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011011.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011011.Designer.cs">
+      <DependentUpon>PRD011011.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011011_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011011_P1.Designer.cs">
+      <DependentUpon>PRD011011_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010213_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010213_P1.Designer.cs">
+      <DependentUpon>PRD010213_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010309.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010309.Designer.cs">
+      <DependentUpon>PRD010309.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010309_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010309_P1.Designer.cs">
+      <DependentUpon>PRD010309_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011012.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011012.Designer.cs">
+      <DependentUpon>PRD011012.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011016.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011016.Designer.cs">
+      <DependentUpon>PRD011016.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011016_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011016_P1.Designer.cs">
+      <DependentUpon>PRD011016_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010309_P2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010309_P2.Designer.cs">
+      <DependentUpon>PRD010309_P2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011015_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011015_P1.Designer.cs">
+      <DependentUpon>PRD011015_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011016_P2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011016_P2.Designer.cs">
+      <DependentUpon>PRD011016_P2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010423.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010423.Designer.cs">
+      <DependentUpon>PRD010423.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010423_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010423_P1.Designer.cs">
+      <DependentUpon>PRD010423_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010908.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010908.Designer.cs">
+      <DependentUpon>PRD010908.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010222.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010222.Designer.cs">
+      <DependentUpon>PRD010222.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011999.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011999.Designer.cs">
+      <DependentUpon>PRD011999.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010910.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010910.Designer.cs">
+      <DependentUpon>PRD010910.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010223.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010223.Designer.cs">
+      <DependentUpon>PRD010223.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010223_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010223_P1.Designer.cs">
+      <DependentUpon>PRD010223_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010805.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010805.Designer.cs">
+      <DependentUpon>PRD010805.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010314.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010314.Designer.cs">
+      <DependentUpon>PRD010314.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010224.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010224.Designer.cs">
+      <DependentUpon>PRD010224.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011015_P2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011015_P2.Designer.cs">
+      <DependentUpon>PRD011015_P2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011017.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011017.Designer.cs">
+      <DependentUpon>PRD011017.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011018.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011018.designer.cs">
+      <DependentUpon>PRD011018.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010911.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010911.Designer.cs">
+      <DependentUpon>PRD010911.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010911_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD010911_P1.Designer.cs">
+      <DependentUpon>PRD010911_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011018_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011018_P1.Designer.cs">
+      <DependentUpon>PRD011018_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011019.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD011019.designer.cs">
+      <DependentUpon>PRD011019.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD011019_P1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRD011019_P1.Designer.cs">
+      <DependentUpon>PRD011019_P1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010612.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010612.Designer.cs">
+      <DependentUpon>PRD010612.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010705.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010705.Designer.cs">
+      <DependentUpon>PRD010705.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010806.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010806.Designer.cs">
+      <DependentUpon>PRD010806.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010424.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010424.Designer.cs">
+      <DependentUpon>PRD010424.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010706.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010706.Designer.cs">
+      <DependentUpon>PRD010706.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010504.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010504.Designer.cs">
+      <DependentUpon>PRD010504.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010912.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010912.Designer.cs">
+      <DependentUpon>PRD010912.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRD010225.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRD010225.Designer.cs">
+      <DependentUpon>PRD010225.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PRD010228.resx">
+      <DependentUpon>PRD010228.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010315.resx">
+      <DependentUpon>PRD010315.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010220_P1.resx">
+      <DependentUpon>PRD010220_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010219.resx">
+      <DependentUpon>PRD010219.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010102.resx">
+      <DependentUpon>PRD010102.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010103.resx">
+      <DependentUpon>PRD010103.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010208.resx">
+      <DependentUpon>PRD010208.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010220.resx">
+      <DependentUpon>PRD010220.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010221.resx">
+      <DependentUpon>PRD010221.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010221_P1.resx">
+      <DependentUpon>PRD010221_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010306.resx">
+      <DependentUpon>PRD010306.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010306_P1.resx">
+      <DependentUpon>PRD010306_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010307.resx">
+      <DependentUpon>PRD010307.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010101.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010201.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010201.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010203.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010203.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010301.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010301.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010303.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010303.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010304.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010304.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010305.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010305.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010401.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010401.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010403.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010403.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010404.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010404.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010402.resx">
+      <DependentUpon>PRD010402.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010406.resx">
+      <DependentUpon>PRD010406.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010407.resx">
+      <DependentUpon>PRD010407.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010411.resx">
+      <DependentUpon>PRD010411.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010420.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010420.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010421.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010421.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010421_P1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010421_P1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010501.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010501.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010501_P1.resx">
+      <DependentUpon>PRD010501_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010503.resx">
+      <DependentUpon>PRD010503.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010603.resx">
+      <DependentUpon>PRD010603.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010603_P1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD010603_P1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010604.resx">
+      <DependentUpon>PRD010604.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010605.resx">
+      <DependentUpon>PRD010605.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010606.resx">
+      <DependentUpon>PRD010606.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010801.resx">
+      <DependentUpon>PRD010801.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011006.resx">
+      <DependentUpon>PRD011006.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011007.resx">
+      <DependentUpon>PRD011007.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011008.resx">
+      <DependentUpon>PRD011008.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011009.resx">
+      <DependentUpon>PRD011009.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011009_P1.resx">
+      <DependentUpon>PRD011009_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011009_P2.resx">
+      <DependentUpon>PRD011009_P2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011009_P3.resx">
+      <DependentUpon>PRD011009_P3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011010.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD011010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011010_P1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD011010_P1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011010_P2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PRD011010_P2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011013.resx">
+      <DependentUpon>PRD011013.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011014.resx">
+      <DependentUpon>PRD011014.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011015.resx">
+      <DependentUpon>PRD011015.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="PRD010502.resx">
+      <DependentUpon>PRD010502.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010405.resx">
+      <DependentUpon>PRD010405.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010202.resx">
+      <DependentUpon>PRD010202.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010602.resx">
+      <DependentUpon>PRD010602.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010701.resx">
+      <DependentUpon>PRD010701.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010607.resx">
+      <DependentUpon>PRD010607.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010408.resx">
+      <DependentUpon>PRD010408.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010409.resx">
+      <DependentUpon>PRD010409.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010204.resx">
+      <DependentUpon>PRD010204.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010205.resx">
+      <DependentUpon>PRD010205.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010901.resx">
+      <DependentUpon>PRD010901.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010608.resx">
+      <DependentUpon>PRD010608.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010609.resx">
+      <DependentUpon>PRD010609.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010702.resx">
+      <DependentUpon>PRD010702.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010703.resx">
+      <DependentUpon>PRD010703.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010704.resx">
+      <DependentUpon>PRD010704.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010610.resx">
+      <DependentUpon>PRD010610.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010902.resx">
+      <DependentUpon>PRD010902.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010903.resx">
+      <DependentUpon>PRD010903.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010903_P1.resx">
+      <DependentUpon>PRD010903_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010206.resx">
+      <DependentUpon>PRD010206.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010909.resx">
+      <DependentUpon>PRD010909.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010207.resx">
+      <DependentUpon>PRD010207.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010410.resx">
+      <DependentUpon>PRD010410.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010209.resx">
+      <DependentUpon>PRD010209.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010210.resx">
+      <DependentUpon>PRD010210.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010211.resx">
+      <DependentUpon>PRD010211.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010212.resx">
+      <DependentUpon>PRD010212.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010312.resx">
+      <DependentUpon>PRD010312.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010313.resx">
+      <DependentUpon>PRD010313.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010308.resx">
+      <DependentUpon>PRD010308.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010904.resx">
+      <DependentUpon>PRD010904.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010904_P1.resx">
+      <DependentUpon>PRD010904_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010412.resx">
+      <DependentUpon>PRD010412.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011001.resx">
+      <DependentUpon>PRD011001.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010502_P1.resx">
+      <DependentUpon>PRD010502_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011002.resx">
+      <DependentUpon>PRD011002.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010413.resx">
+      <DependentUpon>PRD010413.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010414.resx">
+      <DependentUpon>PRD010414.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010415.resx">
+      <DependentUpon>PRD010415.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010416.resx">
+      <DependentUpon>PRD010416.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010417.resx">
+      <DependentUpon>PRD010417.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010905.resx">
+      <DependentUpon>PRD010905.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010418.resx">
+      <DependentUpon>PRD010418.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010418_P1.resx">
+      <DependentUpon>PRD010418_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011003.resx">
+      <DependentUpon>PRD011003.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010802.resx">
+      <DependentUpon>PRD010802.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010419.resx">
+      <DependentUpon>PRD010419.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011004.resx">
+      <DependentUpon>PRD011004.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010906.resx">
+      <DependentUpon>PRD010906.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010213.resx">
+      <DependentUpon>PRD010213.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010214.resx">
+      <DependentUpon>PRD010214.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010215.resx">
+      <DependentUpon>PRD010215.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010803.resx">
+      <DependentUpon>PRD010803.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010804.resx">
+      <DependentUpon>PRD010804.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010216.resx">
+      <DependentUpon>PRD010216.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010218.resx">
+      <DependentUpon>PRD010218.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010217.resx">
+      <DependentUpon>PRD010217.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010611.resx">
+      <DependentUpon>PRD010611.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010907.resx">
+      <DependentUpon>PRD010907.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010422.resx">
+      <DependentUpon>PRD010422.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011011.resx">
+      <DependentUpon>PRD011011.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011011_P1.resx">
+      <DependentUpon>PRD011011_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010213_P1.resx">
+      <DependentUpon>PRD010213_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010309.resx">
+      <DependentUpon>PRD010309.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010309_P1.resx">
+      <DependentUpon>PRD010309_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011012.resx">
+      <DependentUpon>PRD011012.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011016.resx">
+      <DependentUpon>PRD011016.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011016_P1.resx">
+      <DependentUpon>PRD011016_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010309_P2.resx">
+      <DependentUpon>PRD010309_P2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011015_P1.resx">
+      <DependentUpon>PRD011015_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011016_P2.resx">
+      <DependentUpon>PRD011016_P2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010423.resx">
+      <DependentUpon>PRD010423.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010423_P1.resx">
+      <DependentUpon>PRD010423_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010908.resx">
+      <DependentUpon>PRD010908.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010222.resx">
+      <DependentUpon>PRD010222.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011999.resx">
+      <DependentUpon>PRD011999.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010910.resx">
+      <DependentUpon>PRD010910.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010223.resx">
+      <DependentUpon>PRD010223.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010223_P1.resx">
+      <DependentUpon>PRD010223_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010805.resx">
+      <DependentUpon>PRD010805.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010314.resx">
+      <DependentUpon>PRD010314.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010224.resx">
+      <DependentUpon>PRD010224.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011015_P2.resx">
+      <DependentUpon>PRD011015_P2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011017.resx">
+      <DependentUpon>PRD011017.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011018.resx">
+      <DependentUpon>PRD011018.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010911.resx">
+      <DependentUpon>PRD010911.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010911_P1.resx">
+      <DependentUpon>PRD010911_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011018_P1.resx">
+      <DependentUpon>PRD011018_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011019.resx">
+      <DependentUpon>PRD011019.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD011019_P1.resx">
+      <DependentUpon>PRD011019_P1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010612.resx">
+      <DependentUpon>PRD010612.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010705.resx">
+      <DependentUpon>PRD010705.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010806.resx">
+      <DependentUpon>PRD010806.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010424.resx">
+      <DependentUpon>PRD010424.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010706.resx">
+      <DependentUpon>PRD010706.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010504.resx">
+      <DependentUpon>PRD010504.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010912.resx">
+      <DependentUpon>PRD010912.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010225.resx">
+      <DependentUpon>PRD010225.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010807.resx">
+      <DependentUpon>PRD010807.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010226.resx">
+      <DependentUpon>PRD010226.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010227.resx">
+      <DependentUpon>PRD010227.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010425.resx">
+      <DependentUpon>PRD010425.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010426.resx">
+      <DependentUpon>PRD010426.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRD010229.resx">
+      <DependentUpon>PRD010229.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\Bad.jpg" />
+    <Content Include="Image\Best.jpg" />
+    <Content Include="Image\Good.jpg" />
+    <Content Include="Image\Warning.jpg" />
+    <Content Include="Image\WeatherLegend.jpg" />
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Component</PostBuildEvent>
+  </PropertyGroup>
+</Project>

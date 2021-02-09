@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Insert" queryid="INS_RWEBFUNLOG" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[INSERT INTO RWEBFUNLOG(FACTORY,USER_ID,FUNC_NAME,FUNC_GROUP,VIEW_TIME, UPDATE_TIME)
+VALUES (:p_FACTORY, :p_USER_ID, :p_FUNC_NAME, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:p_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="WEBADMIN">:p_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="STD1606">:p_FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="Quality">:p_FUNC_GROUP</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_CHART_FUNGROUP" commandtype="Text" description="Report FunctionGroup별 Log조회" commandtimeout="60">
+        <commandtext><![CDATA[SELECT
+ G.FUNC_GRP_ID, 
+ COUNT(*) AS VIEW_CNT,
+ ROUND(COUNT(*) / SUM(COUNT(*)) OVER() * 100 ,2)  AS VIEW_PERCENT
+ FROM RWEBFUNLOG L ,  
+(SELECT FUNC_GRP_ID,FUNC_GRP_SEQ  
+FROM RWEBGRPFUN
+GROUP BY FUNC_GRP_ID,FUNC_GRP_SEQ
+ORDER BY FUNC_GRP_SEQ) G
+WHERE L.FUNC_GROUP = G.FUNC_GRP_ID
+AND TO_DATE(L.VIEW_TIME, 'YYYYMMDDHH24MISS') BETWEEN TO_DATE(:p_StartDate,'YYYYMMDD') AND TO_DATE(:p_EndDate,'YYYYMMDD') +1
+GROUP BY  G.FUNC_GRP_SEQ, G.FUNC_GRP_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="8" value="20080701">:p_StartDate</param>
+            <param direction="Input" dbtype="VarChar" size="8" value="20080730">:p_EndDate</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_VIEW_FUNCTION" commandtype="Text" description="Report 선택된 FunctionGroup의 Function별 Log조회" commandtimeout="60">
+        <commandtext><![CDATA[SELECT
+ FUNC_NAME,
+ COUNT(*) AS VIEW_CNT,
+ ROUND(COUNT(*) / SUM(COUNT(*)) OVER() * 100,2) AS VIEW_PERCENT
+ FROM RWEBFUNLOG
+WHERE  TO_DATE(VIEW_TIME, 'YYYYMMDDHH24MISS') BETWEEN TO_DATE(:p_StartDate,'YYYYMMDD') AND TO_DATE(:p_EndDate,'YYYYMMDD') +1
+AND FUNC_GROUP = :p_Group_ID
+GROUP BY  FUNC_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="8" value="20080601">:p_StartDate</param>
+            <param direction="Input" dbtype="VarChar" size="8" value="20080730">:p_EndDate</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="WIP Status">:p_Group_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_ALL_FUNCGROUP" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT
+ G.FUNC_GRP_ID,
+ L. FUNC_NAME ,
+ COUNT(*) AS VIEW_CNT,
+ ROUND(COUNT(*) / SUM(COUNT(*)) OVER() * 100,2) AS VIEW_PERCENT
+ FROM RWEBFUNLOG L ,  
+ (SELECT FUNC_GRP_ID,FUNC_GRP_SEQ  
+FROM RWEBGRPFUN
+GROUP BY FUNC_GRP_ID,FUNC_GRP_SEQ
+ORDER BY FUNC_GRP_SEQ) G
+WHERE L.FUNC_GROUP = G.FUNC_GRP_ID
+AND TO_DATE(L.VIEW_TIME, 'YYYYMMDDHH24MISS') BETWEEN TO_DATE(:p_StartDate,'YYYYMMDD') AND TO_DATE(:p_EndDate,'YYYYMMDD') +1
+GROUP BY  G.FUNC_GRP_SEQ,G.FUNC_GRP_ID,L. FUNC_NAME ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="8" value="20080601">:p_StartDate</param>
+            <param direction="Input" dbtype="VarChar" size="8" value="20080731">:p_EndDate</param>
+        </parameters>
+    </query>
+</queryxml>

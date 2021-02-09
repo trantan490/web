@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1F974324-7E86-4EF4-90FA-FE4C30D0E538}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hana.RAS</RootNamespace>
+    <AssemblyName>Hana.RAS</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <StartupObject>
+    </StartupObject>
+    <DelaySign>false</DelaySign>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.SHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=561fdaabb845dee9, processorArchitecture=MSIL">
+      <HintPath>..\..\Component\AxInterop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Base, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartFX.Borders, Version=6.2.1342.0, Culture=neutral, PublicKeyToken=a1878e2052c08dce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\ChartFX.Borders.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinChart.v8.1, Version=8.1.20081.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Infragistics2.Win.UltraWinChart.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel, Version=1.4.0.0, Culture=neutral, PublicKeyToken=2a924091066e3ab0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.FWX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.FWX.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.H101INF, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <HintPath>..\..\Component\Miracom.SmartWeb.H101INF.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.StdUI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.StdUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.UI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Office.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization">
+      <HintPath>..\..\Component\System.Windows.Forms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RAS020107.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020107.Designer.cs">
+      <DependentUpon>RAS020107.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020209.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020209.Designer.cs">
+      <DependentUpon>RAS020209.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020213.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020213.Designer.cs">
+      <DependentUpon>RAS020213.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020312.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020312.designer.cs">
+      <DependentUpon>RAS020312.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020203.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020203.Designer.cs">
+      <DependentUpon>RAS020203.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020205.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020205.designer.cs">
+      <DependentUpon>RAS020205.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020208.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020208.Designer.cs">
+      <DependentUpon>RAS020208.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020211.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020211.Designer.cs">
+      <DependentUpon>RAS020211.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020304.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020304.Designer.cs">
+      <DependentUpon>RAS020304.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020306.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020306.Designer.cs">
+      <DependentUpon>RAS020306.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020308.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020308.Designer.cs">
+      <DependentUpon>RAS020308.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020307.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020307.Designer.cs">
+      <DependentUpon>RAS020307.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020309.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020309.Designer.cs">
+      <DependentUpon>RAS020309.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020404.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020404.Designer.cs">
+      <DependentUpon>RAS020404.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020407.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020407.designer.cs">
+      <DependentUpon>RAS020407.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020401.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020401.Designer.cs">
+      <DependentUpon>RAS020401.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RAS020701.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020701.Designer.cs">
+      <DependentUpon>RAS020701.cs</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RAS020105.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020105.Designer.cs">
+      <DependentUpon>RAS020105.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020405.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020405.Designer.cs">
+      <DependentUpon>RAS020405.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020406.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020406.Designer.cs">
+      <DependentUpon>RAS020406.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020301.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020301.designer.cs">
+      <DependentUpon>RAS020301.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020302.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020302.designer.cs">
+      <DependentUpon>RAS020302.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020303.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020303.designer.cs">
+      <DependentUpon>RAS020303.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020210.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020210.designer.cs">
+      <DependentUpon>RAS020210.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020204.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020204.designer.cs">
+      <DependentUpon>RAS020204.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020106.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020106.Designer.cs">
+      <DependentUpon>RAS020106.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020311.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020311.Designer.cs">
+      <DependentUpon>RAS020311.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020502.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020502.Designer.cs">
+      <DependentUpon>RAS020502.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020601.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020601.Designer.cs">
+      <DependentUpon>RAS020601.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020212.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020212.Designer.cs">
+      <DependentUpon>RAS020212.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020310.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020310.Designer.cs">
+      <DependentUpon>RAS020310.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAS020503.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RAS020503.designer.cs">
+      <DependentUpon>RAS020503.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RAS020107.resx">
+      <DependentUpon>RAS020107.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020209.resx">
+      <DependentUpon>RAS020209.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020213.resx">
+      <DependentUpon>RAS020213.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020312.resx">
+      <DependentUpon>RAS020312.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020203.resx">
+      <DependentUpon>RAS020203.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020205.resx">
+      <DependentUpon>RAS020205.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020208.resx">
+      <DependentUpon>RAS020208.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020211.resx">
+      <DependentUpon>RAS020211.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020304.resx">
+      <DependentUpon>RAS020304.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020306.resx">
+      <DependentUpon>RAS020306.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020308.resx">
+      <DependentUpon>RAS020308.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="RAS020307.resx">
+      <DependentUpon>RAS020307.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020309.resx">
+      <DependentUpon>RAS020309.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020404.resx">
+      <DependentUpon>RAS020404.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020407.resx">
+      <DependentUpon>RAS020407.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020401.resx">
+      <DependentUpon>RAS020401.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020105.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RAS020105.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020405.resx">
+      <DependentUpon>RAS020405.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020406.resx">
+      <DependentUpon>RAS020406.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020301.resx">
+      <DependentUpon>RAS020301.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020302.resx">
+      <DependentUpon>RAS020302.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020303.resx">
+      <DependentUpon>RAS020303.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020210.resx">
+      <DependentUpon>RAS020210.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020204.resx">
+      <DependentUpon>RAS020204.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020106.resx">
+      <DependentUpon>RAS020106.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020311.resx">
+      <DependentUpon>RAS020311.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020502.resx">
+      <DependentUpon>RAS020502.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020601.resx">
+      <DependentUpon>RAS020601.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020212.resx">
+      <DependentUpon>RAS020212.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020310.resx">
+      <DependentUpon>RAS020310.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020503.resx">
+      <DependentUpon>RAS020503.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAS020701.resx">
+      <DependentUpon>RAS020701.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Component</PostBuildEvent>
+  </PropertyGroup>
+</Project>

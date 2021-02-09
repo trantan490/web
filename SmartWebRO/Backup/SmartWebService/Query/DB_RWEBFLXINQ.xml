@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Insert" queryid="INS_RWEBFLXINQ" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[INSERT INTO RWEBFLXINQ
+   (FACTORY, INQUIRY_NAME, INQUIRY_DESC, INQUIRY_GROUP, SELECT_ITEM, SELECT_VALUE, GROUP_ITEM, FILTER_QUERY, RESV_FIELD_1, RESV_FIELD_2, RESV_FIELD_3, RESV_FIELD_4, RESV_FIELD_5, RESV_FLAG_1, RESV_FLAG_2, RESV_FLAG_3, RESV_FLAG_4, RESV_FLAG_5, CREATE_USER_ID, CREATE_TIME, UPDATE_USER_ID, UPDATE_TIME)
+ VALUES
+   (:FACTORY, :INQUIRY_NAME, :INQUIRY_DESC, :INQUIRY_GROUP, :SELECT_ITEM, :SELECT_VALUE, :GROUP_ITEM, :FILTER_QUERY, :RESV_FIELD_1, :RESV_FIELD_2, :RESV_FIELD_3, :RESV_FIELD_4, :RESV_FIELD_5, :RESV_FLAG_1, :RESV_FLAG_2, :RESV_FLAG_3, :RESV_FLAG_4, :RESV_FLAG_5, :CREATE_USER_ID, :CREATE_TIME, :UPDATE_USER_ID, :UPDATE_TIME)]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:INQUIRY_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="50" value="A">:INQUIRY_DESC</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:INQUIRY_GROUP</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:SELECT_ITEM</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:SELECT_VALUE</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:GROUP_ITEM</param>
+            <param direction="Input" dbtype="VarChar" size="1000" value="A">:FILTER_QUERY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_1</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_2</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_3</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_4</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_5</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_1</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_2</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_3</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_4</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_5</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="A">:CREATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="A">:CREATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="A">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="A">:UPDATE_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_FACTORY" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBFLXINQ WHERE FACTORY = :FACTORY
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="FABBLW">:FACTORY</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_FACTORY.GROUP" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBFLXINQ WHERE FACTORY = :FACTORY AND INQUIRY_GROUP = :INQUIRY_GROUP]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="FABBLW">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="TEST">:INQUIRY_GROUP</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_FACTORY.INQ" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBFLXINQ WHERE FACTORY = :FACTORY AND INQUIRY_NAME = :INQUIRY_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="a">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="a">:INQUIRY_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_FACTORY.INQ" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBFLXINQ
+   SET INQUIRY_DESC = :INQUIRY_DESC,
+INQUIRY_GROUP = :INQUIRY_GROUP, 
+SELECT_ITEM = :SELECT_ITEM, 
+SELECT_VALUE = :SELECT_VALUE, 
+GROUP_ITEM = :GROUP_ITEM, 
+FILTER_QUERY = :FILTER_QUERY, 
+RESV_FIELD_1 = :RESV_FIELD_1, 
+RESV_FIELD_2 = :RESV_FIELD_2, 
+RESV_FIELD_3 = :RESV_FIELD_3, 
+RESV_FIELD_4 = :RESV_FIELD_4, 
+RESV_FIELD_5 = :RESV_FIELD_5, 
+RESV_FLAG_1 = :RESV_FLAG_1, 
+RESV_FLAG_2 = :RESV_FLAG_2, 
+RESV_FLAG_3 = :RESV_FLAG_3, 
+RESV_FLAG_4 = :RESV_FLAG_4, 
+RESV_FLAG_5 = :RESV_FLAG_5, 
+UPDATE_USER_ID = :UPDATE_USER_ID, 
+UPDATE_TIME = :UPDATE_TIME
+WHERE FACTORY = :FACTORY
+AND INQUIRY_NAME = :INQUIRY_NAME
+]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:INQUIRY_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="50" value="A">:INQUIRY_DESC</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:INQUIRY_GROUP</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:SELECT_ITEM</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:SELECT_VALUE</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:GROUP_ITEM</param>
+            <param direction="Input" dbtype="VarChar" size="1000" value="A">:FILTER_QUERY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_1</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_2</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_3</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_4</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="A">:RESV_FIELD_5</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_1</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_2</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_3</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_4</param>
+            <param direction="Input" dbtype="Char" size="1" value="A">:RESV_FLAG_5</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="A">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="A">:UPDATE_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Delete" queryid="DEL_REBFLXINQ" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[DELETE FROM RWEBFLXINQ 
+WHERE FACTORY = :FACTORY AND INQUIRY_NAME = :INQUIRY_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="D">:INQUIRY_NAME</param>
+        </parameters>
+    </query>
+</queryxml>

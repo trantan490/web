@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Insert" queryid="INS_RWEBFUNITM" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[INSERT INTO RWEBFUNITM(FACTORY, FUNC_NAME, ITEM_TYPE, ITEM_SEQ,ITEM_NAME, ITEM_DESC,
+UPDATE_USER_ID, UPDATE_TIME)
+ VALUES (:FACTORY, :FUNC_NAME, :ITEM_TYPE, :ITEM_SEQ, :ITEM_NAME, :ITEM_DESC,
+:UPDATE_USER_ID,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') )]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SUMTEST">FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="STD1101">FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="OPR">ITEM_TYPE</param>
+            <param direction="Input" dbtype="Int32" size="5" value="1">ITEM_SEQ</param>
+            <param direction="Input" dbtype="VarChar" size="30" value="1000">ITEM_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="50" value="Intransit">ITEM_DESC</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="WEBADMIN">UPDATE_USER_ID</param>
+        </parameters>
+    </query>
+    <query statement="Delete" queryid="DEL_RWEBFUNITM" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[DELETE FROM RWEBFUNITM
+WHERE FACTORY = :FACTORY 
+  AND FUNC_NAME = :FUNC_NAME
+  AND ITEM_TYPE = :ITEM_TYPE
+  AND ITEM_SEQ = :ITEM_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SUMTEST">FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="STD1101">FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="OPR">ITEM_TYPE</param>
+            <param direction="Input" dbtype="Int32" size="10" value="1">ITEM_SEQ</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_RWEBFUNITM_FUNC_SEQINC" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBFUNITM
+   SET ITEM_SEQ = ITEM_SEQ + 1,
+   	   UPDATE_USER_ID = :UPDATE_USER_ID,
+   	   UPDATE_TIME = TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') 
+ WHERE FACTORY = :FACTORY 
+   AND FUNC_NAME = :FUNC_NAME
+   AND ITEM_TYPE = :ITEM_TYPE
+   AND ITEM_SEQ >= :ITEM_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="20" value="WEBADMIN">UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="SUMTEST">FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="STD1101">FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="OPR">ITEM_TYPE</param>
+            <param direction="Input" dbtype="Int32" size="5" value="2">ITEM_SEQ</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_RWEBFUNITM_FUNC_SEQDEC" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBFUNITM
+   SET ITEM_SEQ = ITEM_SEQ - 1,
+     	   UPDATE_USER_ID = :UPDATE_USER_ID,
+   	   UPDATE_TIME = TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') 
+ WHERE FACTORY = :FACTORY 
+   AND FUNC_NAME = :FUNC_NAME
+   AND ITEM_TYPE = :ITEM_TYPE
+   AND ITEM_SEQ > :ITEM_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="20">UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="SUMTEST">FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="STD1101">FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="OPR">ITEM_TYPE</param>
+            <param direction="Input" dbtype="Int32" size="5" value="2">ITEM_SEQ</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_RWEBFUNITM_LIST" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT ITEM_NAME, ITEM_DESC FROM RWEBFUNITM
+ WHERE FACTORY = :FACTORY
+   AND FUNC_NAME = :FUNC_NAME
+   AND ITEM_TYPE = :ITEM_TYPE
+ ORDER BY ITEM_SEQ ASC]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="20" value="SUMTEST">FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="STD1101">FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="OPR">ITEM_TYPE</param>
+        </parameters>
+    </query>
+</queryxml>

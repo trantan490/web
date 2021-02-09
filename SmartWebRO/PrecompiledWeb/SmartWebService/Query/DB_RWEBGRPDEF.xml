@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_ISFACANDGRP" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBGRPDEF WHERE FACTORY = :FACTORY AND SEC_GRP_ID = :SEC_GRP_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN_GROUP">:SEC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEC_ISFACTORY" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBGRPDEF WHERE FACTORY = :FACTORY ORDER BY SEC_GRP_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+        </parameters>
+    </query>
+    <query statement="Insert" queryid="INS_RWEBGRPDEF" commandtype="Text" description="Insert RWEBGRPDEF Table" commandtimeout="60">
+        <commandtext><![CDATA[INSERT INTO RWEBGRPDEF (FACTORY, SEC_GRP_ID, SEC_GRP_DESC, CREATE_USER_ID, CREATE_TIME, UPDATE_USER_ID, UPDATE_TIME)
+VALUES (:FACTORY, :SEC_GRP_ID, :SEC_GRP_DESC, :CREATE_USER_ID, :CREATE_TIME, :UPDATE_USER_ID, :UPDATE_TIME)]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="factory">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="secgroupid">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="50" value="secgroupdesc">:SEC_GRP_DESC</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="createuserid">:CREATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="createtime">:CREATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="updateuserid">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="updatetime">:UPDATE_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UPD_RWEBGRPDEF" commandtype="Text" description="Update All columns." commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBGRPDEF
+   SET FACTORY= :FACTORY,
+   	SEC_GRP_ID= :SEC_GRP_ID,
+   	SEC_GRP_DESC= :SEC_GRP_DESC,
+   	CREATE_USER_ID= :CREATE_USER_ID,
+   	CREATE_TIME= :CREATE_TIME,
+   	UPDATE_USER_ID= :UPDATE_USER_ID,
+   	UPDATE_TIME= :UPDATE_TIME
+ WHERE FACTORY= :C_FACTORY
+   AND SEC_GRP_ID= :C_SEC_GRP_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="factory">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="secgrpid">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="50" value="secgrpdesc">:SEC_GRP_DESC</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="createuserid">:CREATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="createtime">:CREATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="updateuserid">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="updatetime">:UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="factory">:C_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="secgrpid">:C_SEC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Delete" queryid="DEL_RWEBGRPDEF" commandtype="Text" description="Delete Factory group" commandtimeout="60">
+        <commandtext><![CDATA[DELETE FROM RWEBGRPDEF
+ WHERE FACTORY = :FACTORY
+   AND SEC_GRP_ID = :SEC_GRP_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="factory">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="secgrpid">:SEC_GRP_ID</param>
+        </parameters>
+    </query>
+</queryxml>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_TYPE" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MWIPFACDEF WHERE FAC_TYPE = :FAC_TYPE]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="2" value="FA">:FAC_TYPE</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MWIPFACDEF]]></commandtext>
+    </query>
+    <query statement="Select" queryid="SEL_FACTORY" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MWIPFACDEF WHERE FACTORY = :FACTORY]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="FABBLW">:FACTORY</param>
+        </parameters>
+    </query>
+</queryxml>

@@ -1,0 +1,434 @@
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC, LANGUAGE_1, LANGUAGE_2, LANGUAGE_3
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+INSERT INTO RWEBFUNLOG(FACTORY,USER_ID,FUNC_NAME,FUNC_GROUP,VIEW_TIME, UPDATE_TIME)
+VALUES (:p_FACTORY, :p_USER_ID, :p_FUNC_NAME, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT PLAN_WEEK V1    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_DATE = TO_CHAR(SYSDATE,'yyyymmdd')      AND ROWNUM = 1  
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('2020', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+ SELECT UNIQUE PLAN_WEEK V1, (PLAN_YEAR || LPAD(PLAN_WEEK, 2,'0')) V2    FROM MWIPCALDEF   WHERE CALENDAR_ID IN ('SYSTEM', 'HM', 'SYSTEM')     AND SYS_YEAR = NVL('2020', TO_CHAR(SYSDATE,'yyyy'))    ORDER BY 1 
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+SELECT LANGUAGE_2 FROM RWEBFUNDEF WHERE FUNC_NAME = 'PRD010910'
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+WITH MD AS
+(
+SELECT *
+  FROM (
+        SELECT '계획' AS GUBUN1 FROM DUAL UNION
+        SELECT '일목표' AS GUBUN1 FROM DUAL
+       ) A
+     , (
+        SELECT 'Wafer' AS GUBUN2, 'Half cut' AS GUBUN3 FROM DUAL UNION
+        SELECT 'Wafer' AS GUBUN2, 'B/G' AS GUBUN3 FROM DUAL UNION
+        SELECT 'Wafer' AS GUBUN2, 'Pre_G' AS GUBUN3 FROM DUAL UNION
+        SELECT 'Wafer' AS GUBUN2, 'Saw' AS GUBUN3 FROM DUAL UNION
+        SELECT 'Wafer' AS GUBUN2, 'Stealth saw' AS GUBUN3 FROM DUAL UNION
+        SELECT 'Wafer' AS GUBUN2, 'Laser G/V' AS GUBUN3 FROM DUAL UNION
+        SELECT 'Wafer' AS GUBUN2, 'DAF Cut' AS GUBUN3 FROM DUAL UNION
+        SELECT 'Wafer' AS GUBUN2, 'DDS' AS GUBUN3 FROM DUAL UNION
+        SELECT 'CHIP수' AS GUBUN2, 'Epoxy' AS GUBUN3 FROM DUAL UNION
+        SELECT 'CHIP수' AS GUBUN2, 'BOC' AS GUBUN3 FROM DUAL UNION
+        SELECT 'CHIP수' AS GUBUN2, 'Others' AS GUBUN3 FROM DUAL UNION
+        SELECT 'Wire수' AS GUBUN2, ' ' AS GUBUN3 FROM DUAL UNION
+        SELECT 'PKG수' AS GUBUN2, 'C-Mold' AS GUBUN3 FROM DUAL UNION
+        SELECT 'PKG수' AS GUBUN2, 'ORP' AS GUBUN3 FROM DUAL UNION
+        SELECT 'PKG수' AS GUBUN2, 'SBA' AS GUBUN3 FROM DUAL UNION
+        SELECT 'PKG수' AS GUBUN2, 'SST' AS GUBUN3 FROM DUAL UNION
+        SELECT '95mm' AS GUBUN2, 'Mold' AS GUBUN3 FROM DUAL UNION
+        SELECT '95mm' AS GUBUN2, 'SBA' AS GUBUN3 FROM DUAL UNION
+        SELECT '95mm' AS GUBUN2, 'SST' AS GUBUN3 FROM DUAL
+       ) B      
+)
+SELECT MDL.GUBUN1, MDL.GUBUN2, MDL.GUBUN3
+     , ROUND(CASE WHEN MDL.GUBUN1 = '계획' THEN V0 ELSE V0 / TO_CHAR(LAST_DAY(TO_DATE('202003', 'YYYYMM')), 'DD') END / 1000, 0) V0
+     , ROUND(CASE WHEN MDL.GUBUN1 = '계획' THEN V1 ELSE V1 / TO_CHAR(LAST_DAY(TO_DATE('202004', 'YYYYMM')), 'DD') END / 1000, 0) V1
+     , ROUND(CASE WHEN MDL.GUBUN1 = '계획' THEN V2 ELSE V2 / TO_CHAR(LAST_DAY(TO_DATE('202005', 'YYYYMM')), 'DD') END / 1000, 0) V2
+     , ROUND(CASE WHEN MDL.GUBUN1 = '계획' THEN V3 ELSE V3 / TO_CHAR(LAST_DAY(TO_DATE('202006', 'YYYYMM')), 'DD') END / 1000, 0) V3
+  FROM MD MDL
+     , (
+        SELECT *
+          FROM (
+                SELECT '계획' AS GUBUN1 FROM DUAL UNION
+                SELECT '일목표' AS GUBUN1 FROM DUAL
+               ) A
+             , (
+                SELECT GUBUN2, GUBUN3
+                     , SUM(DECODE(PLAN_DATE, '202003', CONV_QTY, 0)) V0
+                     , SUM(DECODE(PLAN_DATE, '202004', CONV_QTY, 0)) V1
+                     , SUM(DECODE(PLAN_DATE, '202005', CONV_QTY, 0)) V2
+                     , SUM(DECODE(PLAN_DATE, '202006', CONV_QTY, 0)) V3
+                  FROM (
+                        SELECT PLAN_DATE 
+                             , CASE WHEN OPER IN ('C-Mold', 'ORP', 'SBA', 'SST') THEN 'PKG수'
+                                    ELSE 'Wafer' 
+                               END AS GUBUN2 
+                             , OPER AS GUBUN3
+                             , CASE WHEN OPER IN ('C-Mold', 'ORP', 'SBA', 'SST') THEN PLAN_QTY
+                                    ELSE PLAN_QTY * NVL(COMP_CNT,1) 
+                               END AS PLAN_QTY
+                             , ROUND(CASE WHEN OPER IN ('C-Mold', 'ORP', 'SBA', 'SST') THEN PLAN_QTY
+                                          ELSE PLAN_QTY * NVL(COMP_CNT,1) / (MAT_CMF_13 * 0.85) 
+                                     END, 0) AS CONV_QTY
+                          FROM (
+                                SELECT PLAN_DATE, MAT_ID
+                                     , CASE WHEN OPER = 'A0010' THEN 'Half cut'
+                                            WHEN OPER = 'A0040' THEN 'B/G'
+                                            WHEN OPER = 'A0030' THEN 'Pre_G'
+                                            WHEN OPER = 'A0200' THEN 'Saw'
+                                            WHEN OPER IN ('A0012', 'A0033') THEN 'Stealth saw'
+                                            WHEN OPER = 'A0170' THEN 'Laser G/V'
+                                            WHEN OPER = 'A0180' THEN 'DAF Cut'
+                                            WHEN OPER = 'A0230' THEN 'DDS'
+                                            WHEN OPER = 'A1000' THEN 'C-Mold'
+                                            WHEN OPER IN ('A1250', 'A1260') THEN 'ORP'
+                                            WHEN OPER = 'A1300' THEN 'SBA'
+                                            WHEN OPER = 'A1750' THEN 'SST'
+                                            ELSE ''
+                                       END OPER
+                                     , PLAN_QTY
+                                     , MAT_CMF_13
+                                     , (SELECT DATA_1 FROM MGCMTBLDAT WHERE FACTORY = 'HMVA2' AND TABLE_NAME IN ('H_SEC_AUTO_LOSS','H_HX_AUTO_LOSS') AND KEY_1 = A.MAT_ID) AS COMP_CNT
+                                     , (SELECT KEY_3 FROM MGCMTBLDAT WHERE TABLE_NAME = 'H_PKG_2D_CMOLD' AND KEY_1 = 'C-MOLD' AND KEY_2 = A.MAT_GRP_1 AND KEY_3 = A.MAT_CMF_11 AND (KEY_4 = '%' OR KEY_4 = A.MAT_ID)) AS C_MOLD
+                                  FROM (
+                                        SELECT A.PLAN_DATE, A.MAT_KEY, A.MAT_ID, TO_NUMBER(PLAN_QTY) AS PLAN_QTY
+                                             , B.MAT_GRP_1, B.MAT_GRP_2, B.MAT_GRP_4, B.MAT_GRP_5
+                                             , TO_NUMBER(DECODE(B.MAT_GRP_6, '-', 1, ' ', 1, B.MAT_GRP_6)) AS MAT_GRP_6
+                                             , B.MAT_CMF_11, TO_NUMBER(DECODE(B.MAT_CMF_13,' ',1,B.MAT_CMF_13)) AS MAT_CMF_13
+                                             , CASE WHEN B.MAT_GRP_4 IN ('-', 'FD', 'FU') THEN '1'
+                                                    ELSE SUBSTR(B.MAT_GRP_4, 3) 
+                                               END AS STACK
+                                             , B.OPER
+                                          FROM (
+                                                SELECT DISTINCT A.PLAN_MONTH AS PLAN_DATE
+                                                     , CASE WHEN B.MAT_ID IS NULL THEN A.MAT_ID ELSE B.MCP_TO_PART END AS MAT_KEY
+                                                     , CASE WHEN B.MAT_ID IS NULL THEN A.MAT_ID ELSE B.MAT_ID END AS MAT_ID
+                                                     , A.RESV_FIELD1 AS PLAN_QTY
+                                                  FROM CWIPPLNMON A
+                                                     , RWIPMCPBOM B
+                                                 WHERE 1=1   
+                                                   AND A.MAT_ID = B.MCP_TO_PART(+)
+                                                   AND A.FACTORY = 'HMVA2'   
+                                                   AND A.PLAN_MONTH BETWEEN '202003' AND '202006'
+                                                   AND DECODE(A.RESV_FIELD1, ' ', 0, A.RESV_FIELD1) > 0
+                                               ) A
+                                             , (
+                                                SELECT DISTINCT MAT_ID, MAT_GRP_1, MAT_GRP_2, MAT_GRP_4, MAT_GRP_5, MAT_GRP_6, MAT_CMF_11, MAT_CMF_13, KTSCH AS OPER
+                                                  FROM MWIPMATDEF MAT
+                                                     ,( SELECT FLOW PLNNR,' ' ARBPL,OPER KTSCH FROM MWIPFLWOPR@RPTTOMES  WHERE FACTORY = 'HMVA2') SAP
+                                                 WHERE 1=1
+                                                   AND MAT.FIRST_FLOW = SUBSTR(PLNNR, 1, 4) 
+                                                   AND MAT.FACTORY = 'HMVA2'
+                                                   AND MAT.DELETE_FLAG = ' '
+                                                   AND MAT.MAT_TYPE = 'FG'
+                                                   AND SAP.ARBPL != 'DUMMY'
+                                                   AND SAP.KTSCH LIKE 'A%'
+                                               ) B   
+                                         WHERE 1=1
+                                           AND A.MAT_ID = B.MAT_ID
+                                           AND (B.OPER IN ('A0010', 'A0200', 'A0030', 'A0040', 'A0012', 'A0033', 'A0170', 'A0180', 'A0230', 'A1250', 'A1260', 'A1300', 'A1750', 'A1000')
+                                               OR B.OPER LIKE 'A06%')   
+                                       ) A
+                                 WHERE 1=1
+                                   AND OPER IN ('A0010', 'A0200', 'A0030', 'A0040', 'A0012', 'A0033', 'A0170', 'A0180', 'A0230', 'A1000', 'A1250', 'A1260', 'A1300', 'A1750')
+                               )
+                         WHERE 1=1
+                           AND (OPER <> 'C-Mold' OR (OPER = 'C-Mold' AND C_MOLD IS NOT NULL))
+                         UNION ALL
+                        SELECT PLAN_DATE
+                             , 'CHIP수' AS GUBUN2
+                             , FAMILY AS GUBUN3
+                             , SUM(PLAN_QTY * STACK) AS PLAN_QTY
+                             , SUM(PLAN_QTY * STACK) AS CONV_QTY
+                          FROM (
+                                SELECT DISTINCT A.PLAN_DATE, A.MAT_KEY, A.STACK, A.PLAN_QTY 
+                                     , (SELECT DATA_2 FROM MGCMTBLDAT WHERE FACTORY = 'HMVA2' AND TABLE_NAME = 'H_FAMILY' AND KEY_1 = A.MAT_GRP_2) AS FAMILY
+                                  FROM (
+                                        SELECT A.PLAN_DATE, A.MAT_KEY, A.MAT_ID, TO_NUMBER(PLAN_QTY) AS PLAN_QTY
+                                             , B.MAT_GRP_1, B.MAT_GRP_2, B.MAT_GRP_4, B.MAT_GRP_5
+                                             , TO_NUMBER(DECODE(B.MAT_GRP_6, '-', 1, ' ', 1, B.MAT_GRP_6)) AS MAT_GRP_6
+                                             , B.MAT_CMF_11, TO_NUMBER(DECODE(B.MAT_CMF_13,' ',1,B.MAT_CMF_13)) AS MAT_CMF_13
+                                             , CASE WHEN B.MAT_GRP_4 IN ('-', 'FD', 'FU') THEN '1'
+                                                    ELSE SUBSTR(B.MAT_GRP_4, 3) 
+                                               END AS STACK
+                                             , B.OPER
+                                          FROM (
+                                                SELECT DISTINCT A.PLAN_MONTH AS PLAN_DATE
+                                                     , CASE WHEN B.MAT_ID IS NULL THEN A.MAT_ID ELSE B.MCP_TO_PART END AS MAT_KEY
+                                                     , CASE WHEN B.MAT_ID IS NULL THEN A.MAT_ID ELSE B.MAT_ID END AS MAT_ID
+                                                     , A.RESV_FIELD1 AS PLAN_QTY
+                                                  FROM CWIPPLNMON A
+                                                     , RWIPMCPBOM B
+                                                 WHERE 1=1   
+                                                   AND A.MAT_ID = B.MCP_TO_PART(+)
+                                                   AND A.FACTORY = 'HMVA2'   
+                                                   AND A.PLAN_MONTH BETWEEN '202003' AND '202006'
+                                                   AND DECODE(A.RESV_FIELD1, ' ', 0, A.RESV_FIELD1) > 0
+                                               ) A
+                                             , (
+                                                SELECT DISTINCT MAT_ID, MAT_GRP_1, MAT_GRP_2, MAT_GRP_4, MAT_GRP_5, MAT_GRP_6, MAT_CMF_11, MAT_CMF_13, KTSCH AS OPER
+                                                  FROM MWIPMATDEF MAT
+                                                     ,( SELECT FLOW PLNNR,' ' ARBPL,OPER KTSCH FROM MWIPFLWOPR@RPTTOMES  WHERE FACTORY = 'HMVA2') SAP
+                                                 WHERE 1=1
+                                                   AND MAT.FIRST_FLOW = SUBSTR(PLNNR, 1, 4) 
+                                                   AND MAT.FACTORY = 'HMVA2'
+                                                   AND MAT.DELETE_FLAG = ' '
+                                                   AND MAT.MAT_TYPE = 'FG'
+                                                   AND SAP.ARBPL != 'DUMMY'
+                                                   AND SAP.KTSCH LIKE 'A%'
+                                               ) B   
+                                         WHERE 1=1
+                                           AND A.MAT_ID = B.MAT_ID
+                                           AND (B.OPER IN ('A0010', 'A0200', 'A0030', 'A0040', 'A0012', 'A0033', 'A0170', 'A0180', 'A0230', 'A1250', 'A1260', 'A1300', 'A1750', 'A1000')
+                                               OR B.OPER LIKE 'A06%')   
+                                       ) A
+                               )
+                         WHERE 1=1
+                           AND FAMILY IN ('Epoxy', 'BOC', 'Others')
+                         GROUP BY PLAN_DATE, FAMILY
+                         UNION ALL
+                        SELECT PLAN_DATE
+                             , 'Wire수' AS GUBUN2     
+                             , ' ' AS GUBUN3
+                             , PLAN_QTY
+                             , PLAN_QTY * NVL(WIRE_QTY, MAT_GRP_6) AS CONV_QTY
+                          FROM (
+                                SELECT PLAN_DATE
+                                     , OPER
+                                     , PLAN_QTY
+                                     , MAT_ID
+                                     , MAT_GRP_6
+                                     , (SELECT MAX(TO_NUMBER(TCD_CMF_2)) FROM CWIPTCDDEF@RPTTOMES WHERE FACTORY = 'HMVA2' AND SET_FLAG = 'Y' AND TCD_CMF_2 <> ' ' AND MAT_ID = A.MAT_ID AND OPER = A.OPER) AS WIRE_QTY
+                                  FROM (
+                                        SELECT A.PLAN_DATE, A.MAT_KEY, A.MAT_ID, TO_NUMBER(PLAN_QTY) AS PLAN_QTY
+                                             , B.MAT_GRP_1, B.MAT_GRP_2, B.MAT_GRP_4, B.MAT_GRP_5
+                                             , TO_NUMBER(DECODE(B.MAT_GRP_6, '-', 1, ' ', 1, B.MAT_GRP_6)) AS MAT_GRP_6
+                                             , B.MAT_CMF_11, TO_NUMBER(DECODE(B.MAT_CMF_13,' ',1,B.MAT_CMF_13)) AS MAT_CMF_13
+                                             , CASE WHEN B.MAT_GRP_4 IN ('-', 'FD', 'FU') THEN '1'
+                                                    ELSE SUBSTR(B.MAT_GRP_4, 3) 
+                                               END AS STACK
+                                             , B.OPER
+                                          FROM (
+                                                SELECT DISTINCT A.PLAN_MONTH AS PLAN_DATE
+                                                     , CASE WHEN B.MAT_ID IS NULL THEN A.MAT_ID ELSE B.MCP_TO_PART END AS MAT_KEY
+                                                     , CASE WHEN B.MAT_ID IS NULL THEN A.MAT_ID ELSE B.MAT_ID END AS MAT_ID
+                                                     , A.RESV_FIELD1 AS PLAN_QTY
+                                                  FROM CWIPPLNMON A
+                                                     , RWIPMCPBOM B
+                                                 WHERE 1=1   
+                                                   AND A.MAT_ID = B.MCP_TO_PART(+)
+                                                   AND A.FACTORY = 'HMVA2'   
+                                                   AND A.PLAN_MONTH BETWEEN '202003' AND '202006'
+                                                   AND DECODE(A.RESV_FIELD1, ' ', 0, A.RESV_FIELD1) > 0
+                                               ) A
+                                             , (
+                                                SELECT DISTINCT MAT_ID, MAT_GRP_1, MAT_GRP_2, MAT_GRP_4, MAT_GRP_5, MAT_GRP_6, MAT_CMF_11, MAT_CMF_13, KTSCH AS OPER
+                                                  FROM MWIPMATDEF MAT
+                                                     ,( SELECT FLOW PLNNR,' ' ARBPL,OPER KTSCH FROM MWIPFLWOPR@RPTTOMES  WHERE FACTORY = 'HMVA2') SAP
+                                                 WHERE 1=1
+                                                   AND MAT.FIRST_FLOW = SUBSTR(PLNNR, 1, 4) 
+                                                   AND MAT.FACTORY = 'HMVA2'
+                                                   AND MAT.DELETE_FLAG = ' '
+                                                   AND MAT.MAT_TYPE = 'FG'
+                                                   AND SAP.ARBPL != 'DUMMY'
+                                                   AND SAP.KTSCH LIKE 'A%'
+                                               ) B   
+                                         WHERE 1=1
+                                           AND A.MAT_ID = B.MAT_ID
+                                           AND (B.OPER IN ('A0010', 'A0200', 'A0030', 'A0040', 'A0012', 'A0033', 'A0170', 'A0180', 'A0230', 'A1250', 'A1260', 'A1300', 'A1750', 'A1000')
+                                               OR B.OPER LIKE 'A06%')   
+                                       ) A
+                                 WHERE 1=1
+                                   AND OPER LIKE 'A06%'
+                               )
+                         UNION ALL
+                        SELECT PLAN_DATE
+                             , '95mm' AS GUBUN2
+                             , CASE WHEN OPER = 'A1000' THEN 'Mold'
+                                    WHEN OPER = 'A1300' THEN 'SBA'
+                                    ELSE 'SST'
+                               END GUBUN3
+                             , SUM(PLAN_QTY) AS PLAN_QTY
+                             , SUM(PLAN_QTY) AS CONV_QTY
+                          FROM (
+                                        SELECT A.PLAN_DATE, A.MAT_KEY, A.MAT_ID, TO_NUMBER(PLAN_QTY) AS PLAN_QTY
+                                             , B.MAT_GRP_1, B.MAT_GRP_2, B.MAT_GRP_4, B.MAT_GRP_5
+                                             , TO_NUMBER(DECODE(B.MAT_GRP_6, '-', 1, ' ', 1, B.MAT_GRP_6)) AS MAT_GRP_6
+                                             , B.MAT_CMF_11, TO_NUMBER(DECODE(B.MAT_CMF_13,' ',1,B.MAT_CMF_13)) AS MAT_CMF_13
+                                             , CASE WHEN B.MAT_GRP_4 IN ('-', 'FD', 'FU') THEN '1'
+                                                    ELSE SUBSTR(B.MAT_GRP_4, 3) 
+                                               END AS STACK
+                                             , B.OPER
+                                          FROM (
+                                                SELECT DISTINCT A.PLAN_MONTH AS PLAN_DATE
+                                                     , CASE WHEN B.MAT_ID IS NULL THEN A.MAT_ID ELSE B.MCP_TO_PART END AS MAT_KEY
+                                                     , CASE WHEN B.MAT_ID IS NULL THEN A.MAT_ID ELSE B.MAT_ID END AS MAT_ID
+                                                     , A.RESV_FIELD1 AS PLAN_QTY
+                                                  FROM CWIPPLNMON A
+                                                     , RWIPMCPBOM B
+                                                 WHERE 1=1   
+                                                   AND A.MAT_ID = B.MCP_TO_PART(+)
+                                                   AND A.FACTORY = 'HMVA2'   
+                                                   AND A.PLAN_MONTH BETWEEN '202003' AND '202006'
+                                                   AND DECODE(A.RESV_FIELD1, ' ', 0, A.RESV_FIELD1) > 0
+                                               ) A
+                                             , (
+                                                SELECT DISTINCT MAT_ID, MAT_GRP_1, MAT_GRP_2, MAT_GRP_4, MAT_GRP_5, MAT_GRP_6, MAT_CMF_11, MAT_CMF_13, KTSCH AS OPER
+                                                  FROM MWIPMATDEF MAT
+                                                     ,( SELECT FLOW PLNNR,' ' ARBPL,OPER KTSCH FROM MWIPFLWOPR@RPTTOMES  WHERE FACTORY = 'HMVA2') SAP
+                                                 WHERE 1=1
+                                                   AND MAT.FIRST_FLOW = SUBSTR(PLNNR, 1, 4) 
+                                                   AND MAT.FACTORY = 'HMVA2'
+                                                   AND MAT.DELETE_FLAG = ' '
+                                                   AND MAT.MAT_TYPE = 'FG'
+                                                   AND SAP.ARBPL != 'DUMMY'
+                                                   AND SAP.KTSCH LIKE 'A%'
+                                               ) B   
+                                         WHERE 1=1
+                                           AND A.MAT_ID = B.MAT_ID
+                                           AND (B.OPER IN ('A0010', 'A0200', 'A0030', 'A0040', 'A0012', 'A0033', 'A0170', 'A0180', 'A0230', 'A1250', 'A1260', 'A1300', 'A1750', 'A1000')
+                                               OR B.OPER LIKE 'A06%')   
+                                       ) A
+                             , (
+                                SELECT * 
+                                  FROM MATRNAMSTS@RPTTOMES 
+                                 WHERE FACTORY = 'HMVA2'
+                                   AND ATTR_TYPE = 'MAT_ETC'
+                                   AND ATTR_NAME = 'MAGAZINE_TYPE' 
+                                   AND ATTR_VALUE = '95'
+                               ) B
+                         WHERE 1=1
+                           AND A.MAT_ID = B.ATTR_KEY
+                           AND A.OPER IN ('A1000', 'A1300', 'A1750')
+                         GROUP BY PLAN_DATE, OPER
+                       )
+                 GROUP BY GUBUN2, GUBUN3
+               )
+       ) PLN
+ WHERE 1=1
+   AND MDL.GUBUN1 = PLN.GUBUN1(+)   
+   AND MDL.GUBUN2 = PLN.GUBUN2(+)   
+   AND MDL.GUBUN3 = PLN.GUBUN3(+)   
+ ORDER BY GUBUN1, DECODE(GUBUN2, 'Wafer', 1, 'CHIP수', 2, 'Wire수', 3, 'PKG수', 4, 5), GUBUN3
+
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+INSERT INTO RWEBFUNLOG(FACTORY,USER_ID,FUNC_NAME,FUNC_GROUP,VIEW_TIME, UPDATE_TIME)
+VALUES (:p_FACTORY, :p_USER_ID, :p_FUNC_NAME, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC, LANGUAGE_1, LANGUAGE_2, LANGUAGE_3
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------
+SELECT * FROM RWEBUSRDEF WHERE FACTORY = :FACTORY AND USER_ID= :USER_ID
+-------------------------------------------------------------
+SELECT COUNT(*)
+FROM RWEBFUNLOG
+WHERE FACTORY = :FACTORY  
+AND USER_ID = :USER_ID 
+AND FUNC_NAME = :FUNC_NAME 
+AND FUNC_GROUP = :FUNC_GROUP
+AND VIEW_TIME BETWEEN TO_CHAR(SYSDATE - 10/1440, 'YYYYMMDDHH24MISS') AND TO_CHAR(SYSDATE + 10/1440, 'YYYYMMDDHH24MISS')
+-------------------------------------------------------------
+INSERT INTO RWEBFUNLOG(FACTORY,USER_ID,FUNC_NAME,FUNC_GROUP,VIEW_TIME, UPDATE_TIME)
+VALUES (:p_FACTORY, :p_USER_ID, :p_FUNC_NAME, :p_FUNC_GROUP,TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') , TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+
+-------------------------------------------------------------
+SELECT A.FUNC_GRP_SEQ,A.SEC_GRP_ID,A.FUNC_GRP_ID,NVL(A.FUNC_NAME, ' ') FUNC_NAME, NVL(B.FUNC_DESC, ' ') FUNC_DESC, LANGUAGE_1, LANGUAGE_2, LANGUAGE_3
+  FROM RWEBGRPFUN A, RWEBFUNDEF B
+ WHERE A.FACTORY = :p_FACTORY
+   AND A.SEC_GRP_ID = :p_SEC_GRP_ID
+   AND A.FUNC_NAME=B.FUNC_NAME(+)
+ ORDER BY A.FUNC_GRP_SEQ, A.FUNC_SEQ
+-------------------------------------------------------------

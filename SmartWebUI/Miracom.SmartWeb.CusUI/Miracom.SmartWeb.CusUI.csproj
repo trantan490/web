@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8A024F8-1D52-4B40-8D58-EE3B4699E081}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Miracom.SmartWeb.UI</RootNamespace>
+    <AssemblyName>Miracom.SmartWeb.CusUI</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <DelaySign>false</DelaySign>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FarPoint.Excel, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=4.0.2001.2005, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinChart.v8.1, Version=8.1.20081.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Infragistics2.Win.UltraWinChart.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.FWX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.FWX.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.H101INF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.H101INF.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.StdUI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.StdUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Miracom.SmartWeb.UI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d3d3167e709f0915, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\Miracom.SmartWeb.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="transceiverxnet, Version=3.2.70.0, Culture=neutral, PublicKeyToken=ebf86c237689feec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Component\transceiverxnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\320datasort_up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\001exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002FunctionNode.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\003FunctionNode.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\004dataasc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005datadesc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\006excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\007grpbar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\008useroption.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\009window.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\010msaruncht.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\011dataclose1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\011dataclose.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\011dataopen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\012dataexp.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\012find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\013datasaveas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\013Setup.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\014datadel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\014Setup.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\015view.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\020prjup.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\021prjdown.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\202copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\311rowadd.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\313rowdel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\320datasort.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\320datasort_left.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\320datasort_right.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\084excel.gif" />
+    <None Include="Resources\label.gif" />
+    <None Include="Resources\Panel.JPG" />
+    <None Include="Resources\tabel_back.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\323datatrans.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\015dataclose.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\021prjdown.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\020prjup.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\label2.GIF" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..\Component</PostBuildEvent>
+  </PropertyGroup>
+</Project>

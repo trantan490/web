@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="STD1901" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * 
+FROM RWIPLOTSTS 
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1902" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWIPLOTHIS
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1903" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MRASRESDEF
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1904" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM MRASRESHIS
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1905" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[??]]></commandtext>
+    </query>
+</queryxml>

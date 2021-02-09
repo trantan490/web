@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="STD1301" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT WM.MAT_ID, MD.MAT_DESC ,
+SUM(PD.PLAN_QTY) AS PLAN_QTY, 
+SUM(WM.S1_MOVE_LOT + WM.S2_MOVE_LOT + WM.S3_MOVE_LOT + WM.S4_MOVE_LOT) AS OUT_LOT,
+SUM(WM.S1_MOVE_QTY_1 + WM.S2_MOVE_QTY_1 + WM.S3_MOVE_QTY_1 + WM.S4_MOVE_QTY_1) AS OUT_QTY_1
+FROM RSUMWIPMOV WM, MWIPMATDEF MD, MWIPPLNDEF PD 
+??]]></commandtext>
+    </query>
+    <query statement="Select" queryid="STD1302" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT OS.ORDER_ID, OS.MAT_ID, MD.MAT_DESC, OS.ORD_QTY, OS.ORD_IN_QTY, OS.ORD_OUT_QTY
+FROM MWIPORDSTS OS, MWIPMATDEF MD
+??]]></commandtext>
+    </query>
+</queryxml>

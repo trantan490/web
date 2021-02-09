@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_0CFUNCNAME" commandtype="Text" description="Select All RWEBFUNDEF Table" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBFUNDEF WHERE FUNC_NAME = :FUNC_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="12" value="SEC1101">:FUNC_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_OCALL" commandtype="Text" description="Select All RWEBFUNDEF Table" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBFUNDEF ORDER BY FUNC_NAME]]></commandtext>
+    </query>
+    <query statement="Select" queryid="SEL_2CFACANDGRP" commandtype="Text" description="Select RWEBFUNDEF and RWEBGRPFUN Table join" commandtimeout="60">
+        <commandtext><![CDATA[SELECT FD.FUNC_NAME, FD.FUNC_DESC
+  FROM RWEBGRPFUN GF, RWEBFUNDEF FD
+ WHERE GF.FUNC_NAME=FD.FUNC_NAME
+   AND GF.FACTORY= :FACTORY
+   AND GF.SEC_GRP_ID= :SEC_GRP_ID
+   AND GF.FUNC_GRP_ID= :FUNC_GRP_ID
+ ORDER BY GF.FUNC_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN_GROUP">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="기준 정보 관리">:FUNC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Insert" queryid="INS_RWEBFUNDEF" commandtype="Text" description="Insert RWEBFUNDEF Table" commandtimeout="60">
+        <commandtext><![CDATA[INSERT INTO RWEBFUNDEF (FUNC_NAME, FUNC_DESC, FUNC_TYPE_FLAG, FUNC_FLEX_TYPE,
+				FUNC_URL, HELP_URL, CREATE_USER_ID, CREATE_TIME, UPDATE_USER_ID, UPDATE_TIME)
+ VALUES (:FUNC_NAME, :FUNC_DESC, :FUNC_TYPE_FLAG, :FUNC_FLEX_TYPE,
+ 		:FUNC_URL, :HELP_URL, :CREATE_USER_ID, :CREATE_TIME, :UPDATE_USER_ID, :UPDATE_TIME)]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="12" value="A">:FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="510" value="B">:FUNC_DESC</param>
+            <param direction="Input" dbtype="Char" size="1" value="C">:FUNC_TYPE_FLAG</param>
+            <param direction="Input" dbtype="Char" size="1" value="D">:FUNC_FLEX_TYPE</param>
+            <param direction="Input" dbtype="VarChar" size="100" value="E">:FUNC_URL</param>
+            <param direction="Input" dbtype="VarChar" size="100" value="F">:HELP_URL</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="G">:CREATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="H">:CREATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="I">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="J">:UPDATE_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_RWEBFUNDEF" commandtype="Text" description="Update RWEBFUNDEF Table" commandtimeout="60">
+        <commandtext>
+         <![CDATA[UPDATE RWEBFUNDEF
+   SET FUNC_NAME = :FUNC_NAME,     
+       FUNC_DESC = :FUNC_DESC,     
+       FUNC_TYPE_FLAG = :FUNC_TYPE_FLAG,
+       FUNC_FLEX_TYPE = :FUNC_FLEX_TYPE,
+       FUNC_URL = :FUNC_URL,      
+       HELP_URL = :HELP_URL,      
+       CREATE_USER_ID = :CREATE_USER_ID,
+       CREATE_TIME = :CREATE_TIME,   
+       UPDATE_USER_ID = :UPDATE_USER_ID,
+       UPDATE_TIME = :UPDATE_TIME,
+       DELETE_USER_ID = :DELETE_USER_ID,
+       DELETE_TIME = :DELETE_TIME
+ WHERE FUNC_NAME = :C_FUNC_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="12" value="A">:FUNC_NAME</param>
+            <param direction="Input" dbtype="VarChar" size="510" value="B">:FUNC_DESC</param>
+            <param direction="Input" dbtype="Char" size="1" value="C1">:FUNC_TYPE_FLAG</param>
+            <param direction="Input" dbtype="Char" size="1" value="D1">:FUNC_FLEX_TYPE</param>
+            <param direction="Input" dbtype="VarChar" size="100" value="E1">:FUNC_URL</param>
+            <param direction="Input" dbtype="VarChar" size="100" value="F1">:HELP_URL</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="G1">:CREATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="H1">:CREATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="I1">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="A">:UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="K">:DELETE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="L">:DELETE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="A">:C_FUNC_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Delete" queryid="DEL_RWEBFUNDEF" commandtype="Text" description="Delete RWEBFUNDEF Table" commandtimeout="60">
+        <commandtext><![CDATA[DELETE FROM RWEBFUNDEF WHERE FUNC_NAME = :FUNC_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="12" value="A">:FUNC_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_3CFACANDGRP" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT GF.FUNC_GRP_ID, FD.FUNC_NAME, FD.FUNC_DESC
+  FROM RWEBGRPFUN GF, RWEBFUNDEF FD
+ WHERE GF.FUNC_NAME=FD.FUNC_NAME
+   AND GF.FACTORY= :FACTORY
+   AND GF.SEC_GRP_ID= :SEC_GRP_ID
+ ORDER BY GF.FUNC_GRP_SEQ, GF.FUNC_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN_GROUP">:SEC_GRP_ID</param>
+        </parameters>
+    </query>
+</queryxml>

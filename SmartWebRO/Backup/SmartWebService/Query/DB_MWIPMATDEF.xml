@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="DB_MWIPMATDEF" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEL_MAT" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT DISTINCT MAT_ID, MAT_DESC FROM MWIPMATDEF  
+??
+]]></commandtext>
+    </query>
+    <query statement="Select" queryid="SEL_MAT_VER" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT MAT_VER FROM MWIPMATDEF
+??
+]]></commandtext>
+    </query>
+</queryxml>

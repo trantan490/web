@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queryxml conid="MESORA" xmlns="http://www.miracom.co.kr/XMLSchema">
+    <query statement="Select" queryid="SEC_SYSDATE" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS') FROM DUAL]]></commandtext>
+    </query>
+    <query statement="Select" queryid="SEL_0C_FAC.SECGRP.FUNCGRP.FUNCNAME" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBGRPFUN
+ WHERE FACTORY = :FACTORY
+   AND SEC_GRP_ID = :SEC_GRP_ID
+   AND FUNC_GRP_ID = :FUNC_GRP_ID
+   AND FUNC_NAME = :FUNC_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN_GROUP">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="기준 정보 관리">:FUNC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="RPT2040">:FUNC_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_0C_FUNCNAME" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT * FROM RWEBGRPFUN WHERE FUNC_NAME= :FUNC_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FUNC_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_CNT_FACT.SECGRP.FUNCGRP" commandtype="Text" description="Select Row Count RWEBGRPFUN Table" commandtimeout="60">
+        <commandtext><![CDATA[SELECT COUNT(*) FROM RWEBGRPFUN
+ WHERE FACTORY= :FACTORY
+   AND SEC_GRP_ID= :SEC_GRP_ID
+   AND FUNC_GRP_ID= :FUNC_GRP_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN_GROUP">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="기준 정보">:FUNC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_MAXSEQ_FACT.SECGRP.FUNCGRP" commandtype="Text" description="Select Max Func_Grp_Seq and Func_Seq" commandtimeout="60">
+        <commandtext><![CDATA[SELECT REPLACE(MAX(FUNC_GRP_SEQ), NULL, 0), REPLACE(MAX(FUNC_SEQ),NULL, 0)
+   FROM RWEBGRPFUN
+ WHERE FACTORY= :FACTORY
+   AND SEC_GRP_ID= :SEC_GRP_ID
+   AND FUNC_GRP_ID= :FUNC_GRP_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN_GROUP">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="기준 정보 관리">:FUNC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_MAXSEQ_FACT.SECGRP" commandtype="Text" description="Select MAX Group Sequence." commandtimeout="60">
+        <commandtext><![CDATA[SELECT REPLACE(MAX(FUNC_GRP_SEQ), NULL, 0) FROM RWEBGRPFUN
+ WHERE FACTORY= :FACTORY
+   AND SEC_GRP_ID= :SEC_GRP_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN_GROUP">:SEC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_6CJOIN_FACT.SECGRP.FUNCNAME" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT GF.FUNC_GRP_ID, GF.FUNC_GRP_SEQ, GF.FUNC_NAME, GF.FUNC_SEQ, FD.FUNC_DESC, FD.FUNC_URL
+  FROM RWEBGRPFUN GF, RWEBFUNDEF FD
+ WHERE GF.FUNC_NAME = FD.FUNC_NAME
+   AND GF.FACTORY= :FACTORY
+   AND GF.SEC_GRP_ID= :SEC_GRP_ID
+   AND GF.FUNC_NAME <> ' '
+ ORDER BY GF.FUNC_GRP_SEQ, GF.FUNC_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN_GROUP">:SEC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_1CJOIN_FACT.SECGRP" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT GF.FUNC_NAME
+  FROM RWEBGRPFUN GF, (SELECT DISTINCT FUNC_NAME FROM RWEBFUNCOL) FC
+ WHERE GF.FACTORY= :FACTORY
+   AND GF.SEC_GRP_ID= :SEC_GRP_ID
+   AND GF.FUNC_NAME = FC.FUNC_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="DEV_GROUP">:SEC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_2C_FACTORY.SECGRP" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT FUNC_GRP_ID, FUNC_GRP_SEQ
+  FROM RWEBGRPFUN
+ WHERE FACTORY= :FACTORY
+   AND SEC_GRP_ID= :SEC_GRP_ID
+ GROUP BY FUNC_GRP_ID, FUNC_GRP_SEQ
+ ORDER BY FUNC_GRP_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="SYSTEM">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="ADMIN_GROUP">:SEC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Insert" queryid="INS_RWEBGRPFUN" commandtype="Text" description="Insert RWEBGRPFUN  Table." commandtimeout="60">
+        <commandtext><![CDATA[INSERT INTO RWEBGRPFUN (FACTORY, SEC_GRP_ID, FUNC_GRP_ID, FUNC_GRP_SEQ, FUNC_NAME,
+			FUNC_SEQ, CREATE_USER_ID, CREATE_TIME, UPDATE_USER_ID, UPDATE_TIME)
+ VALUES (:FACTORY, :SEC_GRP_ID, :FUNC_GRP_ID, :FUNC_GRP_SEQ, :FUNC_NAME,
+ 		:FUNC_SEQ, :CREATE_USER_ID, :CREATE_TIME, :UPDATE_USER_ID, :UPDATE_TIME)]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:FUNC_GRP_ID</param>
+            <param direction="Input" dbtype="Number" size="6" value="0">:FUNC_GRP_SEQ</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="E">:FUNC_NAME</param>
+            <param direction="Input" dbtype="Number" size="6" value="0">:FUNC_SEQ</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="G">:CREATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="H">:CREATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="I">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="J">:UPDATE_TIME</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_0C_RWEBGRPFUN" commandtype="Text" description="Update RWEBGRPFUN Table." commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBGRPFUN
+   SET FACTORY = :FACTORY,
+   	   SEC_GRP_ID = :SEC_GRP_ID,
+   	   FUNC_GRP_ID = :FUNC_GRP_ID,
+   	   FUNC_GRP_SEQ = :FUNC_GRP_SEQ,
+   	   FUNC_NAME = :FUNC_NAME,
+   	   FUNC_SEQ = :FUNC_SEQ,
+   	   CREATE_USER_ID = :CREATE_USER_ID,
+   	   CREATE_TIME = :CREATE_TIME,
+   	   UPDATE_USER_ID = :UPDATE_USER_ID,
+   	   UPDATE_TIME = :UPDATE_TIME
+ WHERE FACTORY = :C_FACTORY       
+   AND SEC_GRP_ID = :C_SEC_GRP_ID    
+   AND FUNC_GRP_ID = :C_FUNC_GRP_ID   
+   AND FUNC_NAME = :C_FUNC_NAME]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:FUNC_GRP_ID</param>
+            <param direction="Input" dbtype="Number" size="6" value="0">:FUNC_GRP_SEQ</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="E">:FUNC_NAME</param>
+            <param direction="Input" dbtype="Number" size="6" value="0">:FUNC_SEQ</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="G">:CREATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="H">:CREATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="I">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="J">:UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:C_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:C_SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:C_FUNC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="E">:C_FUNC_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_3C_RWEBGRPFUN_GRPSEQ" commandtype="Text" description="Update RWEBGRPFUN Table@ Function Group Sequence." commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBGRPFUN
+   SET FUNC_GRP_SEQ = :FUNC_GRP_SEQ,
+   	   UPDATE_USER_ID = :UPDATE_USER_ID,
+   	   UPDATE_TIME = :UPDATE_TIME   
+ WHERE FACTORY = :C_FACTORY       
+   AND SEC_GRP_ID = :C_SEC_GRP_ID    
+   AND FUNC_GRP_ID = :C_FUNC_GRP_ID ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="Number" size="6" value="0">:FUNC_GRP_SEQ</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="I">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="J">:UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:C_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:C_SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:C_FUNC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_3C_RWEBGRPFUN_GRPID" commandtype="Text" description="Update RWEBGRPFUN Table@ Function Group ID" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBGRPFUN
+   SET FUNC_GRP_ID = :NEWFUNC_GRP_ID,
+   	   UPDATE_USER_ID = :UPDATE_USER_ID,
+   	   UPDATE_TIME = :UPDATE_TIME   
+ WHERE FACTORY = :C_FACTORY       
+   AND SEC_GRP_ID = :C_SEC_GRP_ID    
+   AND FUNC_GRP_ID = :C_FUNC_GRP_ID   ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:NEWFUNC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="I">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="J">:UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:C_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:C_SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:C_FUNC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_3C_RWEBGRPFUN_GRPSEQINC" commandtype="Text" description="Update RWEBGRPFUN Table@ Function Group Sequence increment" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBGRPFUN
+   SET FUNC_GRP_SEQ = FUNC_GRP_SEQ + 1,
+   	   UPDATE_USER_ID = :UPDATE_USER_ID,
+   	   UPDATE_TIME = :UPDATE_TIME   
+ WHERE FACTORY = :C_FACTORY       
+   AND SEC_GRP_ID = :C_SEC_GRP_ID    
+   AND FUNC_GRP_SEQ > :C_FUNC_GRP_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="20" value="I">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="J">:UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:C_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:C_SEC_GRP_ID</param>
+            <param direction="Input" dbtype="Number" size="9" value="0">:C_FUNC_GRP_SEQ</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_3C_RWEBGRPFUN_GRPSEQDEC" commandtype="Text" description="Update RWEBGRPFUN Table@ Function Group Sequence decrement" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBGRPFUN
+   SET FUNC_GRP_SEQ = FUNC_GRP_SEQ - 1,
+   	   UPDATE_USER_ID = :UPDATE_USER_ID,
+   	   UPDATE_TIME = :UPDATE_TIME   
+ WHERE FACTORY = :C_FACTORY       
+   AND SEC_GRP_ID = :C_SEC_GRP_ID    
+   AND FUNC_GRP_SEQ > :C_FUNC_GRP_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="20" value="I">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="J">:UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:C_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:C_SEC_GRP_ID</param>
+            <param direction="Input" dbtype="Number" size="6" value="0">:C_FUNC_GRP_SEQ</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_3C_RWEBGRPFUN_FUNCSEQINC" commandtype="Text" description="Update RWEBGRPFUN Table@ Function Qequence increment" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBGRPFUN
+   SET FUNC_SEQ = FUNC_SEQ + 1,
+   	   UPDATE_USER_ID = :UPDATE_USER_ID,
+   	   UPDATE_TIME = :UPDATE_TIME   
+ WHERE FACTORY = :C_FACTORY       
+   AND SEC_GRP_ID = :C_SEC_GRP_ID    
+   AND FUNC_GRP_ID = :C_FUNC_GRP_ID   
+   AND FUNC_SEQ > :C_FUNC_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="20" value="I">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="J">:UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:C_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:C_SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:C_FUNC_GRP_ID</param>
+            <param direction="Input" dbtype="Number" size="6" value="0">:C_FUNC_SEQ</param>
+        </parameters>
+    </query>
+    <query statement="Update" queryid="UDP_3C_RWEBGRPFUN_FUNCSEQDEC" commandtype="Text" description="Update RWEBGRPFUN Table@ Function Qequence decrement" commandtimeout="60">
+        <commandtext><![CDATA[UPDATE RWEBGRPFUN
+   SET FUNC_SEQ = FUNC_SEQ - 1,
+   	   UPDATE_USER_ID = :UPDATE_USER_ID,
+   	   UPDATE_TIME = :UPDATE_TIME   
+ WHERE FACTORY = :C_FACTORY       
+   AND SEC_GRP_ID = :C_SEC_GRP_ID    
+   AND FUNC_GRP_ID = :C_FUNC_GRP_ID   
+   AND FUNC_SEQ > :C_FUNC_SEQ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="20" value="I">:UPDATE_USER_ID</param>
+            <param direction="Input" dbtype="VarChar" size="14" value="J">:UPDATE_TIME</param>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:C_FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:C_SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:C_FUNC_GRP_ID</param>
+            <param direction="Input" dbtype="Number" size="6" value="0">:C_FUNC_SEQ</param>
+        </parameters>
+    </query>
+    <query statement="Delete" queryid="DEL_0C_FAC.SECGRP.FUNCGRP.FUNCNAME" commandtype="Text" description="Delete RWEBGRPFUN Table" commandtimeout="60">
+        <commandtext><![CDATA[DELETE FROM RWEBGRPFUN 
+ WHERE FACTORY = :FACTORY       
+   AND SEC_GRP_ID = :SEC_GRP_ID    
+   AND FUNC_GRP_ID = :FUNC_GRP_ID   
+   AND FUNC_NAME = :FUNC_NAME  ]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:FUNC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="12" value="E">:FUNC_NAME</param>
+        </parameters>
+    </query>
+    <query statement="Delete" queryid="DEL_0C_FAC.SECGRP.FUNCGRP" commandtype="Text" description="Delete RWEBGRPFUN Table" commandtimeout="60">
+        <commandtext><![CDATA[DELETE FROM RWEBGRPFUN 
+ WHERE FACTORY = :FACTORY       
+   AND SEC_GRP_ID = :SEC_GRP_ID  
+   AND FUNC_GRP_ID = :FUNC_GRP_ID]]></commandtext>
+        <parameters>
+            <param direction="Input" dbtype="VarChar" size="10" value="A">:FACTORY</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="B">:SEC_GRP_ID</param>
+            <param direction="Input" dbtype="VarChar" size="20" value="C">:FUNC_GRP_ID</param>
+        </parameters>
+    </query>
+    <query statement="Select" queryid="SEL_FUNCGROUP" commandtype="Text" commandtimeout="60">
+        <commandtext><![CDATA[SELECT FUNC_GRP_ID
+  FROM RWEBGRPFUN
+ GROUP BY FUNC_GRP_ID, FUNC_GRP_SEQ
+ ORDER BY FUNC_GRP_SEQ]]></commandtext>
+    </query>
+</queryxml>
